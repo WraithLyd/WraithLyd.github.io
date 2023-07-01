@@ -1,6 +1,5 @@
 site_name: WraithLyd
 site_url: https://wraithlyd.github.io/
-edit_uri: tree/master/mkdocs/docs
 dev_addr: '127.0.0.1:5500' #默认值
 theme:
   name: 'material'
