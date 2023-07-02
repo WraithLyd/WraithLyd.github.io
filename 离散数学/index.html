@@ -1252,11 +1252,11 @@
 类似于编程语言中的函数说明（形参）和函数调用（实参）之区分</p>
 </blockquote>
 <h4 id="_7">量词<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p><span class="arithmatex">\(\forall \ \&amp;\ \exists\)</span></p>
+<p><span class="arithmatex">\(\forall \ \&amp;\ \existss\)</span></p>
 <ul>
 <li>“所有”为全称量词，记作 $\forall $</li>
-<li>“有一些”为存在量词，记作 <span class="arithmatex">\(\exists\)</span></li>
-<li>量词作用于谓词时需要引入一个指导变元，同时放在量词后面和谓词填式中：<span class="arithmatex">\(\forall xP(x),\exist xP(x)\)</span></li>
+<li>“有一些”为存在量词，记作 <span class="arithmatex">\(\existss\)</span></li>
+<li>量词作用于谓词时需要引入一个指导变元，同时放在量词后面和谓词填式中：<span class="arithmatex">\(\forall xP(x),\exists xP(x)\)</span></li>
 </ul>
 <p>约束变元和自由变元</p>
 <ul>
@@ -1275,7 +1275,7 @@
 </li>
 <li>谓词公式<ul>
 <li>由五个联结词和量词链接的有限个原子公式称为谓词公式<blockquote>
-<p><span class="arithmatex">\(\forall x A\)</span> ，$ \exist x A$ 中公式 <span class="arithmatex">\(A\)</span> 可以不包含变元 <span class="arithmatex">\(x\)</span> ，此时 <span class="arithmatex">\(\forall x A\)</span> ，<span class="arithmatex">\(\exist x A\)</span> 均等价于 <span class="arithmatex">\(A\)</span></p>
+<p><span class="arithmatex">\(\forall x A\)</span> ，$ \exists x A$ 中公式 <span class="arithmatex">\(A\)</span> 可以不包含变元 <span class="arithmatex">\(x\)</span> ，此时 <span class="arithmatex">\(\forall x A\)</span> ，<span class="arithmatex">\(\exists x A\)</span> 均等价于 <span class="arithmatex">\(A\)</span></p>
 </blockquote>
 </li>
 </ul>
@@ -1319,34 +1319,34 @@
 <h3 id="9">9.谓词演算的永真式<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
 <p>当A不含变元x时</p>
 <ul>
-<li><span class="arithmatex">\(\forall x A \Leftrightarrow A，\exist x A \Leftrightarrow A\)</span></li>
-<li><span class="arithmatex">\(\forall x A x \Rightarrow A x ，A x \Rightarrow \exist x A x ，\forall x A x \Rightarrow \exist x A x\)</span></li>
-<li><span class="arithmatex">\(\lnot \exist x \lnot A x \Leftrightarrow \forall x A x\)</span></li>
-<li><span class="arithmatex">\(\lnot \forall x \lnot A x \leftrightarrow \exist x A x\)</span></li>
-<li><span class="arithmatex">\(\lnot \exist x A x \Leftrightarrow \forall x \lnot A x\)</span></li>
-<li><span class="arithmatex">\(\lnot \forall x A x \Leftrightarrow \exist x \lnot A x\)</span></li>
+<li><span class="arithmatex">\(\forall x A \Leftrightarrow A，\exists x A \Leftrightarrow A\)</span></li>
+<li><span class="arithmatex">\(\forall x A x \Rightarrow A x ，A x \Rightarrow \exists x A x ，\forall x A x \Rightarrow \exists x A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \exists x \lnot A x \Leftrightarrow \forall x A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \forall x \lnot A x \leftrightarrow \exists x A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \exists x A x \Leftrightarrow \forall x \lnot A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \forall x A x \Leftrightarrow \exists x \lnot A x\)</span></li>
 </ul>
 <p>当公式B不含变元x时</p>
 <ul>
 <li><span class="arithmatex">\(\forall x A x ∨ B \Leftrightarrow \forall x (A x ∨ B)\)</span></li>
 <li><span class="arithmatex">\(\forall x A x ∧ B \Leftrightarrow \forall x (A x ∧ B)\)</span></li>
-<li><span class="arithmatex">\(\exist x A x ∨ B \Leftrightarrow \exist x (A x ∨ B)\)</span></li>
-<li><span class="arithmatex">\(\exist x A x ∧ B \Leftrightarrow \exist x (A x ∧ B)\)</span></li>
+<li><span class="arithmatex">\(\exists x A x ∨ B \Leftrightarrow \exists x (A x ∨ B)\)</span></li>
+<li><span class="arithmatex">\(\exists x A x ∧ B \Leftrightarrow \exists x (A x ∧ B)\)</span></li>
 </ul>
 <p>当公式B含变元x时</p>
 <ul>
 <li><span class="arithmatex">\(\forall x (A (x) ∧ B (x)) \Leftrightarrow \forall x A(x)∧ \forall x B(x)\)</span></li>
 <li><span class="arithmatex">\(\forall x A (x) ∨ \forall x B(x) \Rightarrow \forall x(A(x)∨B(x))\)</span></li>
-<li><span class="arithmatex">\(\exist x (A (x) ∧ B (x)) \Rightarrow \exist x A(x)∧ \exist x B(x)\)</span></li>
-<li><span class="arithmatex">\(\exist x (A (x) ∨ B (x)) \Rightarrow \exist x A(x)∨ \exist x B(x)\)</span></li>
+<li><span class="arithmatex">\(\exists x (A (x) ∧ B (x)) \Rightarrow \exists x A(x)∧ \exists x B(x)\)</span></li>
+<li><span class="arithmatex">\(\exists x (A (x) ∨ B (x)) \Rightarrow \exists x A(x)∨ \exists x B(x)\)</span></li>
 </ul>
 <p>量词的组合与顺序</p>
 <ul>
 <li><span class="arithmatex">\(\forall x\forall y A (x, y) \Leftrightarrow \forall y\forall x A (x, y)\)</span></li>
-<li><span class="arithmatex">\(\forall x\forall y A (x, y) \Rightarrow \exist y\forall x A (x, y)\)</span></li>
-<li><span class="arithmatex">\(\exist y\forall x A (x, y) \Rightarrow \forall x\exist y A (x, y)\)</span></li>
-<li><span class="arithmatex">\(\forall x\exist y A (x, y) \Rightarrow \exist y\exist x A (x, y)\)</span></li>
-<li><span class="arithmatex">\(\exist x\exist y A (x, y) \Leftrightarrow \exist y\exist x A (x, y)\)</span></li>
+<li><span class="arithmatex">\(\forall x\forall y A (x, y) \Rightarrow \exists y\forall x A (x, y)\)</span></li>
+<li><span class="arithmatex">\(\exists y\forall x A (x, y) \Rightarrow \forall x\exists y A (x, y)\)</span></li>
+<li><span class="arithmatex">\(\forall x\exists y A (x, y) \Rightarrow \exists y\exists x A (x, y)\)</span></li>
+<li><span class="arithmatex">\(\exists x\exists y A (x, y) \Leftrightarrow \exists y\exists x A (x, y)\)</span></li>
 </ul>
 <h3 id="10">10.公理化集合论<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
 <p>集合</p>
