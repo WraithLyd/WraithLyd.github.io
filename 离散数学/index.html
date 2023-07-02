@@ -933,484 +933,155 @@
 </ul>
 <h3 id="2">2.逻辑联接词集功能完备性<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>逻辑连接词<ul>
-<li>连接命题，对真值进运算的词</li>
-</ul>
-</li>
-<li>原子命题<ul>
-<li>不含有逻辑连接词的命题</li>
-</ul>
-</li>
+<li>逻辑连接词<br />
+连接命题，对真值进运算的词</li>
+<li>原子命题<br />
+不含有逻辑连接词的命题</li>
 <li>
-<p>复合命题</p>
-<ul>
-<li>包括了原子命题和逻辑连接词的命题</li>
-</ul>
+<p>复合命题<br />
+包括了原子命题和逻辑连接词的命题</p>
 </li>
 <li>
 <p>常见逻辑连接词</p>
-</li>
-<li>
 <ul>
-<li>否定词：非 (not) <span class="arithmatex">\(\lnot\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
+<li>否定词：非 (not) $\lnot $</li>
 <li>合取词：并且 (and) <span class="arithmatex">\(\land\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
 <li>析取词：或 (or) <span class="arithmatex">\(\lor\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>蕴涵词：如果……那么…… (if...then...) <span class="arithmatex">\(\rightarrow\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
+<li>蕴涵词：如果……那么…… (if...then...) <span class="arithmatex">\(\rightarrow\)</span><ul>
 <li><span class="arithmatex">\(p\rightarrow q\)</span> 中的 <span class="arithmatex">\(p\)</span> 称作蕴涵前件， <span class="arithmatex">\(q\)</span> 称作蕴涵后件</li>
+<li>在蕴涵式中，只有 <span class="arithmatex">\(p\)</span> 为真 <span class="arithmatex">\(q\)</span> 为假时，<span class="arithmatex">\(p\rightarrow q\)</span> 才为假，故和 <span class="arithmatex">\((\lnot  p \land q )\)</span> 的真值表相同</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>在蕴涵式中，只有 <span class="arithmatex">\(p\)</span> 为真 <span class="arithmatex">\(q\)</span> 为假时，<span class="arithmatex">\(p\rightarrow q\)</span> 才为假，故和 <span class="arithmatex">\((\lnot p \land q )\)</span> 的真值表相同</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>双向蕴涵词：当且仅当 (if and only if) <span class="arithmatex">\(\leftrightarrow\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
+<li>双向蕴涵词：当且仅当 (if and only if) <span class="arithmatex">\(\leftrightarrow\)</span><ul>
 <li>当 <span class="arithmatex">\(p\)</span> 和 <span class="arithmatex">\(q\)</span> 真值相同的情况下，<span class="arithmatex">\(p\leftrightarrow q\)</span> 为真</li>
 </ul>
 </li>
+<li>优先级<ul>
+<li><span class="arithmatex">\((\lnot ) \Rightarrow (\land / \lor) \Rightarrow (\rightarrow) \Rightarrow (\leftrightarrow)\)</span></li>
 </ul>
 </li>
-<li>优先级</li>
-<li>
-<ul>
-<li><span class="arithmatex">\((\lnot) \Rightarrow (\land / \lor) \Rightarrow (\rightarrow) \Rightarrow (\leftrightarrow)\)</span></li>
 </ul>
 </li>
 </ul>
 <h4 id="_1">功能完备集<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>如果任意一个真值函数都可以用仅包含某个联结词集中的联结词的命题公式表示，则称这个联结词集为功能完备集</li>
-<li>
-<ul>
-<li><span class="arithmatex">\(&lt;\lnot,\land,\lor,\rightarrow,\leftrightarrow&gt;\)</span></li>
+<li>如果任意一个真值函数都可以用仅包含某个联结词集中的联结词的命题公式表示，则称这个联结词集为功能完备集，如： <ul>
+<li><span class="arithmatex">\(&lt;\lnot ,\land,\lor,\rightarrow,\leftrightarrow&gt;\)</span>  </li>
+<li><span class="arithmatex">\(&lt;\lnot ,\land,\lor&gt;\)</span>  </li>
 </ul>
 </li>
-<li>
-<ul>
-<li><span class="arithmatex">\(&lt;\lnot,\land,\lor&gt;\)</span></li>
+<li>冗余联结词<br />
+在一个联结词集中，如果某个联结词可以用集合中其他联结词来定义，则这个联结词称作冗余联结词</li>
+<li>功能完备集证明思路<br />
+从一个已知的功能完备集中去掉冗余联结词，直到得到需证明的功能完备集 </li>
 </ul>
-</li>
-<li>冗余联结词</li>
-<li>
-<ul>
-<li>在一个联结词集中，如果某个联结词可以用集合中其他联结词来定义，则这个联结词称作冗余联结词</li>
-</ul>
-</li>
-<li>功能完备集证明</li>
-<li>
-<ul>
-<li>证明思路：从一个已知的功能完备集中去掉冗余联结词，直到得到需证明的功能完备集 </li>
-</ul>
-</li>
-<li>极小功能完备集</li>
-<li>
-<ul>
-<li>如果一个功能完备集中不含冗余联结词，则称这个功能完备集为极小的</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><span class="arithmatex">\(\{\lnot,\rightarrow\},\{\lnot,\lor\},\{\lnot,\land\}\)</span> 是极小功能完备集</li>
-</ul>
-</li>
-<li>仅包含单个联结词的功能完备集</li>
-<li>
-<ul>
-<li>定义联结词 <span class="arithmatex">\(\downarrow\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li><span class="arithmatex">\(p\downarrow q\Leftrightarrow\lnot(p\lor q)\)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li><span class="arithmatex">\(\{\downarrow\}\)</span> 是功能完备集</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>证明思路：用 <span class="arithmatex">\(↓\)</span> 去定义功能完备集中每一个联结词，如 <span class="arithmatex">\(\{¬,∨\}\)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>极小功能完备集<br />
++ 如果一个功能完备集中不含冗余联结词，则称这个功能完备集为极小的，如：
+    + <span class="arithmatex">\(\{\lnot ,\rightarrow\}\)</span>
+    + <span class="arithmatex">\(\{\lnot ,\lor\}\)</span>
+    + <span class="arithmatex">\(\{\lnot ,\land\}\)</span></p>
+<p>仅包含单个联结词的功能完备集<br />
++ 定义联结词 <span class="arithmatex">\(\downarrow\)</span>
++ <span class="arithmatex">\(p\downarrow q\Leftrightarrow\lnot (p\lor q)\)</span>
++ <span class="arithmatex">\(\{\downarrow\}\)</span> 是功能完备集
++ 证明思路：用 <span class="arithmatex">\(↓\)</span> 去定义功能完备集中每一个联结词，如 <span class="arithmatex">\(\{\lnot ,∨\}\)</span></p>
 <h3 id="3">3.真值表<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <h4 id="_2">真值表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
-<li>命题的真值</li>
-<li>
-<ul>
+<li>命题的真值<ul>
 <li>为真用1来表示</li>
-</ul>
-</li>
-<li>
-<ul>
 <li>为假用0来表示</li>
 </ul>
 </li>
 <li>逻辑连接词用<strong>真值表</strong>来定义</li>
-<li>真值表的内容</li>
-<li>
-<ul>
+<li>真值表的内容<ul>
 <li>原子命题的真值组合 <span class="arithmatex">\((0,1)\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
 <li>经过逻辑连接词作用后的真值</li>
 </ul>
 </li>
 </ul>
 <h4 id="_3">命题公式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>定义</li>
-<li>
-<ul>
-<li>命题常元和命题变元是命题公式，称作原子公</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>如果 <span class="arithmatex">\(A\)</span> ，<span class="arithmatex">\(B\)</span> 是命题公式，那么<span class="arithmatex">\(（¬A）\)</span>，<span class="arithmatex">\(（A∧B）\)</span>，<span class="arithmatex">\(A∨B\)</span>，<span class="arithmatex">\(（A→B）\)</span>，<span class="arithmatex">\(A↔B\)</span>也是命题公式</li>
-</ul>
-</li>
-<li>
-<ul>
+<li>定义<ul>
+<li>命题常元和命题变元是命题公式，称作原子公式</li>
+<li>如果 <span class="arithmatex">\(A\)</span> ，<span class="arithmatex">\(B\)</span> 是命题公式，那么<span class="arithmatex">\(（\lnot A）\)</span>，<span class="arithmatex">\(（A∧B）\)</span>，<span class="arithmatex">\(A∨B\)</span>，<span class="arithmatex">\(（A→B）\)</span>，<span class="arithmatex">\(A↔B\)</span>也是命题公式</li>
 <li>只有有限步引用上述两条所组成的符号串是命题公式</li>
 </ul>
 </li>
-<li>赋值</li>
-<li>
-<ul>
-<li>成真赋值</li>
+<li>赋值<ul>
+<li>成真赋值<br />
+当公式 <span class="arithmatex">\(A\)</span> 对赋值 <span class="arithmatex">\(\alpha\)</span> 为真时，称 <span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(A\)</span> 的成真赋值，或者 <span class="arithmatex">\(\alpha\)</span> 弄真 <span class="arithmatex">\(A\)</span>，记做 <span class="arithmatex">\(\alpha(A)=1\)</span> </li>
+<li>成假赋值<br />
+当公式 <span class="arithmatex">\(A\)</span> 对赋值 <span class="arithmatex">\(\alpha\)</span> 为假时，称 <span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(A\)</span> 的成假赋值，或者 <span class="arithmatex">\(\alpha\)</span> 弄假 <span class="arithmatex">\(A\)</span>，记做 <span class="arithmatex">\(\alpha(A)=0\)</span></li>
 </ul>
 </li>
-<li>
-<ul>
-<li>
-<ul>
-<li>当公式 <span class="arithmatex">\(A\)</span> 对赋值 <span class="arithmatex">\(\alpha\)</span> 为真时，称 <span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(A\)</span> 的成真赋值，或者 <span class="arithmatex">\(\alpha\)</span> 弄真 <span class="arithmatex">\(A\)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>记做 <span class="arithmatex">\(\alpha(A)=1\)</span> </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>成假赋值</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>当公式 <span class="arithmatex">\(A\)</span> 对赋值 <span class="arithmatex">\(\alpha\)</span> 为假时，称 <span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(A\)</span> 的成假赋值，或者 <span class="arithmatex">\(\alpha\)</span> 弄假 <span class="arithmatex">\(A\)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>记做 <span class="arithmatex">\(\alpha(A)=0\)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>分类</li>
-<li>
-<ul>
-<li>重言式（永真式）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>命题变元所有赋值都是命题公式的成真赋值</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>矛盾式（永假式、不可满足式）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>命题变元所有赋值都是命题公式的成假赋值</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>可满足式</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>命题变元至少有一个成真赋值</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li><strong>永真式也是可满足式</strong></li>
-</ul>
-</li>
+<li>分类<ul>
+<li>重言式（永真式）<br />
+命题变元所有赋值都是命题公式的成真赋值</li>
+<li>矛盾式（永假式、不可满足式）<br />
+命题变元所有赋值都是命题公式的成假赋值</li>
+<li>可满足式<br />
+命题变元至少有一个成真赋值</li>
+<li><strong>永真式也是可满足式</strong>  </li>
 </ul>
 </li>
 </ul>
 <h3 id="4">4.逻辑等价式<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <ul>
-<li>定义</li>
-<li>
-<ul>
-<li>当命题公式 <span class="arithmatex">\(A\leftrightarrow B\)</span> 是重言式时，则称 <span class="arithmatex">\(A\)</span> 逻辑等价于 <span class="arithmatex">\(B\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>记作 <span class="arithmatex">\(A\Leftrightarrow B\)</span></li>
-</ul>
-</li>
-<li>一些重要的逻辑等价式（<span class="arithmatex">\(A\)</span>，<span class="arithmatex">\(B\)</span>，<span class="arithmatex">\(C\)</span> 是任意公式）</li>
-<li>
-<ul>
-<li>E1: <span class="arithmatex">\(\lnot \lnot A\Leftrightarrow A\)</span> （双重否定律）</li>
-</ul>
-</li>
-<li>
-<ul>
+<li>定义<br />
+当命题公式 <span class="arithmatex">\(A\leftrightarrow B\)</span> 是重言式时，则称 <span class="arithmatex">\(A\)</span> 逻辑等价于 <span class="arithmatex">\(B\)</span>，记作 <span class="arithmatex">\(A\Leftrightarrow B\)</span></li>
+<li>一些重要的逻辑等价式（<span class="arithmatex">\(A\)</span>，<span class="arithmatex">\(B\)</span>，<span class="arithmatex">\(C\)</span> 是任意公式）<ul>
+<li>E1: <span class="arithmatex">\(\lnot  \lnot  A\Leftrightarrow A\)</span> （双重否定律）</li>
 <li>E2: <span class="arithmatex">\(A \land A \Leftrightarrow A,\ A\lor A \Leftrightarrow A\)</span> （幂等律）</li>
-</ul>
-</li>
-<li>
-<ul>
 <li>E3: <span class="arithmatex">\(A∨B\Leftrightarrow B∨A，A∧B\Leftrightarrow B∧A\)</span>（交换律）</li>
-</ul>
-</li>
-<li>
-<ul>
 <li>E4: <span class="arithmatex">\((A∨B)∨C \Leftrightarrow A∨(B∨C)，(A∧B)∧C\Leftrightarrow A∧(B∧C)\)</span>（结合律）</li>
-</ul>
-</li>
-<li>
-<ul>
 <li>E5: <span class="arithmatex">\(A∧(B∨C)\Leftrightarrow (A∧B)∨A∧C,A∨(B∧C)\Leftrightarrow (A∨B)∧(A∨C)\)</span>（分配律）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E6: <span class="arithmatex">\(¬(A∨B)\Leftrightarrow ¬A∧¬B，¬(A∧B)\Leftrightarrow ¬A∨¬B\)</span>（德摩根律）</li>
-</ul>
-</li>
-<li>
-<ul>
+<li>E6: <span class="arithmatex">\(\lnot (A∨B)\Leftrightarrow \lnot A∧\lnot B，\lnot (A∧B)\Leftrightarrow \lnot A∨\lnot B\)</span>（德摩根律）</li>
 <li>E7: <span class="arithmatex">\(A∨(A∧B)\Leftrightarrow A，A∧(A∨B)\Leftrightarrow A\)</span>（吸收律）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E8: <span class="arithmatex">\(A→B≡¬A∨B\)</span>（蕴涵等值式）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E9: <span class="arithmatex">\(A↔B≡(A→B)∧(B→A)\)</span>（等价等值式）</li>
-</ul>
-</li>
-<li>
-<ul>
+<li>E8: <span class="arithmatex">\(A→B\Leftrightarrow\lnot A∨B\)</span>（蕴涵等值式）</li>
+<li>E9: <span class="arithmatex">\(A↔B\Leftrightarrow(A→B)∧(B→A)\)</span>（等价等值式）</li>
 <li>E10: <span class="arithmatex">\(A∨T\Leftrightarrow T，A∧F\Leftrightarrow F\)</span>（零律）</li>
-</ul>
-</li>
-<li>
-<ul>
 <li>E11: <span class="arithmatex">\(A∨F\Leftrightarrow A，A∧T\Leftrightarrow A\)</span>（同一律）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E12: <span class="arithmatex">\(A∨¬A\Leftrightarrow T，A∧¬A\Leftrightarrow F\)</span>（排中律和矛盾律）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E13: <span class="arithmatex">\(¬T\Leftrightarrow F，¬F\Leftrightarrow T\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
+<li>E12: <span class="arithmatex">\(A∨\lnot A\Leftrightarrow T，A∧\lnot A\Leftrightarrow F\)</span>（排中律和矛盾律）</li>
+<li>E13: <span class="arithmatex">\(\lnot T\Leftrightarrow F，\lnot F\Leftrightarrow T\)</span></li>
 <li>E14: <span class="arithmatex">\(A∧B→C\Leftrightarrow A→B→C\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E15: <span class="arithmatex">\(A→B\Leftrightarrow ¬B→¬A\)</span>（假言易位）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E16: <span class="arithmatex">\(A→B∧A→¬B\Leftrightarrow ¬A\)</span>（归谬论）</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>E17: <span class="arithmatex">\(A↔B\Leftrightarrow (A∧B)∨(¬A∧¬B)\)</span>（等价等值式2）</li>
+<li>E15: <span class="arithmatex">\(A→B\Leftrightarrow \lnot B→\lnot A\)</span>（假言易位）</li>
+<li>E16: <span class="arithmatex">\(A→B∧A→\lnot B\Leftrightarrow \lnot A\)</span>（归谬论）</li>
+<li>E17: <span class="arithmatex">\(A↔B\Leftrightarrow (A∧B)∨(\lnot A∧\lnot B)\)</span>（等价等值式2）</li>
 </ul>
 </li>
 </ul>
 <h3 id="5">5.逻辑蕴涵式<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>定义</li>
-<li>
-<ul>
-<li>当命题公式 <span class="arithmatex">\(A\rightarrow B\)</span> 为重言式时，则称 <span class="arithmatex">\(A\)</span> 逻辑等价 <span class="arithmatex">\(B\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>记作 <span class="arithmatex">\(A \Rightarrow B\)</span></li>
-</ul>
-</li>
-<li>一些重要的逻辑蕴涵式（A，B，C，D是任意公式）</li>
-<li>
-<ul>
+<li>定义<br />
+当命题公式 <span class="arithmatex">\(A\rightarrow B\)</span> 为重言式时，则称 <span class="arithmatex">\(A\)</span> 逻辑等价 <span class="arithmatex">\(B\)</span>，记作 <span class="arithmatex">\(A \Rightarrow B\)</span></li>
+<li>一些重要的逻辑蕴涵式（A，B，C，D是任意公式）<ul>
 <li>I1: <span class="arithmatex">\(A\Rightarrow A∨B\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
 <li>I2: <span class="arithmatex">\(A∧B\Rightarrow A\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
 <li>I3: <span class="arithmatex">\(A∧(A→B)\Rightarrow B\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>I4: <span class="arithmatex">\((A→B)∧¬B\Rightarrow¬A\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>I5: <span class="arithmatex">\(¬A∧(A∨B)\Rightarrow B\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
+<li>I4: <span class="arithmatex">\((A→B)∧\lnot B\Rightarrow\lnot A\)</span></li>
+<li>I5: <span class="arithmatex">\(\lnot A∧(A∨B)\Rightarrow B\)</span></li>
 <li>I6: <span class="arithmatex">\((A→B)∧(B→C)\Rightarrow A→C\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
 <li>I7: <span class="arithmatex">\((A→B)∧(C→D)\Rightarrow(A∧C)→(B∧D)\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>I8: <span class="arithmatex">\((A↔B)∧(B↔C)\Rightarrow A↔C\)</span><blockquote>
-<p><strong>逻辑等价式和逻辑蕴涵式的区别</strong>
-+ 逻辑等价式 <span class="arithmatex">\(\Leftrightarrow\)</span> 左右两边的真值相等
-+ 逻辑蕴涵式 <span class="arithmatex">\(\Rightarrow\)</span> 当左边为真的时候可以推出右边，而如果左边为假，逻辑蕴涵式一定为真，右边可真可假</p>
-</blockquote>
-</li>
+<li>I8: <span class="arithmatex">\((A↔B)∧(B↔C)\Rightarrow A↔C\)</span></li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p><strong>逻辑等价式和逻辑蕴涵式的性质</strong>
-+ 自反性
-+ 对称性
-+ 传递性</p>
+<p><strong>逻辑等价式和逻辑蕴涵式的区别</strong><br />
+逻辑等价式 <span class="arithmatex">\(\Leftrightarrow\)</span> 左右两边的真值相等<br />
+逻辑蕴涵式 <span class="arithmatex">\(\Rightarrow\)</span> 当左边为真的时候可以推出右边，而如果左边为假，逻辑蕴涵式一定为真，右边可真可假  </p>
+<p><strong>逻辑等价式和逻辑蕴涵式的性质</strong>：自反性、对称性、传递性  </p>
 </blockquote>
 <h3 id="6">6.代入原理、替换原理<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>带入原理</li>
-<li>
-<ul>
+<li>带入原理<ul>
 <li>将重言式 <span class="arithmatex">\(A\)</span> 中的某个命题变元 <span class="arithmatex">\(p\)</span> 的出现都代换为命题公式 <span class="arithmatex">\(B\)</span>，得到的命题公式仍为重言式</li>
-</ul>
-</li>
-<li>
-<ul>
 <li><strong>必须代换所有的命题变元 <span class="arithmatex">\(p\)</span></strong></li>
 </ul>
 </li>
-<li>替换原理</li>
-<li>
-<ul>
+<li>替换原理<ul>
 <li>将命题公式中的子公式替换为逻辑等价的公式，得到的命题公式真值和原真值相同</li>
-</ul>
-</li>
-<li>
-<ul>
 <li><strong>不要求全部替换</strong></li>
 </ul>
 </li>
@@ -1418,294 +1089,76 @@
 <h3 id="7">7.（主）合取范式、（主）析取范式<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
 <h4 id="_4">基础概念<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ul>
-<li>文字</li>
-<li>
-<ul>
-<li>命题常元、变元和它们的否定</li>
-</ul>
-</li>
-<li>析取子句</li>
-<li>
-<ul>
-<li>文字或者若干文字的析取</li>
-</ul>
-</li>
-<li>合取子句</li>
-<li>
-<ul>
-<li>文字或者若干文字的合取</li>
-</ul>
-</li>
-<li>互补文字对</li>
-<li>
-<ul>
-<li>指一对正文字和负文字</li>
-</ul>
-</li>
+<li>文字<br />
+命题常元、变元和它们的否定</li>
+<li>析取子句<br />
+文字或者若干文字的析取</li>
+<li>合取子句<br />
+文字或者若干文字的合取</li>
+<li>互补文字对<br />
+指一对正文字和负文字</li>
 </ul>
 <h4 id="_5">析取范式和合取范式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<ul>
-<li>析取范式</li>
-<li>
-<ul>
-<li>如果 <span class="arithmatex">\(A'\Leftrightarrow A\)</span> 且  <span class="arithmatex">\(A'\)</span> 为合取子句或者若干合取子句的析取，那么 <span class="arithmatex">\(A'\)</span> 称为 <span class="arithmatex">\(A\)</span> 的析取范式</li>
-</ul>
-</li>
-<li>合取范式</li>
-<li>
-<ul>
-<li>如果 <span class="arithmatex">\(A'\Leftrightarrow A\)</span> 且  <span class="arithmatex">\(A'\)</span> 为析取子句或者若干析取子句的合取，那么 <span class="arithmatex">\(A'\)</span> 称为 <span class="arithmatex">\(A\)</span> 的合取范式</li>
-</ul>
-</li>
-<li>特例</li>
-<li>
-<ul>
-<li><span class="arithmatex">\(p→q\)</span> 的析取范式和合取范式都可以为 <span class="arithmatex">\(¬p∨q\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li><span class="arithmatex">\(¬p∨q\)</span> 是合取子句 <span class="arithmatex">\(¬p\)</span> 和 <span class="arithmatex">\(q\)</span> 的析取</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li><span class="arithmatex">\(¬p∨q\)</span> 也是析取子句</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>求析取范式或合取范式的一般步骤</li>
-<li>
-<ul>
-<li>消去公式中的联结词 <span class="arithmatex">\(\rightarrow\)</span> 和 <span class="arithmatex">\(\leftrightarrow\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li><span class="arithmatex">\(p→q\)</span> 化为 <span class="arithmatex">\(¬p∨q\)</span>（蕴涵等值式）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li><span class="arithmatex">\(p↔q\)</span> 化为 <span class="arithmatex">\((¬p∨q)∧(p∨¬q)\)</span> 或者 <span class="arithmatex">\((p∧q)∨(¬p∧¬q)\)</span>（等价等值式）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>利用德摩根律将否定联结词 <span class="arithmatex">\(\lnot\)</span> 向内深入，最后只作用于文字</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>再将 <span class="arithmatex">\(\lnot\lnot p\)</span> 化简为 <span class="arithmatex">\(p\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>利用分配律，最后得到需要的析取或合取范式</li>
-</ul>
-</li>
-</ul>
+<p>析取范式<br />
++ 如果 <span class="arithmatex">\(A'\Leftrightarrow A\)</span> 且  <span class="arithmatex">\(A'\)</span> 为合取子句或者若干合取子句的析取，那么 <span class="arithmatex">\(A'\)</span> 称为 <span class="arithmatex">\(A\)</span> 的析取范式</p>
+<p>合取范式<br />
++ 如果 <span class="arithmatex">\(A'\Leftrightarrow A\)</span> 且  <span class="arithmatex">\(A'\)</span> 为析取子句或者若干析取子句的合取，那么 <span class="arithmatex">\(A'\)</span> 称为 <span class="arithmatex">\(A\)</span> 的合取范式</p>
+<p>特例<br />
++ <span class="arithmatex">\(p→q\)</span> 的析取范式和合取范式都可以为 <span class="arithmatex">\(\lnot p∨q\)</span>
+    + <span class="arithmatex">\(\lnot p∨q\)</span> 是合取子句 <span class="arithmatex">\(\lnot p\)</span> 和 <span class="arithmatex">\(q\)</span> 的析取
+    + <span class="arithmatex">\(\lnot p∨q\)</span> 也是析取子句</p>
+<p>求析取范式或合取范式的一般步骤<br />
++ 消去公式中的联结词 <span class="arithmatex">\(\rightarrow\)</span> 和 <span class="arithmatex">\(\leftrightarrow\)</span>
+    + <span class="arithmatex">\(p→q\)</span> 化为 <span class="arithmatex">\(\lnot p∨q\)</span>（蕴涵等值式）
+    + <span class="arithmatex">\(p↔q\)</span> 化为 <span class="arithmatex">\((\lnot p∨q)∧(p∨\lnot q)\)</span> 或者 <span class="arithmatex">\((p∧q)∨(\lnot p∧\lnot q)\)</span>（等价等值式）
++ 利用德摩根律将否定联结词 $\lnot $ 向内深入，最后只作用于文字
++ 再将 <span class="arithmatex">\(\lnot \lnot  p\)</span> 化简为 <span class="arithmatex">\(p\)</span>
++ 利用分配律，最后得到需要的析取或合取范式</p>
 <h4 id="_6">主析取范式和主合取范式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<ul>
-<li>主析取范式</li>
-<li>
-<ul>
-<li>如果 <span class="arithmatex">\(A'\)</span> 是 <span class="arithmatex">\(A\)</span> 的析取范式，且 <span class="arithmatex">\(A'\)</span> 中每一个合取子句里 <span class="arithmatex">\(p1，p2，...，pn\)</span> 均恰出现一次，那么公式 <span class="arithmatex">\(A'\)</span> 称作公式 <span class="arithmatex">\(A(p1，p2，...，pn)\)</span> 的主析取范式</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><font color=red>极小项只有唯一的成真赋值</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>极小项的数量为 <span class="arithmatex">\(N=2^n\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>由极小项组成的主析取范式的数量为 <span class="arithmatex">\(2^N\)</span> </font></li>
-</ul>
-</li>
-<li>主合取范式</li>
-<li>
-<ul>
-<li>如果 <span class="arithmatex">\(A'\)</span> 是 <span class="arithmatex">\(A\)</span> 的合取范式，且 <span class="arithmatex">\(A'\)</span> 中每一个析取子句里 <span class="arithmatex">\(p1，p2，...，pn\)</span> 均恰出现一次，那么公式 <span class="arithmatex">\(A'\)</span> 称作公式 <span class="arithmatex">\(A(p1，p2，...，pn)\)</span> 的主合取范式</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><font color=red>极大项只有唯一的成假赋值</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>极大项的数量为 <span class="arithmatex">\(N=2^n\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>由极大项组成的主合取范式的数量为 <span class="arithmatex">\(2^N\)</span></font></li>
-</ul>
-</li>
-</ul>
+<p>主析取范式
++ 如果 <span class="arithmatex">\(A'\)</span> 是 <span class="arithmatex">\(A\)</span> 的析取范式，且 <span class="arithmatex">\(A'\)</span> 中每一个合取子句里 <span class="arithmatex">\(p1，p2，...，pn\)</span> 均恰出现一次，那么公式 <span class="arithmatex">\(A'\)</span> 称作公式 <span class="arithmatex">\(A(p1，p2，...，pn)\)</span> 的主析取范式
++ 极小项只有唯一的成真赋值
++ 极小项的数量为 <span class="arithmatex">\(N=2^n\)</span>
++ 由极小项组成的主析取范式的数量为 <span class="arithmatex">\(2^N\)</span></p>
+<p>主合取范式
++ 如果 <span class="arithmatex">\(A'\)</span> 是 <span class="arithmatex">\(A\)</span> 的合取范式，且 <span class="arithmatex">\(A'\)</span> 中每一个析取子句里 <span class="arithmatex">\(p1，p2，...，pn\)</span> 均恰出现一次，那么公式 <span class="arithmatex">\(A'\)</span> 称作公式 <span class="arithmatex">\(A(p1，p2，...，pn)\)</span> 的主合取范式
++ 极大项只有唯一的成假赋值
++ 极大项的数量为 <span class="arithmatex">\(N=2^n\)</span>
++ 由极大项组成的主合取范式的数量为 <span class="arithmatex">\(2^N\)</span></p>
 <h3 id="8">8.谓词逻辑<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
-<ul>
-<li>个体</li>
-<li>
-<ul>
-<li>谓词逻辑中将一切讨论的对象都称作个体</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>个体常元</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>确定的个体，常用 <span class="arithmatex">\(a,b,c\)</span> 来表示</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>个体变元</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>不确定的个体，常用 <span class="arithmatex">\(x,y,z,u,v,w\)</span> 来表示</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>个体域</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>被讨论对象的全体</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>全总域</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>包含一切对象的个体</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>谓词</li>
-<li>
-<ul>
-<li>表示个体性质或关系的语言成分</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>元数</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>
-<ul>
-<li>谓词中可以防止个体的空位个数称为谓词的元数</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>谓词命名式</li>
-<li>
-<ul>
-<li>将谓词中的个体空位用变元字母代替，常用大写字母 <span class="arithmatex">\(P,Q,R\)</span> 来代表谓词，命名形式如同 <span class="arithmatex">\(P(x),Q(x,y)\)</span></li>
-</ul>
-</li>
-<li>谓词填式</li>
-<li>
-<ul>
-<li>将谓词中的个体空位用个体变元或常元代替</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>谓词填式在形式上和命名式相同，但是属于不同的概念，需要根据上下文加以区分</li>
-</ul>
-</li>
-<li>区别</li>
-<li>
-<ul>
-<li>类似于编程语言中的函数说明（形参）和函数调用（实参）之区分</li>
-</ul>
-</li>
-</ul>
+<p>个体
++ 谓词逻辑中将一切讨论的对象都称作个体  </p>
+<p>个体常元<br />
++ 确定的个体，常用 <span class="arithmatex">\(a,b,c\)</span> 来表示  </p>
+<p>个体变元<br />
++ 不确定的个体，常用 <span class="arithmatex">\(x,y,z,u,v,w\)</span> 来表示</p>
+<p>个体域<br />
++ 被讨论对象的全体</p>
+<p>全总域<br />
++ 包含一切对象的个体</p>
+<p>谓词
++ 表示个体性质或关系的语言成分
++ 元数
+谓词中可以防止个体的空位个数称为谓词的元数
++ 谓词命名式
+将谓词中的个体空位用变元字母代替，常用大写字母 <span class="arithmatex">\(P,Q,R\)</span> 来代表谓词，命名形式如同 <span class="arithmatex">\(P(x),Q(x,y)\)</span>
++ 谓词填式
+将谓词中的个体空位用个体变元或常元代替</p>
+<blockquote>
+<p>谓词填式在形式上和命名式相同，但是属于不同的概念，需要根据上下文加以区分</p>
+<p><strong>区别</strong>
+类似于编程语言中的函数说明（形参）和函数调用（实参）之区分</p>
+</blockquote>
 <h4 id="_7">量词<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<ul>
-<li><span class="arithmatex">\(\forall\ \&amp;\ \exists\)</span></li>
-<li>
-<ul>
-<li>“所有”为全称量词，记作 <span class="arithmatex">\(\forall\)</span></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>“有一些”为存在量词，记作 <span class="arithmatex">\(\exists\)</span></li>
-</ul>
-</li>
-<li>量词作用于谓词时需要引入一个指导变元，同时放在量词后面和谓词填式中：<span class="arithmatex">\(∀xP(x),∃xP(x)\)</span></li>
-<li>约束变元和自由变元</li>
-<li>
-<ul>
-<li>指导变元是不可取值代入的，称作约束变元，约束变元可以改名而不改变语句含义</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>可以取值代入的个体变元称作自由变元</li>
-</ul>
-</li>
-<li>辖域</li>
-<li>
-<ul>
-<li>量词所作用的谓词或者复合谓词表达式，称作量词的辖域</li>
-</ul>
-</li>
-</ul>
+<p><span class="arithmatex">\(\forall \ \&amp;\ \exists\)</span>
++ “所有”为全称量词，记作 $\forall $
++ “有一些”为存在量词，记作 <span class="arithmatex">\(\exists\)</span>
++ 量词作用于谓词时需要引入一个指导变元，同时放在量词后面和谓词填式中：<span class="arithmatex">\(\forall xP(x),\exist xP(x)\)</span></p>
+<p>约束变元和自由变元
++ 指导变元是不可取值代入的，称作约束变元，约束变元可以改名而不改变语句含义
++ 可以取值代入的个体变元称作自由变元</p>
+<p>辖域
++ 量词所作用的谓词或者复合谓词表达式，称作量词的辖域</p>
 <h4 id="_8">谓词公式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>原子公式</li>
@@ -1719,7 +1172,7 @@
 <ul>
 <li>
 <blockquote>
-<p><span class="arithmatex">\(∀x A\)</span> ，$ ∃x A$ 中公式 <span class="arithmatex">\(A\)</span> 可以不包含变元 <span class="arithmatex">\(x\)</span> ，此时 <span class="arithmatex">\(∀x A\)</span> ，<span class="arithmatex">\(∃x A\)</span> 均等价于 <span class="arithmatex">\(A\)</span></p>
+<p><span class="arithmatex">\(\forall x A\)</span> ，$ \exist x A$ 中公式 <span class="arithmatex">\(A\)</span> 可以不包含变元 <span class="arithmatex">\(x\)</span> ，此时 <span class="arithmatex">\(\forall x A\)</span> ，<span class="arithmatex">\(\exist x A\)</span> 均等价于 <span class="arithmatex">\(A\)</span></p>
 </blockquote>
 </li>
 </ul>
@@ -1817,28 +1270,28 @@
 </ul>
 <h3 id="9">9.谓词演算的永真式<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
 <ul>
-<li>当A不含变元x时，<span class="arithmatex">\(∀x A ≡ A，∃x A ≡ A\)</span></li>
-<li><span class="arithmatex">\(∀x A x ⊨ A x ，A x ⊨ ∃x A x ，∀x A x ⊨ ∃x A x\)</span></li>
-<li><span class="arithmatex">\(¬∃x ¬A x ≡ ∀x A x\)</span></li>
-<li><span class="arithmatex">\(¬∀x ¬A x ≡ ∃x A x\)</span></li>
-<li><span class="arithmatex">\(¬∃x A x ≡ ∀x ¬A x\)</span></li>
-<li><span class="arithmatex">\(¬∀x A x ≡ ∃x ¬A x\)</span></li>
+<li>当A不含变元x时，<span class="arithmatex">\(\forall x A \Leftrightarrow A，\exist x A \Leftrightarrow A\)</span></li>
+<li><span class="arithmatex">\(\forall x A x \Rightarrow A x ，A x \Rightarrow \exist x A x ，\forall x A x \Rightarrow \exist x A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \exist x \lnot A x \Leftrightarrow \forall x A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \forall x \lnot A x \leftrightarrow \exist x A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \exist x A x \Leftrightarrow \forall x \lnot A x\)</span></li>
+<li><span class="arithmatex">\(\lnot \forall x A x \Leftrightarrow \exist x \lnot A x\)</span></li>
 <li>当公式B不含变元x时，有：
-• <span class="arithmatex">\(∀x A x ∨ B ≡ ∀x (A x ∨ B)\)</span>
-• <span class="arithmatex">\(∀x A x ∧ B ≡ ∀x (A x ∧ B)\)</span>
-• <span class="arithmatex">\(∃x A x ∨ B ≡ ∃x (A x ∨ B)\)</span>
-• <span class="arithmatex">\(∃x A x ∧ B ≡ ∃x (A x ∧ B)\)</span></li>
+• <span class="arithmatex">\(\forall x A x ∨ B \Leftrightarrow \forall x (A x ∨ B)\)</span>
+• <span class="arithmatex">\(\forall x A x ∧ B \Leftrightarrow \forall x (A x ∧ B)\)</span>
+• <span class="arithmatex">\(\exist x A x ∨ B \Leftrightarrow \exist x (A x ∨ B)\)</span>
+• <span class="arithmatex">\(\exist x A x ∧ B \Leftrightarrow \exist x (A x ∧ B)\)</span></li>
 <li>当公式B含变元x时，有：
-• <span class="arithmatex">\(∀x (A (x) ∧ B (x)) ≡ ∀x A(x)∧ ∀x B(x)\)</span>
-• <span class="arithmatex">\(∀x A (x) ∨ ∀x B(x) ⊨ ∀x(A(x)∨B(x))\)</span>
-• <span class="arithmatex">\(∃x (A (x) ∧ B (x)) ⊨ ∃x A(x)∧ ∃x B(x)\)</span>
-• <span class="arithmatex">\(∃x (A (x) ∨ B (x)) ≡ ∃x A(x)∨ ∃x B(x)\)</span></li>
+• <span class="arithmatex">\(\forall x (A (x) ∧ B (x)) \Leftrightarrow \forall x A(x)∧ \forall x B(x)\)</span>
+• <span class="arithmatex">\(\forall x A (x) ∨ \forall x B(x) \Rightarrow \forall x(A(x)∨B(x))\)</span>
+• <span class="arithmatex">\(\exist x (A (x) ∧ B (x)) \Rightarrow \exist x A(x)∧ \exist x B(x)\)</span>
+• <span class="arithmatex">\(\exist x (A (x) ∨ B (x)) \Rightarrow \exist x A(x)∨ \exist x B(x)\)</span></li>
 <li>量词的组合与顺序：
-• <span class="arithmatex">\(∀x∀y A (x, y) ≡ ∀y∀x A (x, y)\)</span>
-• <span class="arithmatex">\(∀x∀y A (x, y) ⊨ ∃y∀x A (x, y)\)</span>
-• <span class="arithmatex">\(∃y∀x A (x, y) ⊨ ∀x∃y A (x, y)\)</span>
-• <span class="arithmatex">\(∀x∃y A (x, y) ⊨ ∃y∃x A (x, y)\)</span>
-• <span class="arithmatex">\(∃x∃y A (x, y) ≡ ∃y∃x A (x, y)\)</span></li>
+• <span class="arithmatex">\(\forall x\forall y A (x, y) \Leftrightarrow \forall y\forall x A (x, y)\)</span>
+• <span class="arithmatex">\(\forall x\forall y A (x, y) \Rightarrow \exist y\forall x A (x, y)\)</span>
+• <span class="arithmatex">\(\exist y\forall x A (x, y) \Rightarrow \forall x\exist y A (x, y)\)</span>
+• <span class="arithmatex">\(\forall x\exist y A (x, y) \Rightarrow \exist y\exist x A (x, y)\)</span>
+• <span class="arithmatex">\(\exist x\exist y A (x, y) \Leftrightarrow \exist y\exist x A (x, y)\)</span></li>
 </ul>
 <h3 id="10">10.公理化集合论<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1857,7 +1310,7 @@
 <ul>
 <li>外延公理（extensionality axiom）
 • 两个集合A和B相等当且仅当它们具有相同的元素
-• A = B ↔ ∀x (x ∈ A ↔ x ∈ B)
+• A = B ↔ \forall x (x ∈ A ↔ x ∈ B)
 • 0,1 = 1,0 = {x｜x = 0 ∨ x = 1}</li>
 <li>说明集合元素的无序性，以及集合表示形式的不唯一性</li>
 <li>概括公理（comprehension axiom）</li>
@@ -1884,7 +1337,7 @@
 </li>
 <li>
 <ul>
-<li>∀x (x ∈ A → x ∈ B)</li>
+<li>\forall x (x ∈ A → x ∈ B)</li>
 </ul>
 </li>
 <li>
@@ -1995,7 +1448,7 @@
 </li>
 <li>关系 <span class="arithmatex">\(R\)</span> 的关系矩阵 <span class="arithmatex">\(M_R\)</span> 的定义：</li>
 <li><span class="arithmatex">\(m_{ij}=1\)</span> 当且仅当 <span class="arithmatex">\(a_iRb_j\)</span></li>
-<li><span class="arithmatex">\(m_{ij}=0\)</span> 当且仅当 <span class="arithmatex">\(¬a_iRb_j\)</span></li>
+<li><span class="arithmatex">\(m_{ij}=0\)</span> 当且仅当 <span class="arithmatex">\(\lnot a_iRb_j\)</span></li>
 </ul>
 <h3 id="16">16.等价关系、等价类、划分<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
 <ul>
