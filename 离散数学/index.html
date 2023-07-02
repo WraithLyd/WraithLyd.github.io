@@ -1302,13 +1302,13 @@
 </ul>
 </li>
 <li>谓词公式<ul>
-<li>由五个联结词和量词链接的有限个原子公式称为谓词公式<blockquote>
-<p><span class="arithmatex">\(\forall x A\)</span> ，$ \exists x A$ 中公式 <span class="arithmatex">\(A\)</span> 可以不包含变元 <span class="arithmatex">\(x\)</span> ，此时 <span class="arithmatex">\(\forall x A\)</span> ，<span class="arithmatex">\(\exists x A\)</span> 均等价于 <span class="arithmatex">\(A\)</span></p>
+<li>由五个联结词和量词链接的有限个原子公式称为谓词公式  </li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><span class="arithmatex">\(\forall x A\)</span> ，<span class="arithmatex">\(\exists x A\)</span> 中公式 <span class="arithmatex">\(A\)</span> 可以不包含变元 <span class="arithmatex">\(x\)</span> ，此时 <span class="arithmatex">\(\forall x A\)</span> ，<span class="arithmatex">\(\exists x A\)</span> 均等价于 <span class="arithmatex">\(A\)</span></p>
 </blockquote>
-</li>
-</ul>
-</li>
-</ul>
 <p>谓词公式成为命题</p>
 <ul>
 <li>如果给定个体域，公式中的所有谓词都有明确意义，公式中的所有自由变元取定个体，谓词公式就成为一个命题
@@ -1320,7 +1320,7 @@
 </ul>
 <p>永真式</p>
 <ul>
-<li>给定个体域 <span class="arithmatex">\(D\)</span>，公式 <span class="arithmatex">\(A\)</span> 中各谓词符号的解释 <span class="arithmatex">\(I\)</span>，如果 <span class="arithmatex">\(A\)</span> 中的自由变元 <span class="arithmatex">\(x1,…,xn\)</span> 分别取值 <span class="arithmatex">\(u1,…,un\)</span> 时 <span class="arithmatex">\(A\)</span> 为真，称 <span class="arithmatex">\(A\)</span> 在 <span class="arithmatex">\(u1,…,un\)</span> 处为真</li>
+<li>给定个体域 <span class="arithmatex">\(D\)</span>，公式 <span class="arithmatex">\(A\)</span> 中各谓词符号的解释 <span class="arithmatex">\(I\)</span>，如果 <span class="arithmatex">\(A\)</span> 中的自由变元 <span class="arithmatex">\(x_1,…,x_n\)</span> 分别取值 <span class="arithmatex">\(u_1,…,u_n\)</span> 时 <span class="arithmatex">\(A\)</span> 为真，称 <span class="arithmatex">\(A\)</span> 在 <span class="arithmatex">\(u_1,…,u_n\)</span> 处为真</li>
 <li>如果 <span class="arithmatex">\(A\)</span> 在自由变元的任何取值下都为真，称 <span class="arithmatex">\(A\)</span> 在解释 <span class="arithmatex">\(I\)</span> 下为真</li>
 <li>如果 <span class="arithmatex">\(A\)</span> 在每个解释 <span class="arithmatex">\(I\)</span> 下均为真，称 <span class="arithmatex">\(A\)</span> 在 <span class="arithmatex">\(D\)</span> 上永真</li>
 <li>如果 <span class="arithmatex">\(A\)</span> 在任何个体域 <span class="arithmatex">\(D\)</span> 永真，称 <span class="arithmatex">\(A\)</span> 永真</li>
@@ -1417,13 +1417,13 @@
 <h5 id="_11">概括公理<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
 <ul>
 <li>对于任意个体域 <span class="arithmatex">\(U\)</span>，任一谓词公式 <span class="arithmatex">\(P\)</span> 都确定一个以该域中的对象为元素的集合 <span class="arithmatex">\(S\)</span></li>
-<li><span class="arithmatex">\(S = \{x｜x ∈ U ∧ P(x)\}\)</span></li>
+<li><span class="arithmatex">\(S = \{x | x ∈ U ∧ P(x)\}\)</span></li>
 <li>规定了集合成员的确定性</li>
 <li>空集：<span class="arithmatex">\(P(x)\)</span> 为永假式</li>
 </ul>
 <h5 id="_12">正规公理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
 <ul>
-<li>不存在集合<span class="arithmatex">\(A1，A2，A3， ... ...\)</span> 使得 $ ... ∈ A3 ∈ A2 ∈ A1$</li>
+<li>不存在集合<span class="arithmatex">\(A1，A2，A3， ... ...\)</span> 使得 <span class="arithmatex">\(... ∈ A3 ∈ A2 ∈ A1\)</span></li>
 <li>直观来说就是集合的有限可分，个体域的元素是“基本粒子”</li>
 </ul>
 <blockquote>
@@ -1435,7 +1435,7 @@
 <li>并运算（Union）：<span class="arithmatex">\(∪\)</span></li>
 <li>交运算（Intersection）：<span class="arithmatex">\(∩\)</span></li>
 <li>差运算（Difference）：<span class="arithmatex">\(−\)</span></li>
-<li>补运算（Complement）：<span class="arithmatex">\(~\)</span></li>
+<li>补运算（Complement）：<span class="arithmatex">\(\sim\)</span></li>
 </ul>
 <p>运算律（后续补上）</p>
 <p>幂集运算
@@ -1462,7 +1462,7 @@
 <p>定义</p>
 <ul>
 <li>对任意集合 <span class="arithmatex">\(A_1, A_2,…, A_n\)</span>， <span class="arithmatex">\(A_1×A_2\)</span> 称作集合 <span class="arithmatex">\(A1, A2\)</span> 的笛卡尔积，定义如下：<ul>
-<li><span class="arithmatex">\(A_1×A_2 = {&lt; u, v &gt; ｜u ∈ A_1, v ∈ A_2}\)</span></li>
+<li><span class="arithmatex">\(A_1×A_2 = \{&lt; u, v &gt; ｜u ∈ A_1, v ∈ A_2\}\)</span></li>
 <li><span class="arithmatex">\(A_1×A_2×⋯×A_n = (A_1×A_2×⋯×A_{n-1})×An\)</span></li>
 </ul>
 </li>
