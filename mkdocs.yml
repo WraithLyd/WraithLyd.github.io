@@ -1,5 +1,9 @@
 site_name: WraithLyd
 site_url: https://wraithlyd.github.io/
+<<<<<<< Updated upstream
+=======
+#edit_uri: docs
+>>>>>>> Stashed changes
 dev_addr: '127.0.0.1:5500' #默认值
 theme:
   name: 'material'
@@ -46,7 +50,5 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
 nav:
-  - home
-    - index.md
-  - discrete mathematics 
-    - 离散数学.md
+  - ./docs/index.md
+  - ./docs/离散数学.md
