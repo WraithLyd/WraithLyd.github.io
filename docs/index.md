@@ -1,17 +1,16 @@
-# Welcome to MkDocs
+---
+comments: false
+statistics: True
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Welcome to Wraith's site
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+!!! note "" 
+    <br><br>
+    <div align="center" style="font-size:32px;font-weight:bold">
+        ~『我们哭着降临世界，却可以笑着走向永恒.』~
+    </div>
+    <div align="center" style="font-size:12px">
+        
+    </div>
+    <br><br>

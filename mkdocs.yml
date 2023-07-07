@@ -1,19 +1,39 @@
-site_name: WraithLyd
-site_url: https://wraithlyd.github.io/
-<<<<<<< Updated upstream
-=======
-#edit_uri: docs
->>>>>>> Stashed changes
+site_name: WraithLyd's Notebook
 dev_addr: '127.0.0.1:5500' #默认值
 theme:
   name: 'material'
   palette:
-    primary: black
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: lime
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: lime
+      toggle:
+        icon: material/weather-night 
+        name: Switch to light mode
   language: 'zh'
-  font: 
-    text: '华文新魏'
+  font-family: JetBrains Mono Regular, LXGW WenKai GB Screen
   logo: assets/images/logo.png
-  favicon: assets/images/logo.png
+  #favicon: images/clipboard.svg
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.top
+extra_css:
+  - stylesheets/extra.css
 markdown_extensions:
   - toc:
       permalink: true
@@ -47,8 +67,13 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 extra_javascript:
+  - assets/js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
 nav:
-  - ./docs/index.md
-  - ./docs/离散数学.md
+  - Home: index.md
+  - Course: 
+    - course.md
+    - Discrete Mathemtics: 离散数学.md
+    - Calculus: Calculus.md
+    - College Physics: College Physics.md
