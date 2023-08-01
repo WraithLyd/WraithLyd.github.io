@@ -1,4 +1,4 @@
 @font-face {
-    font-family:"JetBrains Mono Regular", "LXGW WenKai GB Screen";
-	src: "./JetBrainsMono.ttf" "truetype","./LXGWWenKaiGBScreen.ttf" "truetype";
+    font-family:"LXGW WenKai GB Screen";
+	src: url(https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.300/LXGWWenKaiGBScreen.ttf) ;
 }
