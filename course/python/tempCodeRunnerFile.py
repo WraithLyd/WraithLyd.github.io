@@ -1,0 +1,8 @@
+str1 = "{:d}".format(123)
+print(str1)
+str2 = "{:f}".format(21.712)
+print(str2)
+str3 = "{:g}".format(24.50)
+print(str3)
+str4 = "{:g}".format(12.00)
+print(str4)
