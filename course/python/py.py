@@ -99,3 +99,56 @@ str3 = "{:g}".format(24.50)
 print(str3)
 str4 = "{:g}".format(12.00)
 print(str4)
+
+str1 = "{:+d}".format(123)
+print(str1)
+str2 = "{:+d}".format(-123)
+print(str2)
+str3 = "{:+f}".format(123.456)
+print(str3)
+str4 = "{:+f}".format(-123.456)
+print(str4)
+
+str1 = "{:5d}".format(123)
+print(str1)
+str2 = "{:10d}".format(123)
+print(str2)
+str3 = "{:05d}".format(123)
+print(str3)
+str4 = "{:010d}".format(123)
+print(str4)
+str5 = "{:10d}".format(-123)
+print(str5)
+str6 = "{:=10d}".format(-123)
+print(str6)
+
+str = "Welcome to Python!"
+print(str.upper())
+print(str.lower())
+
+str = """
+		Hello!
+Welcome to Python!
+
+"""
+print(str)
+print("#strip")
+print(str.strip())
+
+
+# 判断是否由字母组成，是则输出True，不是则输出False
+print("Python".isalpha())
+# 判断是否由小写字母组成，是则输出True，不是则输出False
+print("Python".islower())
+
+str = "decide your destiny"
+print(str.find("de"))
+print(str.rfind("de"))
+
+str = "decide your destiny"
+print("your" in str)
+print("my" in str)
+    
+str = "decide your destiny"
+print(str.split(" "))
+
