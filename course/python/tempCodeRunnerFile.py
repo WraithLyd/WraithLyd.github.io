@@ -1,6 +1,5 @@
 
-str = "decide your destiny"
-print(str.split(" "))
-
-str[0] = 'c'
-print(str)
+tuple = (1, 2, 3)
+print(tuple[0])
+print(tuple[1])
+print(tuple[2])
