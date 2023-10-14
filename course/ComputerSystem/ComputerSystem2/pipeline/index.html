@@ -468,6 +468,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -693,6 +695,70 @@
             
           
         
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Program/cpp/">Cpp</a>
+          
+            <label for="__nav_2_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Program/cpp/1/" class="md-nav__link">
+        book
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" >
+      
+      
+        
+          
+            
+          
+        
       
       
         
@@ -702,8 +768,8 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_3_3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_4">
           <span class="md-nav__icon md-icon"></span>
           Object-oriented Programming
         </label>
@@ -1458,6 +1524,8 @@
         
           
         
+          
+        
       
       
         
@@ -1488,6 +1556,20 @@
     <li class="md-nav__item">
       <a href="../../../../life/music/" class="md-nav__link">
         Music
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/tasks/" class="md-nav__link">
+        task
       </a>
     </li>
   
@@ -1562,6 +1644,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    流水线执行
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1605,6 +1694,7 @@
 </li>
 </ul>
 <h3 id="_4">流水线定义<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>通过开发指令之间更多的并行来提高CPU效率。</p>
 <p>将指令的执行过程划分为三个阶段：</p>
 <p>取指(IF)  译码(ID)  执行(EX)</p>
 <p>顺序执行(Sequential execution)
@@ -1618,6 +1708,32 @@
 <p>静态流水线(Static pipelining)</p>
 <p>只能同时执行相同类别的</p>
 <p>动态流水线(Dynamic pipelining)</p>
+<p>线性流水线：</p>
+<p>非线性流水线</p>
+<p>循序流水线</p>
+<p>乱序流水线</p>
+<p>标量流水线处理器</p>
+<p>矢量流水线处理器</p>
+<h3 id="_6">流水线执行<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>IF  取指 PC=PC+4</p>
+<p>ID  </p>
+<p>EX  执行</p>
+<p>MEM 访存</p>
+<p>WB</p>
+<p>流水线和ISA设计</p>
+<p>RISC-V ISA的流水线设计
++ 所有的指令都是32位
+    + 更好地去取指和译码
++ 更少的更规律的指令格式
++ 访存地址
++ 内存操作数</p>
+<p>单周期时钟周期取时间最长的指令。
+流水线时钟周期取时间最长的阶段。</p>
+<h1 id="_7">流水线冲突<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<p>结构冲突    有一个需要使用的元件繁忙</p>
+<p>数据冲突    指令之间的数据依赖
+            需要等待之前的指令执行完保存数据之和才能进一步执行。</p>
+<p>控制冲突    </p>
 
 
 
