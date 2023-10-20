@@ -1026,6 +1026,33 @@
     流水线效率的衡量
   </a>
   
+    <nav class="md-nav" aria-label="流水线效率的衡量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tp-troughput" class="md-nav__link">
+    吞吐量(TP, Troughput):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedup" class="md-nav__link">
+    加速比(Speedup)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effiency" class="md-nav__link">
+    效率(effiency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1782,6 +1809,33 @@
     流水线效率的衡量
   </a>
   
+    <nav class="md-nav" aria-label="流水线效率的衡量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tp-troughput" class="md-nav__link">
+    吞吐量(TP, Troughput):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedup" class="md-nav__link">
+    加速比(Speedup)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effiency" class="md-nav__link">
+    效率(effiency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1843,28 +1897,30 @@
 <li>simulaneously use diff resource to speed up</li>
 <li>最慢的阶段决定了最终时间</li>
 </ul>
-<p>5个阶段
-+ IF: Instruction fetch from memory取指
-+ ID: Instruction decode &amp; register read 译码&amp;读寄存器
-+ EX: Execute operation or calculate address 执行
-+ MEM: 访存
-+ WB写回</p>
+<p>5个阶段</p>
+<ul>
+<li>IF: Instruction fetch from memory取指</li>
+<li>ID: Instruction decode &amp; register read 译码&amp;读寄存器</li>
+<li>EX: Execute operation or calculate address 执行</li>
+<li>MEM: 访存</li>
+<li>WB写回</li>
+</ul>
 <h3 id="_1">流水线效率的衡量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>吞吐量(TP, Troughput):
-<span class="arithmatex">\(<span class="arithmatex">\(TP=\frac{n}{T}(n表示指令条数，T表示运行总时长)\)</span>\)</span>
-当<span class="arithmatex">\(n&gt;&gt;m\)</span>时，TP达到最大，几位最大吞吐量：
-<span class="arithmatex">\(<span class="arithmatex">\(TP_{max}=\frac{1}{\delta t_0}\)</span>\)</span></p>
-<p>加速比(Speedup)
-<span class="arithmatex">\(<span class="arithmatex">\(Sp=\frac{Execution Time_{non-piplined}}{Execution Time_{piplined}}\)</span>\)</span>
-<span class="arithmatex">\(Sp=\frac{n\ m \cdot \delta t_0}{(m+n-1)\cdot \delta t_0}=\frac{n\cdot m}{m+n-1}\)</span>
-当<span class="arithmatex">\(n&gt;&gt;m\)</span>时，<span class="arithmatex">\(Sp_{max}=m\)</span></p>
-<p>效率(effiency)
-<span class="arithmatex">\(\eta = \frac{Sp}{m}\)</span></p>
+<h4 id="tp-troughput">吞吐量(TP, Troughput):<a class="headerlink" href="#tp-troughput" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[TP=\frac{n}{T}(n表示指令条数，T表示运行总时长)\]</div>
+<p>当<span class="arithmatex">\(n&gt;&gt;m\)</span>时，TP达到最大，几位最大吞吐量：</p>
+<div class="arithmatex">\[TP_{max}=\frac{1}{\delta t_0}\]</div>
+<h4 id="speedup">加速比(Speedup)<a class="headerlink" href="#speedup" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[Sp=\frac{Execution Time_{non-piplined}}{Execution Time_{piplined}}\]</div>
+<div class="arithmatex">\[Sp=\frac{n\ m \cdot \delta t_0}{(m+n-1)\cdot \delta t_0}=\frac{n\cdot m}{m+n-1}\]</div>
+<p>当<span class="arithmatex">\(n&gt;&gt;m\)</span>时，<span class="arithmatex">\(Sp_{max}=m\)</span></p>
+<h4 id="effiency">效率(effiency)<a class="headerlink" href="#effiency" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(\eta = \frac{Sp}{m}\)</span></p>
 <p>a1*b1 a2*b2 a3*b3 a4*b4</p>
 <p>times: 4+2 t
 add: 1+4+4</p>
-<div class="arithmatex">\[TP=\frac{7}{15\delta t}$$
-$$Sp=\frac{4*3+3*4}{15}=1.6\]</div>
+<div class="arithmatex">\[TP=\frac{7}{15\delta t}\]</div>
+<div class="arithmatex">\[Sp=\frac{4*3+3*4}{15}=1.6\]</div>
 <div class="admonition warning">
 <p class="admonition-title">周期问题</p>
 <p>4*3+3*4计算的并不是单周期CPU，由于前半段加法周期为<span class="arithmatex">\(4*\Delta t\)</span>，而后半段乘法周期为<span class="arithmatex">\(3*\Delta t\)</span>，但是做题就按逐条执行。</p>
