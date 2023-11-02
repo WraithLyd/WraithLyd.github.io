@@ -15,7 +15,7 @@
     
     
       
-        <title>Exceptions&Interruots - Wraith's Notebook</title>
+        <title>OS introduction - Wraith's Notebook</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#handler-action" class="md-skip">
+        <a href="#os-introduction" class="md-skip">
           跳转至
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exceptions&Interruots
+              OS introduction
             
           </span>
         </div>
@@ -1695,6 +1695,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1703,23 +1705,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#handler-action" class="md-nav__link">
-    Handler Action
+  <a href="#why-study-operating-systems" class="md-nav__link">
+    Why Study Operating Systems
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exceptions-in-a-pipeline" class="md-nav__link">
-    Exceptions in a pipeline
+  <a href="#learning-objectives" class="md-nav__link">
+    Learning Objectives
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#software-hardware-interface" class="md-nav__link">
-    Software-Hardware Interface
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-material" class="md-nav__link">
+    Course Material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2
+  </a>
+  
+    <nav class="md-nav" aria-label="2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#four-compontents-of-a-computer-system" class="md-nav__link">
+    Four Compontents of a Computer System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-operating-systems-do" class="md-nav__link">
+    What Operating Systems Do
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1738,29 +1774,78 @@
                   
 
 
-  <h1>Exceptions&Interruots</h1>
-
-<h3 id="handler-action">Handler Action<a class="headerlink" href="#handler-action" title="Permanent link">&para;</a></h3>
+<h1 id="os-introduction">OS introduction<a class="headerlink" href="#os-introduction" title="Permanent link">&para;</a></h1>
+<h3 id="why-study-operating-systems">Why Study Operating Systems<a class="headerlink" href="#why-study-operating-systems" title="Permanent link">&para;</a></h3>
+<p>OS is highly complicated software running on most machines.</p>
+<p>It contains many important system concepts.</p>
+<blockquote>
+<p>complexity hiding, performance tuning(run many tasks in the meantime), resource allocation...</p>
+</blockquote>
+<p>Studying OS internals makes you a more capable programmer.(know how it works and how it works better)</p>
+<blockquote>
+<p>user（用户态）&amp; kernel（内核态）
+In formal OS, the CPU only have a core. So the OS only support a core is running. When the CPU progress and have more cores, the OS must grow to support several cores run more tasks. Otherwise, the progress of CPU can't be embodied.</p>
+</blockquote>
+<p>OS concepts benefit whole life.</p>
+<p>For hacking, the more you know OS, the better hacker you are. Because the thing you are trying to hack into, probably is running an OS.</p>
+<blockquote>
+<p>If you can hack into the virtual machine core from your virtual machine user. Then you can hack into the VMM(virtual machine manager, link the physical computer and several virtual machines). You can hack into other's virtual machines.</p>
+</blockquote>
+<p>For profit, Interview = coding + system design</p>
+<p>Build your own company, ( Great system -&gt; great product -&gt; great company ).</p>
+<h3 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h3>
+<p>Understand operating system concepts.</p>
+<blockquote>
+<p>process（进程） management, CPU scheduling（进程调度，CPU调度）, synchronization（同步）, file system...</p>
+</blockquote>
+<p>Comprehend OS concepts through programming.</p>
+<blockquote>
+<p>multi-threading and synchronization（多线程调度和同步）, system call（系统调用）, kernel modules（内核态）...</p>
+</blockquote>
+<p>Get a deep understanding of how the real-world operating systems work</p>
+<blockquote>
+<p>You can never truly understand a concept unless you implemented (CODE) it.</p>
+</blockquote>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>read cause, and transfer to relevant handler</li>
-<li>determine action required</li>
-<li>If restartable:<ul>
-<li>take corrective action</li>
-<li>use SEPC to return to program</li>
+<li>Data Structures</li>
+<li>Programming Skills<ul>
+<li>C</li>
+<li>ASM a little </li>
 </ul>
 </li>
-<li>Otherwise:<ul>
-<li>terminate program</li>
-<li>report error using SEPC, etc.</li>
+</ul>
+<h3 id="course-material">Course Material<a class="headerlink" href="#course-material" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lecture notes</li>
+<li>textbook<ul>
+<li>Operating System Concepts - 10th</li>
+<li>Operating Systems: Three Easy Pieces (better)</li>
 </ul>
 </li>
 </ul>
-<h3 id="exceptions-in-a-pipeline">Exceptions in a pipeline<a class="headerlink" href="#exceptions-in-a-pipeline" title="Permanent link">&para;</a></h3>
-<ul>
-<li>another form of control hazard</li>
-<li>consider malfunction on add in EX stage <code>add x1, x2, x1</code></li>
-</ul>
-<h2 id="software-hardware-interface">Software-Hardware Interface<a class="headerlink" href="#software-hardware-interface" title="Permanent link">&para;</a></h2>
+<h2 id="2">2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="four-compontents-of-a-computer-system">Four Compontents of a Computer System<a class="headerlink" href="#four-compontents-of-a-computer-system" title="Permanent link">&para;</a></h3>
+<p>Computer system  has four compontents:
++ <strong>hardware</strong> provides basic computing resources.
+    + e.g. CPU, memory, I/O devices
++ <strong>operating system</strong> controls and coordinates use of hardware among users.
++ <strong>application</strong> programs use system resources to solve computing problems
+    + e.g. word processors, compilers, web broswers...
++ <strong>users</strong> 
+    + e.g., machines, other computers</p>
+<h3 id="what-operating-systems-do">What Operating Systems Do<a class="headerlink" href="#what-operating-systems-do" title="Permanent link">&para;</a></h3>
+<p>OS is a <strong>resource allocator</strong></p>
+<blockquote>
+<p>it manages all resources, and it decides between conflicting requests for efficient and fair resource sharing.</p>
+<p>efficient: let the process which cost less time run first, and others follows.
+fair: let the two processes run one by one. Each of them run in a short time such as one second, and the two take turns to run. </p>
+<p>But if do fair, the time that waste in saving the data when the processes interrupt is so huge. Efficient can't meet.</p>
+</blockquote>
+<p>OS is a <strong>control program</strong></p>
+<blockquote>
+<p>it controls program execution to prevent <strong>errors</strong> and <strong>improper use</strong> of system</p>
+</blockquote>
 
 
 

@@ -15,7 +15,7 @@
     
     
       
-        <title>Exceptions&Interruots - Wraith's Notebook</title>
+        <title>Priority Queues - Wraith's Notebook</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#handler-action" class="md-skip">
+        <a href="#priority-queues" class="md-skip">
           跳转至
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exceptions&Interruots
+              Priority Queues
             
           </span>
         </div>
@@ -638,7 +638,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../Program/BasicDataStructure/">BasicDataStructure</a>
+          <a href="../">BasicDataStructure</a>
           
             <label for="__nav_2_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -661,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Program/BasicDataStructure/AlgorithmAnalysis/" class="md-nav__link">
+      <a href="../AlgorithmAnalysis/" class="md-nav__link">
         算法分析
       </a>
     </li>
@@ -702,7 +702,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../Program/cpp/">Cpp</a>
+          <a href="../../cpp/">Cpp</a>
           
             <label for="__nav_2_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -725,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Program/cpp/1/" class="md-nav__link">
+      <a href="../../cpp/1/" class="md-nav__link">
         book
       </a>
     </li>
@@ -764,7 +764,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../Program/Oop/">Object-oriented Programming</a>
+          <a href="../../Oop/">Object-oriented Programming</a>
           
         </div>
       
@@ -863,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ComputerSystem1/preview/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem1/preview/" class="md-nav__link">
         单周期CPU复习
       </a>
     </li>
@@ -908,7 +908,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">System2</a>
+          <a href="../../../ComputerSystem/ComputerSystem2/">System2</a>
           
             <label for="__nav_2_4_2">
               <span class="md-nav__icon md-icon"></span>
@@ -931,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../InstructionSet/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem2/InstructionSet/" class="md-nav__link">
         指令集系统
       </a>
     </li>
@@ -945,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipeline/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem2/pipeline/" class="md-nav__link">
         流水线
       </a>
     </li>
@@ -959,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipelinesum/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem2/pipelinesum/" class="md-nav__link">
         流水线复习
       </a>
     </li>
@@ -1695,6 +1695,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1703,22 +1705,90 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#handler-action" class="md-nav__link">
-    Handler Action
+  <a href="#simple-implementations" class="md-nav__link">
+    Simple Implementations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exceptions-in-a-pipeline" class="md-nav__link">
-    Exceptions in a pipeline
+  <a href="#binary-heap" class="md-nav__link">
+    Binary Heap
+  </a>
+  
+    <nav class="md-nav" aria-label="Binary Heap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-property" class="md-nav__link">
+    Structure Property:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap-order-property" class="md-nav__link">
+    Heap Order Property:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-heap-operations" class="md-nav__link">
+    Other Heap Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Heap Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decreasekeypdeltah" class="md-nav__link">
+    DecreaseKey(P,\(\Delta\),H)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increasekeypdeltah" class="md-nav__link">
+    IncreaseKey(P,\(\Delta\),H)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteph" class="md-nav__link">
+    Delete(P,H)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buildheaph" class="md-nav__link">
+    BuildHeap(H)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-priority-queues" class="md-nav__link">
+    Applications of Priority Queues
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#software-hardware-interface" class="md-nav__link">
-    Software-Hardware Interface
+  <a href="#d-heaps" class="md-nav__link">
+    d-Heaps
   </a>
   
 </li>
@@ -1738,29 +1808,148 @@
                   
 
 
-  <h1>Exceptions&Interruots</h1>
-
-<h3 id="handler-action">Handler Action<a class="headerlink" href="#handler-action" title="Permanent link">&para;</a></h3>
+<h1 id="priority-queues">Priority Queues<a class="headerlink" href="#priority-queues" title="Permanent link">&para;</a></h1>
+<h2 id="simple-implementations">Simple Implementations<a class="headerlink" href="#simple-implementations" title="Permanent link">&para;</a></h2>
+<p>Linked list is better since there is never more deletions than insertion.</p>
 <ul>
-<li>read cause, and transfer to relevant handler</li>
-<li>determine action required</li>
-<li>If restartable:<ul>
-<li>take corrective action</li>
-<li>use SEPC to return to program</li>
-</ul>
-</li>
-<li>Otherwise:<ul>
-<li>terminate program</li>
-<li>report error using SEPC, etc.</li>
+<li>Array:<ul>
+<li>Insertion -- add one item at the end ~ <span class="arithmatex">\(\Theta(1)\)</span></li>
+<li>Deletion<ul>
+<li>find the largest/smallest key ~ <span class="arithmatex">\(\Theta(n)\)</span></li>
+<li>remove the item and shift array ~ <span class="arithmatex">\(O(n)\)</span></li>
 </ul>
 </li>
 </ul>
-<h3 id="exceptions-in-a-pipeline">Exceptions in a pipeline<a class="headerlink" href="#exceptions-in-a-pipeline" title="Permanent link">&para;</a></h3>
-<ul>
-<li>another form of control hazard</li>
-<li>consider malfunction on add in EX stage <code>add x1, x2, x1</code></li>
+</li>
+<li>Linked List:<ul>
+<li>Insertion -- add to the front of the chain ~ <span class="arithmatex">\(\Theta(1)\)</span></li>
+<li>Deletion<ul>
+<li>find the largest/smallest key ~ <span class="arithmatex">\(\Theta(n)\)</span></li>
+<li>remove the item ~ <span class="arithmatex">\(\Theta(1)\)</span></li>
 </ul>
-<h2 id="software-hardware-interface">Software-Hardware Interface<a class="headerlink" href="#software-hardware-interface" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+</li>
+<li>Ordered Array:<ul>
+<li>Insertion<ul>
+<li>find the proper position ~ <span class="arithmatex">\(O(n)\)</span></li>
+<li>shift array and add the item ~ <span class="arithmatex">\(O(n)\)</span></li>
+</ul>
+</li>
+<li>Deletion -- remove the item ~ <span class="arithmatex">\(\Theta(1)\)</span></li>
+</ul>
+</li>
+<li>Ordered Linked List:<ul>
+<li>Insertion<ul>
+<li>find the proper position ~ <span class="arithmatex">\(O(n)\)</span></li>
+<li>add the item ~ <span class="arithmatex">\(\Theta(1)\)</span></li>
+</ul>
+</li>
+<li>Deletion -- remove the first/last item ~ <span class="arithmatex">\(\Theta(1)\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="binary-heap">Binary Heap<a class="headerlink" href="#binary-heap" title="Permanent link">&para;</a></h2>
+<h4 id="structure-property">Structure Property:<a class="headerlink" href="#structure-property" title="Permanent link">&para;</a></h4>
+<p>A binary tree with <span class="arithmatex">\(n\)</span> nodes and height <span class="arithmatex">\(h\)</span> is complete if its nodes correspond to the nodes numbered from 1 to <span class="arithmatex">\(n\)</span> in the perfect binary tree of height <span class="arithmatex">\(h\)</span>.</p>
+<blockquote>
+<p>A complete binary tree of height <span class="arithmatex">\(h\)</span> has between <span class="arithmatex">\(2^h\)</span> and <span class="arithmatex">\(2^{h+1}-1\)</span> nodes. </p>
+<p><span class="arithmatex">\(h=[logN]\)</span></p>
+</blockquote>
+<p>If a complete binary tree with <span class="arithmatex">\(n\)</span> nodes is represented sequentially, then for any node with index <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(0&lt;i&lt;n\)</span>, we have:</p>
+<p>index of <span class="arithmatex">\(parent(i) = \left\{
+\begin{matrix}
+ [\frac{i}{2}]\ \ \  if\ \ i \neq 1 \\
+ None\ \ \  if\ \ i=1
+\end{matrix}
+\right.\)</span></p>
+<p>index of <span class="arithmatex">\(left\_child(i) = \left\{
+\begin{matrix}
+ 2i\ \ \  if\ \ 2i \leq n \\
+ None\ \ \  if\ \ 2i \geq n
+\end{matrix}
+\right.\)</span></p>
+<p>index of <span class="arithmatex">\(right\_child(i) = \left\{
+\begin{matrix}
+ 2i+1\ \ \  if\ \ 2i+1 \leq n \\
+ None\ \ \  if\ \ 2i+1 \geq n
+\end{matrix}
+\right.\)</span></p>
+<h4 id="heap-order-property">Heap Order Property:<a class="headerlink" href="#heap-order-property" title="Permanent link">&para;</a></h4>
+<p>A <strong>min tree</strong> is a tree in which the key value in each node is no longer then the key values in its children (if any). A min heap is a complete binary min tree.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/*H-&gt;Elements[0] is a sentinel*/</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Insert</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">IsFull</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="n">Error</span><span class="p">(</span><span class="s">&quot;Priority queue is full&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=++</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Size</span><span class="p">;</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="n">i</span><span class="o">/=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">X</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ElementType</span><span class="w"> </span><span class="nf">DeleteMin</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="cm">/*Percolate Down*/</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">Child</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">MinElement</span><span class="p">,</span><span class="w"> </span><span class="n">LastElement</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">IsEmpty</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="n">Error</span><span class="p">(</span><span class="s">&quot;Priority queue is empty&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">MinElement</span><span class="o">=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">LastElement</span><span class="o">=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Size</span><span class="o">--</span><span class="p">];</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">&lt;=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Size</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">Child</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="n">Child</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">Child</span><span class="o">!=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Size</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">Child</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">Child</span><span class="p">])</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">            </span><span class="n">Child</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">LastElement</span><span class="o">&gt;</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">Child</span><span class="p">])</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">Child</span><span class="p">];</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">LastElement</span><span class="p">;</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MinElement</span><span class="p">;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="other-heap-operations">Other Heap Operations<a class="headerlink" href="#other-heap-operations" title="Permanent link">&para;</a></h2>
+<p>Finding any key except the minimum one will have to take a linear scan through the entire heap.</p>
+<h4 id="decreasekeypdeltah">DecreaseKey(P,<span class="arithmatex">\(\Delta\)</span>,H)<a class="headerlink" href="#decreasekeypdeltah" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Percolate up</p>
+</blockquote>
+<h4 id="increasekeypdeltah">IncreaseKey(P,<span class="arithmatex">\(\Delta\)</span>,H)<a class="headerlink" href="#increasekeypdeltah" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Percolate down</p>
+</blockquote>
+<h4 id="deleteph">Delete(P,H)<a class="headerlink" href="#deleteph" title="Permanent link">&para;</a></h4>
+<p>DecreaseKey(P,<span class="arithmatex">\(\infty\)</span>,H);DeleteMin(H)</p>
+<h4 id="buildheaph">BuildHeap(H)<a class="headerlink" href="#buildheaph" title="Permanent link">&para;</a></h4>
+<p>N successive Insertions</p>
+<blockquote>
+<p>Time complexity is too low.</p>
+</blockquote>
+<p>First, use the keys build a complete binary tree. Then, percolate down from the last parent node in <span class="arithmatex">\(h-1\)</span> height.
+Considering the worst case, the times of percolating down is the sum of height of each node. <span class="arithmatex">\(sum=\displaystyle \sum^h_{i=0}(h-i)\times 2^i\)</span></p>
+<p>[Theorem] For the prefect binary tree of height <span class="arithmatex">\(h\)</span> containing <span class="arithmatex">\(2^{h+1}-1\)</span> nodes, the sum of heights of the nodes is <span class="arithmatex">\(2^{h+1}-1-(h+1)\)</span></p>
+<p>T(N) = O(N)</p>
+<h2 id="applications-of-priority-queues">Applications of Priority Queues<a class="headerlink" href="#applications-of-priority-queues" title="Permanent link">&para;</a></h2>
+<h2 id="d-heaps">d-Heaps<a class="headerlink" href="#d-heaps" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>All nodes have <span class="arithmatex">\(d\)</span> children.</p>
+</blockquote>
+<ul>
+<li>Shall we make <span class="arithmatex">\(d\)</span> as large as possible?</li>
+<li>DeleteMin will take <span class="arithmatex">\(d-1\)</span> comparsions to find the smallest child. Hence the total time complexity would be <span class="arithmatex">\(O(d\ log_dN)\)</span></li>
+<li><span class="arithmatex">\(*2\)</span> or <span class="arithmatex">\(/2\)</span> is merely <strong>a bit shift</strong>, but <span class="arithmatex">\(*d\)</span> or <span class="arithmatex">\(/d\)</span> is not.</li>
+<li>When the prtority queue is too large to fit entirely in main memory, a d-heap will become interesting.</li>
+</ul>
 
 
 
