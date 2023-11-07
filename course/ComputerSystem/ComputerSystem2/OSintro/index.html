@@ -1754,6 +1754,88 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#interruptshardware-interrupts-and-trapssoftware-interrupts" class="md-nav__link">
+    Interrupts(Hardware Interrupts) and Traps(Software Interrupts)
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupts(Hardware Interrupts) and Traps(Software Interrupts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-handling" class="md-nav__link">
+    Interrupt Handling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-from-system-call-to-devices-and-back" class="md-nav__link">
+    I/O: from System Call to Devices and Back
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-memory-access" class="md-nav__link">
+    Direct Memory Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-structure" class="md-nav__link">
+    Storage Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-memory" class="md-nav__link">
+    Main Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-storage" class="md-nav__link">
+    Second Storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-hierarchy" class="md-nav__link">
+    Storage Hierarchy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    Cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-system-arch" class="md-nav__link">
+    Computer System Arch
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1844,8 +1926,69 @@ fair: let the two processes run one by one. Each of them run in a short time suc
 </blockquote>
 <p>OS is a <strong>control program</strong></p>
 <blockquote>
-<p>it controls program execution to prevent <strong>errors</strong> and <strong>improper use</strong> of system</p>
+<p>it controls program execution to prevent <strong>errors</strong> and <strong>improper use</strong> of system.</p>
 </blockquote>
+<h3 id="interruptshardware-interrupts-and-trapssoftware-interrupts">Interrupts(Hardware Interrupts) and Traps(Software Interrupts)<a class="headerlink" href="#interruptshardware-interrupts-and-trapssoftware-interrupts" title="Permanent link">&para;</a></h3>
+<p>Interrupt transfers control to the interrupt service routine.</p>
+<ul>
+<li><strong>interrupt vecter</strong>: a table containing addresses of all the service routines.</li>
+<li>incoming </li>
+</ul>
+<p>A trap is a software-generated interrupt, caused either by an error or a user request
++ an interrupt is asynchronous(异步的); a trap is synchronous(同步的).
++ e.g. system call</p>
+<h4 id="interrupt-handling">Interrupt Handling<a class="headerlink" href="#interrupt-handling" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Operating system preserves the execution state of the CPU<ul>
+<li>save registers and the program counter(PC)</li>
+</ul>
+</li>
+<li>OS determines which device caused the interrupt<ul>
+<li>polling</li>
+<li>vectored interrupt system</li>
+</ul>
+</li>
+<li>OS handles the interrupt by calling the device's driver</li>
+<li>OS restores the CPU execution to the saved state</li>
+</ul>
+<h3 id="io-from-system-call-to-devices-and-back">I/O: from System Call to Devices and Back<a class="headerlink" href="#io-from-system-call-to-devices-and-back" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A program uses a system call to access system resources, e.g., files, network.</li>
+<li>OS converts it to device access and issues I/O requests<ul>
+<li>I/O requests are sent to the device driver, then to the controller</li>
+<li>e.g., read disk blocks, send/recieve packets</li>
+</ul>
+</li>
+<li>OS puts the program to wait (synchronous I/O) or returns to it without waiting(asynchronous I/O)<ul>
+<li>OS may switches to another program when the requester is waiting</li>
+</ul>
+</li>
+<li>I/O completes and the controller interrupts the OS</li>
+<li>OS processes the I/O, and then wakes up the program (synchronous I/O) or send its a signal (asynchronous I/O)</li>
+</ul>
+<h3 id="direct-memory-access">Direct Memory Access<a class="headerlink" href="#direct-memory-access" title="Permanent link">&para;</a></h3>
+<h3 id="storage-structure">Storage Structure<a class="headerlink" href="#storage-structure" title="Permanent link">&para;</a></h3>
+<h4 id="main-memory">Main Memory<a class="headerlink" href="#main-memory" title="Permanent link">&para;</a></h4>
+<p>the only large storage that CPU can directly access</p>
+<ul>
+<li>random access</li>
+<li>volatile</li>
+<li>smaller space and more expensive</li>
+<li>memory will lose when powered off</li>
+</ul>
+<h4 id="second-storage">Second Storage<a class="headerlink" href="#second-storage" title="Permanent link">&para;</a></h4>
+<p>Magnetic disks are most common second-storage devices(HHD)</p>
+<h3 id="storage-hierarchy">Storage Hierarchy<a class="headerlink" href="#storage-hierarchy" title="Permanent link">&para;</a></h3>
+<p>Storage systems can be organized in hierarchy.</p>
+<ul>
+<li>speed</li>
+<li>cost</li>
+<li>volatility</li>
+</ul>
+<h3 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h3>
+<p>Caching: copying information into faster storage system</p>
+<p>data in use copied from slower to faster storage temporarily</p>
+<h3 id="computer-system-arch">Computer System Arch<a class="headerlink" href="#computer-system-arch" title="Permanent link">&para;</a></h3>
 
 
 
