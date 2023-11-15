@@ -1,13 +1,14 @@
-site_name: WraithLyd's Notebook
+site_name: Wraith's Notebook
 dev_addr: '127.0.0.1:5500' #默认值
 theme:
   name: 'material'
+  custom_dir: docs/overrides
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
-      accent: lime
+      primary: white
+      accent: grey
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
@@ -16,15 +17,18 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: lime
+      accent: white
       toggle:
         icon: material/weather-night 
         name: Switch to light mode
   language: 'zh'
-  font-family: JetBrains Mono Regular, LXGW WenKai GB Screen
-  logo: assets/images/logo.png
-  #favicon: images/clipboard.svg
+  font: 
+    text: LXGW WenKai GB Screen 
+    code: JetBrains Mono Regular, LXGW WenKai GB Screen
+  logo: assets/images/clipboard.svg # logo.jpg
+  favicon: assets/images/clipboard2.svg
   features:
+    - navigation.indexes
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.tracking
@@ -66,6 +70,14 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.arithmatex:
       generic: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      #fallback_to_build_date: true
+      enable_creation_date: true
 extra_javascript:
   - assets/js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -73,7 +85,67 @@ extra_javascript:
 nav:
   - Home: index.md
   - Course: 
-    - course.md
-    - Discrete Mathemtics: 离散数学.md
-    - Calculus: Calculus.md
-    - College Physics: College Physics.md
+    - course/index.md
+    - Mathematical Basic:
+      - Discrete Mathemtics: course/MathematicalBasic/DiscreteMathemtics.md
+      - Calculus: course/MathematicalBasic/Calculus.md
+      - College Physics: course/MathematicalBasic/College Physics.md
+    - Program:
+      - Python: 
+        - course/python/index.md
+        - Python入门: course/python/python1.md
+        - 数据类型: course/python/python2.md
+        - 条件语句: course/python/python3.md
+        - 循环语句: course/python/python4.md
+        - 函数: course/python/python5.md
+      - BasicDataStructure:
+        - course/Program/BasicDataStructure/index.md
+        - 算法分析: course/Program/BasicDataStructure/AlgorithmAnalysis.md
+      - Cpp: 
+        - course/Program/cpp/index.md
+        - book: course/Program/cpp/1.md
+      - Object-oriented Programming: 
+        - course/Program/Oop/index.md
+    - ComputerSystem:
+      - System1:
+        - 单周期CPU复习: course/ComputerSystem/ComputerSystem1/preview.md
+      - System2: 
+        - course/ComputerSystem/ComputerSystem2/index.md
+        - 指令集系统: course/ComputerSystem/ComputerSystem2/InstructionSet.md
+        - 流水线: course/ComputerSystem/ComputerSystem2/pipeline.md
+        - 流水线复习: course/ComputerSystem/ComputerSystem2/pipelinesum.md
+        - lab4: course/ComputerSystem/ComputerSystem2/lab4.md
+      - ComputerOrganization:
+        - 计算机抽象及相关技术: course/ComputerOrganization/ComputerOrganization1.md
+    - Economics: 
+      - AgriculturalEconomics: 
+        - course/Economics/AgriculturalEconomics/index.md
+      - InternationalTrade: 
+        - course/Economics/InternationalTrade/index.md
+      - WesternEconomics: 
+        - course/Economics/WesternEconomics/index.md
+        - 微经-需求、供给和均衡价格: course/Economics/WesternEconomics/microeconomics1.md
+    - Policy:
+      - course/Policy/index.md
+      - 政策科学的发展历程: course/Policy/1.md
+      - 公共政策的制定过程: course/Policy/4.md
+    - IdeologyAndPoitics:
+      - Military:
+        - course/IdeologyAndPoitics/military1.md
+  - Tool:
+    - tool/index.md
+    - Mkdocs: tool/MkDocs.md
+#   - C Code Display: c.md
+  - Collection:
+    - collection/index.md
+    - 2022 sentence: collection/sentence.md
+    - 2022 paragraph: collection/paragraph.md
+    - 2023 sentence: collection/sentence2023.md
+    - 2023 paragraph: collection/paragraph2023.md
+    - CCTV collection: collection/cctv.md
+  - Life:
+    - life/index.md
+    - Music: life/music.md
+    - plan: life/plan.md
+  - Task:
+    - task/index.md

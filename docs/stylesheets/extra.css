@@ -1,4 +1,9 @@
 @font-face {
-  font-family:"JetBrains Mono Regular", "LXGW WenKai GB Screen";
-  src: "./JetBrainsMono.ttf" "truetype","./LXGWWenKaiGBScreen.ttf" "truetype";
+    font-family:"LXGW WenKai GB Screen","JetBrains Mono Regular";
+	src: url('./LXGWWenKaiGBScreen.ttf'), format('ttf') ,"./JetBrainsMono.ttf",format('ttf');
+}
+
+:root {
+	--md-text-font: "LXGW WenKai GB Screen"; 
+	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen"; 
 }

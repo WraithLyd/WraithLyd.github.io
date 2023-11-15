@@ -5,7 +5,7 @@ statistics: True
 
 # Welcome to Wraith's site
 
-!!! note "" 
+!!! example "site" 
     <br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
         ~『我们哭着降临世界，却可以笑着走向永恒.』~

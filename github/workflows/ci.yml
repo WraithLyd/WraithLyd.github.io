@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master/mkdocs/test 
+env:
+  TZ: Asia/Hangzhou # 设置当前环境时区
 permissions:
   contents: write
 jobs:

@@ -1,0 +1,135 @@
+# Priority Queues
+## Simple Implementations
+Linked list is better since there is never more deletions than insertion.
+
++ Array:
+    + Insertion -- add one item at the end ~ $\Theta(1)$
+    + Deletion
+        + find the largest/smallest key ~ $\Theta(n)$
+        + remove the item and shift array ~ $O(n)$
++ Linked List:
+    + Insertion -- add to the front of the chain ~ $\Theta(1)$
+    + Deletion
+        + find the largest/smallest key ~ $\Theta(n)$
+        + remove the item ~ $\Theta(1)$
++ Ordered Array:
+    + Insertion
+        + find the proper position ~ $O(n)$
+        + shift array and add the item ~ $O(n)$
+    + Deletion -- remove the item ~ $\Theta(1)$
++ Ordered Linked List:
+    + Insertion
+        + find the proper position ~ $O(n)$
+        + add the item ~ $\Theta(1)$
+    + Deletion -- remove the first/last item ~ $\Theta(1)$
+
+## Binary Heap
+#### Structure Property:
+A binary tree with $n$ nodes and height $h$ is complete if its nodes correspond to the nodes numbered from 1 to $n$ in the perfect binary tree of height $h$.
+
+> A complete binary tree of height $h$ has between $2^h$ and $2^{h+1}-1$ nodes. 
+> 
+> $h=[logN]$
+
+If a complete binary tree with $n$ nodes is represented sequentially, then for any node with index $i$, $0<i<n$, we have:
+
+index of $parent(i) = \left\{
+\begin{matrix}
+ [\frac{i}{2}]\ \ \  if\ \ i \neq 1 \\
+ None\ \ \  if\ \ i=1
+\end{matrix}
+\right.$
+
+index of $left\_child(i) = \left\{
+\begin{matrix}
+ 2i\ \ \  if\ \ 2i \leq n \\
+ None\ \ \  if\ \ 2i \geq n
+\end{matrix}
+\right.$
+
+index of $right\_child(i) = \left\{
+\begin{matrix}
+ 2i+1\ \ \  if\ \ 2i+1 \leq n \\
+ None\ \ \  if\ \ 2i+1 \geq n
+\end{matrix}
+\right.$
+
+#### Heap Order Property:
+A **min tree** is a tree in which the key value in each node is no larger than the key values in its children (if any). A **min heap** is a complete binary min tree.
+
+```c
+/*H->Elements[0] is a sentinel*/
+void Insert(ElementType X, PriorityQueue H)
+{
+	int i;
+	if(IsFull(H))
+	{
+		Error("Priority queue is full");
+		return;
+	}
+	for( i=++H->Size; H->Elements[i/2]; i/=2)
+		H->Elements[i] = H->Elements[i/2];
+	H->Elements[i]=X;
+}
+```
+```c
+ElementType DeleteMin(PriorityQueue H)
+{
+	/*Percolate Down*/
+	int i, Child;
+
+	ElementType MinElement, LastElement;
+	if(IsEmpty(H))
+	{
+		Error("Priority queue is empty");
+		return H->Elements[0];
+	}
+	MinElement=H->Elements[1];
+	LastElement=H->Elements[H->Size--];
+	for(i=1;i*2<=H->Size;i=Child)
+	{
+		Child=i*2;
+		if(Child!=H->Size && H->Elements[Child+1]<H->Elements[Child])
+			Child++;
+		if(LastElement>H->Elements[Child])
+			H->Elements[i]=H->Elements[Child];
+		else
+			break;
+	}
+	H->Elements[i]=LastElement;
+	return MinElement;
+}
+```
+## Other Heap Operations
+Finding any key except the minimum one will have to take a linear scan through the entire heap.
+
+#### DecreaseKey(P,$\Delta$,H)
+> Percolate up
+
+#### IncreaseKey(P,$\Delta$,H)
+> Percolate down
+
+#### Delete(P,H)
+DecreaseKey(P,$\infty$,H);DeleteMin(H)
+
+#### BuildHeap(H)
+
+N successive Insertions
+> Time complexity is too low.
+
+First, use the keys build a complete binary tree. Then, percolate down from the last parent node in $h-1$ height.
+Considering the worst case, the times of percolating down is the sum of height of each node. $sum=\displaystyle \sum^h_{i=0}(h-i)\times 2^i$
+
+[Theorem] For the prefect binary tree of height $h$ containing $2^{h+1}-1$ nodes, the sum of heights of the nodes is $2^{h+1}-1-(h+1)$
+
+T(N) = O(N)
+
+## Applications of Priority Queues
+
+## d-Heaps
+> All nodes have $d$ children.
+
++ Shall we make $d$ as large as possible?
++ DeleteMin will take $d-1$ comparsions to find the smallest child. Hence the total time complexity would be $O(d\ log_dN)$
++ $*2$ or $/2$ is merely **a bit shift**, but $*d$ or $/d$ is not.
++ When the prtority queue is too large to fit entirely in main memory, a d-heap will become interesting.
