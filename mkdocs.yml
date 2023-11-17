@@ -89,7 +89,7 @@ nav:
     - Mathematical Basic:
       - Discrete Mathemtics: course/MathematicalBasic/DiscreteMathemtics.md
       - Calculus: course/MathematicalBasic/Calculus.md
-      - College Physics: course/MathematicalBasic/College Physics.md
+      - College Physics: course/MathematicalBasic/CollegePhysics/电磁学.md
     - Program:
       - Python: 
         - course/python/index.md
