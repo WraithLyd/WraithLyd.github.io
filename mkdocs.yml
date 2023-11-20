@@ -104,6 +104,7 @@ nav:
         - 抽象数据结构: course/Program/BasicDataStructure/List.md
         - 树: course/Program/BasicDataStructure/Tree.md
         - 堆: course/Program/BasicDataStructure/Heap.md
+        - 并查集: course/Program/BasicDataStructure/DisjointSet.md
       - Cpp: 
         - course/Program/cpp/index.md
         - book: course/Program/cpp/1.md
