@@ -1,4 +1,4 @@
 publish:
 	mkdocs build
-	mkdocs gh-page
+	mkdocs gh-deploy
 	del site
