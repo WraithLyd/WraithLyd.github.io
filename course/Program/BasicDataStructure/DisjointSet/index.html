@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../Heap/">
       
       
-      <link rel="icon" href="/assets/images/clipboard2.svg">
+        <link rel="next" href="../../cpp/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/clipboard2.svg">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
-        <title>Wraith's Notebook</title>
+        <title>并查集 - Wraith's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#5-the-disjoint-set-adt" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -84,9 +93,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="Wraith&#39;s Notebook" class="md-header__button md-logo" aria-label="Wraith's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Wraith&#39;s Notebook" class="md-header__button md-logo" aria-label="Wraith's Notebook" data-md-component="logo">
       
-  <img src="/assets/images/clipboard.svg" alt="logo">
+  <img src="../../../../assets/images/clipboard.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -103,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              并查集
             
           </span>
         </div>
@@ -189,7 +198,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -204,11 +213,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/course/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
     
@@ -228,7 +239,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/tool/" class="md-tabs__link">
+        <a href="../../../../tool/" class="md-tabs__link">
           
   
     
@@ -248,7 +259,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/collection/" class="md-tabs__link">
+        <a href="../../../../collection/" class="md-tabs__link">
           
   
     
@@ -268,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/life/" class="md-tabs__link">
+        <a href="../../../../life/" class="md-tabs__link">
           
   
     
@@ -288,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/task/" class="md-tabs__link">
+        <a href="../../../../task/" class="md-tabs__link">
           
   
     
@@ -329,9 +340,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Wraith&#39;s Notebook" class="md-nav__button md-logo" aria-label="Wraith's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Wraith&#39;s Notebook" class="md-nav__button md-logo" aria-label="Wraith's Notebook" data-md-component="logo">
       
-  <img src="/assets/images/clipboard.svg" alt="logo">
+  <img src="../../../../assets/images/clipboard.svg" alt="logo">
 
     </a>
     Wraith's Notebook
@@ -345,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -362,6 +373,8 @@
       
   
   
+    
+  
   
     
     
@@ -389,17 +402,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -416,7 +429,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Course
@@ -475,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/MathematicalBasic/DiscreteMathemtics/" class="md-nav__link">
+      <a href="../../../MathematicalBasic/DiscreteMathemtics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -495,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/MathematicalBasic/Calculus/" class="md-nav__link">
+      <a href="../../../MathematicalBasic/Calculus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/MathematicalBasic/CollegePhysics/%E7%94%B5%E7%A3%81%E5%AD%A6/" class="md-nav__link">
+      <a href="../../../MathematicalBasic/CollegePhysics/%E7%94%B5%E7%A3%81%E5%AD%A6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,6 +554,8 @@
                 
   
   
+    
+  
   
     
     
@@ -557,12 +572,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -576,7 +591,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Program
@@ -619,7 +634,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/python/" class="md-nav__link ">
+            <a href="../../../python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -651,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/python/python1/" class="md-nav__link">
+      <a href="../../../python/python1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -671,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/python/python2/" class="md-nav__link">
+      <a href="../../../python/python2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/python/python3/" class="md-nav__link">
+      <a href="../../../python/python3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -711,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/python/python4/" class="md-nav__link">
+      <a href="../../../python/python4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -731,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/python/python5/" class="md-nav__link">
+      <a href="../../../python/python5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -757,6 +772,8 @@
                 
   
   
+    
+  
   
     
     
@@ -779,17 +796,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/Program/BasicDataStructure/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -806,7 +823,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             BasicDataStructure
@@ -821,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Program/BasicDataStructure/AlgorithmAnalysis/" class="md-nav__link">
+      <a href="../AlgorithmAnalysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -841,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Program/BasicDataStructure/List/" class="md-nav__link">
+      <a href="../List/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -861,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Program/BasicDataStructure/Tree/" class="md-nav__link">
+      <a href="../Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -881,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Program/BasicDataStructure/Heap/" class="md-nav__link">
+      <a href="../Heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,9 +916,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/course/Program/BasicDataStructure/DisjointSet/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    并查集
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -910,6 +947,40 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-equivalence-relations" class="md-nav__link">
+    5.1 Equivalence relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-the-dynamic-equivalence-problem" class="md-nav__link">
+    5.2 The Dynamic Equivalence Problem
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -951,7 +1022,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/Program/cpp/" class="md-nav__link ">
+            <a href="../../cpp/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -983,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Program/cpp/1/" class="md-nav__link">
+      <a href="../../cpp/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1102,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/Program/Oop/" class="md-nav__link ">
+            <a href="../../Oop/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1158,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/ComputerSystem/ComputerSystem1/preview/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem1/preview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1285,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/ComputerSystem/ComputerSystem2/" class="md-nav__link ">
+            <a href="../../../ComputerSystem/ComputerSystem2/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1246,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/ComputerSystem/ComputerSystem2/InstructionSet/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem2/InstructionSet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1266,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/ComputerSystem/ComputerSystem2/pipeline/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem2/pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/ComputerSystem/ComputerSystem2/pipelinesum/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem2/pipelinesum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1306,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/ComputerSystem/ComputerSystem2/lab4/" class="md-nav__link">
+      <a href="../../../ComputerSystem/ComputerSystem2/lab4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/ComputerOrganization/ComputerOrganization1/" class="md-nav__link">
+      <a href="../../../ComputerOrganization/ComputerOrganization1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1474,7 +1545,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/Economics/AgriculturalEconomics/" class="md-nav__link ">
+            <a href="../../../Economics/AgriculturalEconomics/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1529,7 +1600,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/Economics/InternationalTrade/" class="md-nav__link ">
+            <a href="../../../Economics/InternationalTrade/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1586,7 +1657,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/Economics/WesternEconomics/" class="md-nav__link ">
+            <a href="../../../Economics/WesternEconomics/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1618,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Economics/WesternEconomics/microeconomics1/" class="md-nav__link">
+      <a href="../../../Economics/WesternEconomics/microeconomics1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1678,7 +1749,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/course/Policy/" class="md-nav__link ">
+            <a href="../../../Policy/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1710,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Policy/1/" class="md-nav__link">
+      <a href="../../../Policy/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1730,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/Policy/4/" class="md-nav__link">
+      <a href="../../../Policy/4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1838,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course/IdeologyAndPoitics/military1/" class="md-nav__link">
+      <a href="../../../IdeologyAndPoitics/military1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1906,7 +1977,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/tool/" class="md-nav__link ">
+            <a href="../../../../tool/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1938,7 +2009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tool/MkDocs/" class="md-nav__link">
+      <a href="../../../../tool/MkDocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1998,7 +2069,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/collection/" class="md-nav__link ">
+            <a href="../../../../collection/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2030,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/collection/sentence/" class="md-nav__link">
+      <a href="../../../../collection/sentence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2050,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/collection/paragraph/" class="md-nav__link">
+      <a href="../../../../collection/paragraph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2070,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/collection/sentence2023/" class="md-nav__link">
+      <a href="../../../../collection/sentence2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2090,7 +2161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/collection/paragraph2023/" class="md-nav__link">
+      <a href="../../../../collection/paragraph2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2110,7 +2181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/collection/cctv/" class="md-nav__link">
+      <a href="../../../../collection/cctv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2164,7 +2235,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/life/" class="md-nav__link ">
+            <a href="../../../../life/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2196,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/life/music/" class="md-nav__link">
+      <a href="../../../../life/music/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2216,7 +2287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/life/plan/" class="md-nav__link">
+      <a href="../../../../life/plan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2266,7 +2337,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/task/" class="md-nav__link ">
+            <a href="../../../../task/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2311,6 +2382,30 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-equivalence-relations" class="md-nav__link">
+    5.1 Equivalence relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-the-dynamic-equivalence-problem" class="md-nav__link">
+    5.2 The Dynamic Equivalence Problem
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2322,8 +2417,55 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="5-the-disjoint-set-adt">5 The Disjoint Set ADT<a class="headerlink" href="#5-the-disjoint-set-adt" title="Permanent link">&para;</a></h1>
+<h2 id="51-equivalence-relations">5.1 Equivalence relations<a class="headerlink" href="#51-equivalence-relations" title="Permanent link">&para;</a></h2>
+<p>A relation <span class="arithmatex">\(R\)</span> is defined on a set <span class="arithmatex">\(S\)</span> if for every pair of elements (a, b), <span class="arithmatex">\(a, b\in S\)</span>, a R b is either true or false.  If a R b is true, then we say that a is related to b.</p>
+<p>A relation, ~, over a set, S, is said to be an equivalence(等价) relation over S if it is symmetric(对称), reflexive(反身), and transitive(传递) over S.</p>
+<p>Two members x and y of a set S are said to be in the same equivalence class(等价类) if x ~ y.</p>
+<h2 id="52-the-dynamic-equivalence-problem">5.2 The Dynamic Equivalence Problem<a class="headerlink" href="#52-the-dynamic-equivalence-problem" title="Permanent link">&para;</a></h2>
+<p>Given an equivalence relation ~, decide for any a and b if a ~ b.</p>
+<ul>
+<li>Elements of the sets:  1, 2, 3, ..., N</li>
+<li>Sets :  S1, S2, ... ...  and  <span class="arithmatex">\(S_i\cap S_j = \phi\)</span>  ( if <span class="arithmatex">\(i \neq j\)</span>) —— disjoint</li>
+<li>Operations<ul>
+<li>Union(i, j) ::= Replace <span class="arithmatex">\(S_i\)</span> and <span class="arithmatex">\(S_j\)</span> by <span class="arithmatex">\(S = S_i\cupS_j\)</span></li>
+<li>Find(i) ::= Find the set <span class="arithmatex">\(S_k\)</span> which contains the element i.</li>
+</ul>
+</li>
+</ul>
+
+  
+
+<!-- taken from 
+https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-file.html -->
+
+<hr />
+<div class="md-source-file">
+<small>
+
+    <!-- mkdocs-git-revision-date-localized-plugin -->
+    
+    最后更新:
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 20, 2023 22:01:28</span>
+    
+        <br />
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 20, 2023 22:01:28</span>
+    
+
+    <!-- mkdocs-git-revision-date-plugin -->
+    
+</small>
+</div>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2362,12 +2504,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top"], "search": "/assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
-        <script src="/assets/js/mathjax.js"></script>
+        <script src="../../../../assets/js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
