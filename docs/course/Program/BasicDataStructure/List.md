@@ -87,6 +87,7 @@ A stack is a Last-In-First-Out list, that is, an ordered list in which insertion
 	Objects: A finite ordered list with zero or more elements.
 
 	Operations: 
+	
 	+ int IsEmpty(stack S)
 	+ stack CreateStack()
 	+ DisposeStack(stack S)
@@ -107,7 +108,7 @@ S->Next = TmpCell;
 return S->Next->Element;
 ```
 #### 2.3.1.3 Pop
-```c linenums='1
+```c linenums='1'
 FirstCell = S->Next;
 S->Next = S->Next->Next;
 free(FirstCell);
@@ -128,6 +129,7 @@ A queue is a First-In-First-Out (FIFO) list, that is, an ordered list in which i
 	Objects: A finite ordered list with zero or more elements.
 
 	Operations: 
+
 	+ int IsEmpty(queue Q)
 	+ queue CreateQueue()
 	+ DisposeQueue(queue Q)
