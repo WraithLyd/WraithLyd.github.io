@@ -12,7 +12,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../cpp/">
+        <link rel="next" href="../List/">
       
       
       <link rel="icon" href="../../../../assets/images/clipboard2.svg">
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#algorithm-analysis" class="md-skip">
+        <a href="#1-algorithm-analysis" class="md-skip">
           跳转至
         </a>
       
@@ -784,6 +784,8 @@
       
         
       
+        
+      
     
     
     
@@ -876,9 +878,138 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#algorithm-definition" class="md-nav__link">
-    Algorithm Definition
+  <a href="#11-algorithm-definition" class="md-nav__link">
+    1.1 Algorithm Definition
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-how-to-analyze" class="md-nav__link">
+    1.2 How to Analyze
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 How to Analyze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-time-complexities" class="md-nav__link">
+    1.2.1 Time Complexities
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.1 Time Complexities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1211-for-loops" class="md-nav__link">
+    1.2.1.1 FOR loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1212-nested-for-loops" class="md-nav__link">
+    1.2.1.2 Nested(嵌套的) FOR loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1213-consecutive-statements" class="md-nav__link">
+    1.2.1.3 Consecutive statements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1214-ifelse" class="md-nav__link">
+    1.2.1.4 IF/ELSE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-asymptotic-notation-omegathetaoo" class="md-nav__link">
+    1.2.2 Asymptotic(渐近的) Notation(符号)  ( \(\Omega,\Theta,o,O\) )
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.2 Asymptotic(渐近的) Notation(符号) ( \(\Omega,\Theta,o,O\) )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1221-tnofn" class="md-nav__link">
+    1.2.2.1 T(N)=O(f(N))
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1222-tnomegagn" class="md-nav__link">
+    1.2.2.2 T(N)=\(\Omega\)(g(N))
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1223-tnthetahn" class="md-nav__link">
+    1.2.2.3 T(N)=\(\Theta\)(h(N))
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1224-tnohn" class="md-nav__link">
+    1.2.2.4 T(N)=o(h(N))
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-rules-of-asymptotic-notation" class="md-nav__link">
+    1.2.3 Rules of Asymptotic Notation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-check-your-analysis" class="md-nav__link">
+    1.3 Check your analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Check your analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-method-1" class="md-nav__link">
+    1.3.1 Method 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-method-2" class="md-nav__link">
+    1.3.2 Method 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -886,6 +1017,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../List/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    抽象数据结构
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2297,9 +2448,138 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#algorithm-definition" class="md-nav__link">
-    Algorithm Definition
+  <a href="#11-algorithm-definition" class="md-nav__link">
+    1.1 Algorithm Definition
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-how-to-analyze" class="md-nav__link">
+    1.2 How to Analyze
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 How to Analyze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-time-complexities" class="md-nav__link">
+    1.2.1 Time Complexities
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.1 Time Complexities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1211-for-loops" class="md-nav__link">
+    1.2.1.1 FOR loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1212-nested-for-loops" class="md-nav__link">
+    1.2.1.2 Nested(嵌套的) FOR loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1213-consecutive-statements" class="md-nav__link">
+    1.2.1.3 Consecutive statements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1214-ifelse" class="md-nav__link">
+    1.2.1.4 IF/ELSE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-asymptotic-notation-omegathetaoo" class="md-nav__link">
+    1.2.2 Asymptotic(渐近的) Notation(符号)  ( \(\Omega,\Theta,o,O\) )
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.2 Asymptotic(渐近的) Notation(符号) ( \(\Omega,\Theta,o,O\) )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1221-tnofn" class="md-nav__link">
+    1.2.2.1 T(N)=O(f(N))
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1222-tnomegagn" class="md-nav__link">
+    1.2.2.2 T(N)=\(\Omega\)(g(N))
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1223-tnthetahn" class="md-nav__link">
+    1.2.2.3 T(N)=\(\Theta\)(h(N))
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1224-tnohn" class="md-nav__link">
+    1.2.2.4 T(N)=o(h(N))
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-rules-of-asymptotic-notation" class="md-nav__link">
+    1.2.3 Rules of Asymptotic Notation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-check-your-analysis" class="md-nav__link">
+    1.3 Check your analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Check your analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-method-1" class="md-nav__link">
+    1.3.1 Method 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-method-2" class="md-nav__link">
+    1.3.2 Method 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2318,72 +2598,128 @@
                   
 
 
-<h1 id="algorithm-analysis">Algorithm Analysis<a class="headerlink" href="#algorithm-analysis" title="Permanent link">&para;</a></h1>
-<h2 id="algorithm-definition">Algorithm Definition<a class="headerlink" href="#algorithm-definition" title="Permanent link">&para;</a></h2>
-<details class="note">
-<summary>Note</summary>
-<h1 id="_1">算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">算法定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>一个算法必须满足以下要求：</p>
-<ul>
-<li>输入：0个或更多的参数</li>
-<li>输出：</li>
-<li>确定的：每一条指令都应是清晰的</li>
-<li>有限的：算法一定是要终止的</li>
-</ul>
-</details>
+<h1 id="1-algorithm-analysis">1. Algorithm Analysis<a class="headerlink" href="#1-algorithm-analysis" title="Permanent link">&para;</a></h1>
+<h2 id="11-algorithm-definition">1.1 Algorithm Definition<a class="headerlink" href="#11-algorithm-definition" title="Permanent link">&para;</a></h2>
 <p>A algorithm must satisfy:</p>
 <ul>
-<li>Input: zero or more </li>
-<li>Output:</li>
-<li></li>
+<li>Input: There are zero or more quantities that are externally supplied.</li>
+<li>Output: At least one quantity is produced.</li>
+<li>Definiteness: Each instruction is <strong>clear and unambiguous</strong>.</li>
+<li>Finiteness: If we trace out the instructions of a algorithm, then for all cases, the algorithm <strong>terminates</strong> after <strong>finite number of steps</strong>.</li>
+<li>Effectiveness: Every instrution must be basic enough to be carried out, in principle, by a person using only pencil and paper. It is not enough that each operation be definite as in (3). It also must be <strong>feasible</strong>.</li>
 </ul>
-<h2 id="how-to-analyze">How to Analyze<a class="headerlink" href="#how-to-analyze" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <strong>program</strong> is written in some programming language, and does not have to be finite.(e.g. an operation system)</p>
+<p>A <strong>algorithm</strong> can be described by human languages, or psdeudo-code.</p>
+</div>
+<h2 id="12-how-to-analyze">1.2 How to Analyze<a class="headerlink" href="#12-how-to-analyze" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Machine &amp; compiler-dependent run time.</li>
-<li>Time &amp; space complexities: Machine &amp; compiler-independent</li>
+<li>Time &amp; space complexities: Machine &amp; compiler-<strong>independent</strong></li>
 </ul>
-<h3 id="time-complexities">Time Complexities<a class="headerlink" href="#time-complexities" title="Permanent link">&para;</a></h3>
+<div class="admonition note assumptions">
+<p class="admonition-title">Note</p>
+<ol>
+<li>Instructions are executed sequentially(连续的).</li>
+<li>Each instruction is simple, and takes exactly one time unit.</li>
+<li>Integer size is fixed(固定的) and we have infinite(无穷的) memory.</li>
+</ol>
+</div>
+<h3 id="121-time-complexities">1.2.1 Time Complexities<a class="headerlink" href="#121-time-complexities" title="Permanent link">&para;</a></h3>
 <p>Typically the following two functions are analyzed:
-<span class="arithmatex">\(T_{avg}(N)\)</span>&amp;<span class="arithmatex">\(T_{wrost}(N)\)</span>:the average and worst case time complexities, N means input size.</p>
-<details class="example">
-<summary>Time Complexities</summary>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">list</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="cm">/*add a list of numbers*/</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tempsum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="cm">/*count++*/</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="cm">/*count++*/</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">tempsum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="cm">/*count++*/</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tempsum</span><span class="p">;</span><span class="w">         </span><span class="cm">/*count++*/</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span>
+<span class="arithmatex">\(T_{avg}(N)\)</span>&amp;<span class="arithmatex">\(T_{wrost}(N)\)</span>:the average and worst case time complexities, a function of input size N.</p>
+<div class="admonition example">
+<p class="admonition-title">Matrix Addition</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[][</span><span class="n">MAX_SIZE</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">[][</span><span class="n">MAX_SIZE</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">[][</span><span class="n">MAX_SIZE</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cols</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">rows</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="cm">/*rows+1*/</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">cols</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="cm">/*rows(cols+1)*/</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="cm">/*rows*cols*/</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</code></pre></div>
+T(rows, cols)=2rows·cols+2<strong>rows</strong>+1(<strong>rows</strong> can be selected in {rows, cols})</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Iterative function for summing a list of numbers</label><label for="__tabbed_1_2">Recursive function for summing a list of numbers</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition example">
+<p class="admonition-title">Iterative function</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">list</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="cm">/*add a list of numbers*/</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tempsum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="cm">/*count++*/</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="cm">/*count++*/</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="n">tempsum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="cm">/*count++*/</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tempsum</span><span class="p">;</span><span class="w">         </span><span class="cm">/*count++*/</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<span class="arithmatex">\(T_{sum}(n)=2n+3\)</span></p>
-</details>
-<h3 id="asymptotic-notation-omegathetaoo">Asymptotic Notation  ( <span class="arithmatex">\(\Omega,\Theta,\o,\O\)</span> )<a class="headerlink" href="#asymptotic-notation-omegathetaoo" title="Permanent link">&para;</a></h3>
-<p><span class="arithmatex">\(T(N)=O(f(N))\)</span> if there are positive constants <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(n_0\)</span> such that <span class="arithmatex">\(T(N)\leq c f(N)\)</span> for all <span class="arithmatex">\(N\geq n_0\)</span>
-<span class="arithmatex">\(T(N)=\Omega(g(N))\)</span> if there are positive constants <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(n_0\)</span> such that <span class="arithmatex">\(T(N)\geq c g(N)\)</span> for all <span class="arithmatex">\(N\geq n_0\)</span>
-<span class="arithmatex">\(T(N)=\Theta(h(N))\)</span> if and only if <span class="arithmatex">\(T(N)=O(h(N))\)</span> and <span class="arithmatex">\(T(N)=\Omega(h(N))\)</span>
-<span class="arithmatex">\(T(N)=\Theta(h(N))\)</span> if and only if <span class="arithmatex">\(T(N)=O(h(N))\)</span> and <span class="arithmatex">\(T(N)\neq\Theta(h(N))\)</span></p>
-<h3 id="rules-of-asymptotic-notation">Rules of Asymptotic Notation<a class="headerlink" href="#rules-of-asymptotic-notation" title="Permanent link">&para;</a></h3>
-<p>If <span class="arithmatex">\(T_1(N)=O(f(N))\)</span> and <span class="arithmatex">\(T_2(N)=O(g(N))\)</span>, then
-+ <span class="arithmatex">\(T_1(N)+T_2(N)=max{O(f(N)),O(g(N))}\)</span>
-+ <span class="arithmatex">\(T_1(N)*T_2(N)=O(f(N)*g(N))\)</span></p>
-<p>If <span class="arithmatex">\(T(N)\)</span> is a polynomial of degree <span class="arithmatex">\(k\)</span>, then <span class="arithmatex">\(T(N)=\Theta(N^k)\)</span></p>
-<h2 id="check-your-analysis">Check your analysis<a class="headerlink" href="#check-your-analysis" title="Permanent link">&para;</a></h2>
+T(n)=2n+3</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition example">
+<p class="admonition-title">Recursive function</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">rsum</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">list</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="cm">/*add a list of numbers*/</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="cm">/*count++*/</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">rsum</span><span class="p">(</span><span class="n">list</span><span class="p">,</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="o">+</span><span class="n">list</span><span class="p">[</span><span class="n">n</span><span class="mi">-1</span><span class="p">];</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="cm">/*count++*/</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="cm">/*count++*/</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div>
+T(n)=2n+2</p>
+</div>
+</div>
+</div>
+</div>
+<h4 id="1211-for-loops">1.2.1.1 FOR loops<a class="headerlink" href="#1211-for-loops" title="Permanent link">&para;</a></h4>
+<p>The running time of a FOR loop is at most the running time of the statements inside the FOR loop(including tests) times the number of iterations.</p>
+<h4 id="1212-nested-for-loops">1.2.1.2 Nested(嵌套的) FOR loops<a class="headerlink" href="#1212-nested-for-loops" title="Permanent link">&para;</a></h4>
+<p>The total running time of a statement inside a group of nested loops is the running time of the statements multiplied by the product(乘积) of sizes of all the FOR loops.</p>
+<h4 id="1213-consecutive-statements">1.2.1.3 Consecutive statements<a class="headerlink" href="#1213-consecutive-statements" title="Permanent link">&para;</a></h4>
+<p>These just add (which means that the maximum is the one that counts).</p>
+<h4 id="1214-ifelse">1.2.1.4 IF/ELSE<a class="headerlink" href="#1214-ifelse" title="Permanent link">&para;</a></h4>
+<p>For the fragment if(Condition) S1; else S2; the running time is never more than the test plus the larger of the running tiem of S1 and S2.</p>
+<h3 id="122-asymptotic-notation-omegathetaoo">1.2.2 Asymptotic(渐近的) Notation(符号)  ( <span class="arithmatex">\(\Omega,\Theta,o,O\)</span> )<a class="headerlink" href="#122-asymptotic-notation-omegathetaoo" title="Permanent link">&para;</a></h3>
+<h4 id="1221-tnofn">1.2.2.1 T(N)=O(f(N))<a class="headerlink" href="#1221-tnofn" title="Permanent link">&para;</a></h4>
+<p>If there are positive constants <span class="arithmatex">\(c\)</span> and n such that T(N)&lt;=cf(N) for all N&gt;=n</p>
+<h4 id="1222-tnomegagn">1.2.2.2 T(N)=<span class="arithmatex">\(\Omega\)</span>(g(N))<a class="headerlink" href="#1222-tnomegagn" title="Permanent link">&para;</a></h4>
+<p>If there are positive constants <span class="arithmatex">\(c\)</span> and n such that T(N)&gt;=cg(N) for all N&gt;=n</p>
+<h4 id="1223-tnthetahn">1.2.2.3 T(N)=<span class="arithmatex">\(\Theta\)</span>(h(N))<a class="headerlink" href="#1223-tnthetahn" title="Permanent link">&para;</a></h4>
+<p>If and only if T(N)=O(h(N)) and T(N)=<span class="arithmatex">\(\Omega\)</span>(h(N))</p>
+<h4 id="1224-tnohn">1.2.2.4 T(N)=o(h(N))<a class="headerlink" href="#1224-tnohn" title="Permanent link">&para;</a></h4>
+<p>If T(N)=O(p(N)) and T(N)!=<span class="arithmatex">\(\Theta\)</span>(p(N))</p>
+<h3 id="123-rules-of-asymptotic-notation">1.2.3 Rules of Asymptotic Notation<a class="headerlink" href="#123-rules-of-asymptotic-notation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If <span class="arithmatex">\(T_1\)</span>(N)=O(f(N)) and <span class="arithmatex">\(T_2\)</span>(N)=O(g(N)), then<ul>
+<li><span class="arithmatex">\(T_1\)</span>(N)+<span class="arithmatex">\(T_2\)</span>(N)=max{O(f(N)),O(g(N))}</li>
+<li><span class="arithmatex">\(T_1\)</span>(N)*<span class="arithmatex">\(T_2\)</span>(N)=O(f(N)*g(N))</li>
+</ul>
+</li>
+<li>If T(N) is a polynomial of degree k, then T(N)=<span class="arithmatex">\(\Theta\)</span>(N^k)</li>
+<li><span class="arithmatex">\(log^kN\)</span>=O(N) for any constant k.</li>
+</ul>
+<h2 id="13-check-your-analysis">1.3 Check your analysis<a class="headerlink" href="#13-check-your-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="131-method-1">1.3.1 Method 1<a class="headerlink" href="#131-method-1" title="Permanent link">&para;</a></h3>
 <p>When <span class="arithmatex">\(T(N)=O(N)\)</span>, check if <span class="arithmatex">\(T(2N)/T(N)=2\)</span></p>
 <p>When <span class="arithmatex">\(T(N)=O(N^2)\)</span>, check if <span class="arithmatex">\(T(2N)/T(N)=4\)</span></p>
 <p>When <span class="arithmatex">\(T(N)=O(N^3)\)</span>, check if <span class="arithmatex">\(T(2N)/T(N)=8\)</span></p>
+<h3 id="132-method-2">1.3.2 Method 2<a class="headerlink" href="#132-method-2" title="Permanent link">&para;</a></h3>
+<p>When T(N)=O(f(N)), check if <span class="arithmatex">\(\displaystyle\lim_{N\rightarrow\infty}\frac{T(N)}{f(N)}\)</span>=constant.</p>
 
   
 
@@ -2397,7 +2733,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
     <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 15, 2023 17:30:52</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 20, 2023 08:47:35</span>
     
         <br />
         创建日期:
