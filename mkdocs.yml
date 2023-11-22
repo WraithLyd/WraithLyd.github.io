@@ -143,6 +143,7 @@ nav:
   - Tool:
     - tool/index.md
     - Mkdocs: tool/MkDocs.md
+    - Photograph: tool/photography.md
 #   - C Code Display: c.md
   - Collection:
     - collection/index.md
