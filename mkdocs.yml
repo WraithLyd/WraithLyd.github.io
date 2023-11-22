@@ -148,6 +148,9 @@ nav:
     - 2023 sentence: collection/sentence2023.md
     - 2023 paragraph: collection/paragraph2023.md
     - CCTV collection: collection/cctv.md
+    - verse: collection/verse.md
+    - poem: collection/poem.md
+    - elegance: collection/elegance.md
   - Life:
     - life/index.md
     - Music: life/music.md
