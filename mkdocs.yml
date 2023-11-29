@@ -51,6 +51,7 @@ markdown_extensions:
   - md_in_html
   - sane_lists
   - admonition
+  - footnotes
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.keys
@@ -140,6 +141,9 @@ nav:
     - IdeologyAndPoitics:
       - Military:
         - course/IdeologyAndPoitics/military1.md
+  - Book Notes:
+    - 社会认知论:
+      - read/社会认知论/index.md
   - Tool:
     - tool/index.md
     - Mkdocs: tool/MkDocs.md
@@ -161,3 +165,4 @@ nav:
     - plan: life/plan.md
   - Task:
     - task/index.md
+    - 2023.11.29: task/plan.md
