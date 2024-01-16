@@ -109,6 +109,7 @@ nav:
         - 树: course/Program/BasicDataStructure/Tree.md
         - 堆: course/Program/BasicDataStructure/Heap.md
         - 并查集: course/Program/BasicDataStructure/DisjointSet.md
+        - 图: course/Program/BasicDataStructure/Graph.md
       - Cpp: 
         - course/Program/cpp/index.md
         - book: course/Program/cpp/1.md
@@ -166,3 +167,4 @@ nav:
   - Task:
     - task/index.md
     - 2023.11.29: task/plan.md
+    - 欢乐大巡游: task/欢乐大巡游.md
