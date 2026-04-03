@@ -1,6 +1,4 @@
-@import url('https://cdn.tonycrane.cc/lxgw/lxgwscreen.css');
-
 :root {
-	--md-text-font: "LXGW WenKai Screen"; 
-	--md-code-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+	--md-text-font: "LXGW WenKai GB Screen"; 
+	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen"; 
 }
