@@ -1,4 +1,13 @@
 @font-face {
-    font-family:"JetBrains Mono Regular", "LXGW WenKai GB Screen";
-	src: "./JetBrainsMono.ttf" "truetype","./LXGWWenKaiGBScreen.ttf" "truetype";
+    font-family: "JetBrains Mono Regular";
+    src: url("./JetBrainsMono.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "LXGW WenKai GB Screen";
+    src: url("./LXGWWenKaiGBScreen.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }

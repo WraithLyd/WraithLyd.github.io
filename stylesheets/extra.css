@@ -1,4 +1,4 @@
 :root {
-	--md-text-font: "LXGW WenKai GB Screen"; 
-	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen"; 
+	--md-text-font: "LXGW WenKai GB Screen", sans-serif;
+	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen", monospace;
 }
