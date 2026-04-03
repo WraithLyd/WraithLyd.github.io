@@ -46,12 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
-    
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
-    
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
-    
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="../../../../stylesheets/extratest.css">
@@ -3062,18 +3056,15 @@
 <p>Let T( M, N ) be the maximum time required to process an intermixed sequence of M (M &gt;= N) finds and N - 1 unions.</p>
 <p><strong>Tarjan Lemma</strong> is below for some positive constants <span class="arithmatex">\(k_1\)</span> and <span class="arithmatex">\(k_2\)</span>.</p>
 <div class="arithmatex">\[k1M \alpha ( M, N )\leq T( M, N ) \leq k2M \alpha ( M, N )\]</div>
-<p>!!! hint Ackermann’s Function and  ( M, N )
-    <span class="arithmatex">\(A(1,j) = 2^j\ ( j\geq 1)\)</span></p>
-<div class="highlight"><pre><span></span><code>$A(i,1) = A(i-1,2)\ (i\geq 2)$
-
-$A(i,j) = A(i-1,A(i,j-1))\ (i\geq 2, j\geq 2)$
-
-For this, we define **inverse Ackermann function**:
-
-$\alpha(M,N) = \min\{i\geq1|A(i,[M/N])&gt;\log N\}$
-
-For example, $ \min\{i\geq1|A(i,[M/N])&gt;\log N\}\leq O(\log^*N)\leq 4$. Since $\log\log\log\log\log(2^{65536})=1$, $\log^*2^{65536}=5$.
-</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Ackermann’s Function and  ( M, N )</p>
+<p><span class="arithmatex">\(A(1,j) = 2^j\ ( j\geq 1)\)</span></p>
+<p><span class="arithmatex">\(A(i,1) = A(i-1,2)\ (i\geq 2)\)</span></p>
+<p><span class="arithmatex">\(A(i,j) = A(i-1,A(i,j-1))\ (i\geq 2, j\geq 2)\)</span></p>
+<p>For this, we define <strong>inverse Ackermann function</strong>:</p>
+<p><span class="arithmatex">\(\alpha(M,N) = \min\{i\geq1|A(i,[M/N])&gt;\log N\}\)</span></p>
+<p>For example, $ \min{i\geq1|A(i,[M/N])&gt;\log N}\leq O(\log^*N)\leq 4$. Since <span class="arithmatex">\(\log\log\log\log\log(2^{65536})=1\)</span>, <span class="arithmatex">\(\log^*2^{65536}=5\)</span>.</p>
+</div>
 
 
 <!-- taken from 
