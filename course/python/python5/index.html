@@ -3102,9 +3102,10 @@
 <h2 id="_2">创建函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">函数的基本格式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>定义函数的基本格式如下：
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>def linenums=&quot;1&quot; 函数名(参数, 参数, ...):
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    函数体代码
-</span></code></pre></div></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">def</span> <span class="nf">函数名</span><span class="p">(</span><span class="n">参数</span><span class="p">,</span> <span class="n">参数</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="n">函数体代码</span>
+</span></code></pre></div></td></tr></table></div></p>
 <details class="warning">
 <summary>TypeError报错</summary>
 <p>定义并创建函数后，在调用函数时，输入的参数过少或过多都会出现TypeError报错。</p>
@@ -3112,9 +3113,10 @@
 <h3 id="_4">参数类型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <h4 id="_5">可变参数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>当输入的参数的个数不确定时，可以使用可变参数。格式如下：
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>def linenums=&quot;1&quot; 函数名(参数, 参数1, ..., *可变参数):
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    函数体代码
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">def</span> <span class="nf">函数名</span><span class="p">(</span><span class="n">参数</span><span class="p">,</span> <span class="n">参数1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">可变参数</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="n">函数体代码</span>
+</span></code></pre></div></td></tr></table></div>
 使用可变参数的规则如下：</p>
 <ul>
 <li>可变参数后面不能再有其他一般参数。</li>
