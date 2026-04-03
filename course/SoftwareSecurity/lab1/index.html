@@ -2361,6 +2361,8 @@
       
         
       
+        
+      
     
     
       
@@ -2435,6 +2437,27 @@
   
   <span class="md-ellipsis">
     Photograph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/Qwen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qwen Code
   </span>
   
 
@@ -3135,8 +3158,8 @@
 <p class="admonition-title">Hint</p>
 <p><a href="https://www.cnblogs.com/fuxuqiannian/p/16913836.html#syscall">pwn之ret2syscall</a></p>
 </div>
-<div class="admonition done solution">
-<p class="admonition-title">Done</p>
+<div class="admonition done">
+<p class="admonition-title">Solution</p>
 <p>根据题目提示使用ret2libc攻击，但似乎我并没有利用到libc，应该是ret2syscall (?) </p>
 <p>同样，先在<code>lab-01/rop</code>地址下利用checksec检测一下<code>rop2</code>开启的程序保护。
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>checksec<span class="w"> </span>--file<span class="o">=</span>rop2
@@ -3193,8 +3216,8 @@
 <ul>
 <li>IP: <code>8.154.20.109</code>, PORT: <code>10102</code></li>
 </ul>
-<div class="admonition done solution">
-<p class="admonition-title">Done</p>
+<div class="admonition done">
+<p class="admonition-title">Solution</p>
 <p>本题开启的程序保护和上道题是一样的，就不多赘述了。检查一下<code>rop3.c</code>发现有两个<code>read</code>输入，但只有一个可以溢出，而且可以溢出的大小只有0x10。所以最初我考虑利用<code>func</code>中<code>read</code>函数0x8字节的溢出将程序导入到<code>gbuffer</code>中进行执行，但<code>rop3</code>开启了NX保护，无法在内存数据段执行指令。然后考虑能否像上道题一样，将gadget的地址放置在<code>gbuffer</code>中，然后从gbuffer中执行这些指令，但是与之不同的是栈不在<code>gbuffer</code>的地址附近。但只有0x8的溢出，如果想要利用<code>gbuffer</code>，那么<code>gbuffer</code>的地址肯定是要存入<code>func</code>中<code>read</code>函数的溢出部分的，那如果用这8字节填充<code>gbuffer</code>的地址，应该怎么进入<code>gbuffer</code>执行gadgets这又是一个问题。</p>
 <p>然后我查看了一些其他人的博客和笔记，突然意识到其实old rbp部分也是可以利用的，而我们想要去执行gbuffer中存储的gadgets，最简单的方法就是将栈设置在gbuffer上，利用<code>ret</code> 将栈顶地址pop给 <code>rip</code>。那么我们现在就是要想办法利用old rbp的8字节和溢出的8字节将栈顶指针转移到<code>gbuffer</code>上，这时想到了上课讲的<code>leave</code>。<code>leave</code>就是将rbp赋值给了rsp，然后弹出新的rbp。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>leave -&gt;
@@ -3248,11 +3271,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
     <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月21日 23:24:27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年4月3日 17:00:40</span>
     
         <br />
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月21日 23:24:27</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年4月3日 17:00:40</span>
     
 
     <!-- mkdocs-git-revision-date-plugin -->
