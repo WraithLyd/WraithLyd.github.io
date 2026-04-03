@@ -1094,6 +1094,8 @@
           
         
       
+        
+      
     
     
       
@@ -1109,7 +1111,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Program/Oop/" class="md-nav__link ">
+            <a href="../../Program/oop/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1118,6 +1120,11 @@
   
 
             </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
             
           </div>
         
@@ -1128,6 +1135,27 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Program/oop/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2990,24 +3018,26 @@
 <div class="admonition done">
 <p class="admonition-title">Solution</p>
 <p>根据题目中的提示，可以知道本题可以使用ret2shellcode进行攻击，首先在<code>lab-01/sbof</code>地址下利用checksec检测一下<code>sbof2</code>开启的程序保护。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>checksec
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>checksec<span class="w"> </span>--file<span class="o">=</span>sbof2
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>file<span class="w"> </span>sbof2
-</code></pre></div>
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>checksec
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>checksec<span class="w"> </span>--file<span class="o">=</span>sbof2
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>file<span class="w"> </span>sbof2
+</span></code></pre></div></td></tr></table></div>
 得到<code>sbof2</code>基本没有开启保护，并且为64位elf文件。通过查看<code>sbof2.c</code>可知存在可溢出的函数<code>gets</code>，所以可以直接写入shellcode进行栈溢出攻击。</p>
 <p>接下来需要确定shellcode的长度，shellcode应该覆盖gets所申请的栈大小加上存储old rbp的8位（32位程序为4位），在IDA中查看<code>sbof2</code>对应的汇编代码，得到
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lea     rax, [rbp+var_100]
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mov     rdi, rax
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>mov     eax, 0
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>call    _gets
-</code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lea linenums=&quot;1&quot;     rax, [rbp+var_100]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mov     rdi, rax
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>mov     eax, 0
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>call    _gets
+</span></code></pre></div>
 其中<code>var_100</code>的定义为 <code>var_100= byte ptr -100h</code> ，故len(shellcode)=0x100+0x8=0x108.</p>
 <p>将shellcode写入<code>buffer</code>后，还需要应该指令让<code>rip</code>跳到<code>buffer</code>的首地址对shellcode进行执行，所以我们接下来需要修改<code>rip</code>。</p>
 <p>在调用<code>gets</code>函数之后，程序通过<code>ret</code>返回调用程序的位置，<code>ret</code>相当于：<code>pop rip</code>. 我们只需要在栈顶输入shellcode的地址，便可以让程序执行gets函数结束后，执行shellcode中的指令，而shellcode的地址便是<code>buffer</code>的地址，<code>buffer</code>的地址在源程序中有输出，将源程序的字符串输出转化为数据得到<code>buffer_addr</code>。<code>payload=shellcode+buffer_addr</code>，并将payload作为<code>gets</code>的输入。</p>
 <p>在本地调试成功后，改变连接方式，进行远程连接，执行命令后得到flag。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>./flag.exe 3220105848
-</code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls linenums=&quot;1&quot;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>./flag.exe 3220105848
+</span></code></pre></div>
 <img alt="flag" src="../lab1-assets/flag1.png" /></p>
 </div>
 <h3 id="2-rop-return-oriented-programming-60-points">2 ROP: Return-Oriented-Programming (60 points)<a class="headerlink" href="#2-rop-return-oriented-programming-60-points" title="Permanent link">&para;</a></h3>
@@ -3037,9 +3067,10 @@
 <p class="admonition-title">Solution</p>
 <p>根据题目提示使用ret2libc攻击，但似乎我并没有利用到libc，应该是ret2syscall (?) </p>
 <p>同样，先在<code>lab-01/rop</code>地址下利用checksec检测一下<code>rop2</code>开启的程序保护。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>checksec<span class="w"> </span>--file<span class="o">=</span>rop2
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>file<span class="w"> </span>rop2
-</code></pre></div>
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>checksec<span class="w"> </span>--file<span class="o">=</span>rop2
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>file<span class="w"> </span>rop2
+</span></code></pre></div></td></tr></table></div>
 得到<code>rop2</code>开启了NX保护，并且为64位elf文件。NX保护限制了数据内存页的执行，所以无法像<code>sbof2</code>一样使用ret2shellcode攻击。通过查看<code>sbof2.c</code>可知<code>buffer</code>的长度是固定的64，但<code>read</code>函数写入的长度可以自行输入，因此可以通过<code>read</code>函数进行栈溢出，而且<code>system</code>函数和<code>/bin/sh</code>字符串均存在，所以选择ret2syscall攻击。</p>
 <p>在ret2syscall攻击中，我们选择<code>execve</code>（在父进程中fork一个子进程，在子进程中调用<code>exec</code>函数启动新的程序），寄存器赋值如下：</p>
 <table>
@@ -3064,26 +3095,34 @@
 <p>hint: 如果是32位，则寄存器依次位<code>eax</code> <code>ebx</code> <code>ecx</code> <code>edx</code> ，并且<code>execve</code>系统调用号为0x0b。</p>
 </blockquote>
 <p>这时，寄存器的赋值便需要在程序中寻找gadget，需要利用ROPgadget命令。依次执行下面两条命令。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ROPgadget<span class="w"> </span>--binary<span class="w"> </span>rop2<span class="w"> </span>--only<span class="w"> </span><span class="s2">&quot;pop|ret&quot;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ROPgadget<span class="w"> </span>--binary<span class="w"> </span>rop2<span class="w"> </span>--only<span class="w"> </span><span class="s2">&quot;syscall&quot;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>ROPgadget<span class="w"> </span>--binary<span class="w"> </span>rop2<span class="w"> </span>--string<span class="w"> </span><span class="s2">&quot;/bin/sh&quot;</span>
-</code></pre></div>
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>ROPgadget<span class="w"> </span>--binary<span class="w"> </span>rop2<span class="w"> </span>--only<span class="w"> </span><span class="s2">&quot;pop|ret&quot;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>ROPgadget<span class="w"> </span>--binary<span class="w"> </span>rop2<span class="w"> </span>--only<span class="w"> </span><span class="s2">&quot;syscall&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>ROPgadget<span class="w"> </span>--binary<span class="w"> </span>rop2<span class="w"> </span>--string<span class="w"> </span><span class="s2">&quot;/bin/sh&quot;</span>
+</span></code></pre></div></td></tr></table></div>
 得到的部分输入如下：
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>0x000000000040061f<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rax<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>0x0000000000400ea8<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rbx<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>0x0000000000400716<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rdi<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>0x000000000044bdc6<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rdx<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>0x0000000000410853<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rsi<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>0x000000000040134c<span class="w"> </span>:<span class="w"> </span>syscall
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>0x00000000006d50f0<span class="w"> </span>:<span class="w"> </span>/bin/sh
-</code></pre></div>
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>0x000000000040061f<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rax<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>0x0000000000400ea8<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rbx<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>0x0000000000400716<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rdi<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>0x000000000044bdc6<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rdx<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>0x0000000000410853<span class="w"> </span>:<span class="w"> </span>pop<span class="w"> </span>rsi<span class="w"> </span><span class="p">;</span><span class="w"> </span>ret
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>0x000000000040134c<span class="w"> </span>:<span class="w"> </span>syscall
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>0x00000000006d50f0<span class="w"> </span>:<span class="w"> </span>/bin/sh
+</span></code></pre></div></td></tr></table></div>
 这时将这些gadget的地址和对应寄存器的值放在gadget中要使得全部gadget执行，所以直接覆盖掉<code>read</code>所申请的栈大小（通过查看IDA得知为0x50）加上存储old rbp的8位，所以用'A'填充<code>buffer</code>和old rbp的内存。在此之后紧接需要执行的指令地址和数据。</p>
 <p>这样的payload使得原<code>read</code>函数的<code>ret</code>使得程序执行<code>pop_rax_ret</code>地址下的指令，而pop则将栈顶存放的应该给<code>rax</code>的值进行赋值。同时<code>pop_rax_ret</code>中的<code>ret</code>指令继续将rip赋值为下一个gadget的地址，直到系统调用<code>syscall</code>，弹出shell。</p>
 <p>所以在本次ret2syscall中，<code>payload='A'\*0x58+(p64(gadget_addr)+p64(value))\*n+p64(syscall_addr)</code>，其中<code>p64()</code>将int类型转换为了64位byte类型，从而可以直接通过<code>read</code>写入到内存中。</p>
 <p>在本地调试成功后，改变连接方式，进行远程连接，执行命令后得到flag。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ls
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>./flag.exe 3220105848
-</code></pre></div></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ls linenums=&quot;1&quot;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>./flag.exe 3220105848
+</span></code></pre></div></p>
 <p><img alt="flag" src="../lab1-assets/flag2.png" /></p>
 </div>
 <h4 id="-2">实践 - 2<a class="headerlink" href="#-2" title="Permanent link">&para;</a></h4>
@@ -3095,23 +3134,30 @@
 <p class="admonition-title">Solution</p>
 <p>本题开启的程序保护和上道题是一样的，就不多赘述了。检查一下<code>rop3.c</code>发现有两个<code>read</code>输入，但只有一个可以溢出，而且可以溢出的大小只有0x10。所以最初我考虑利用<code>func</code>中<code>read</code>函数0x8字节的溢出将程序导入到<code>gbuffer</code>中进行执行，但<code>rop3</code>开启了NX保护，无法在内存数据段执行指令。然后考虑能否像上道题一样，将gadget的地址放置在<code>gbuffer</code>中，然后从gbuffer中执行这些指令，但是与之不同的是栈不在<code>gbuffer</code>的地址附近。但只有0x8的溢出，如果想要利用<code>gbuffer</code>，那么<code>gbuffer</code>的地址肯定是要存入<code>func</code>中<code>read</code>函数的溢出部分的，那如果用这8字节填充<code>gbuffer</code>的地址，应该怎么进入<code>gbuffer</code>执行gadgets这又是一个问题。</p>
 <p>然后我查看了一些其他人的博客和笔记，突然意识到其实old rbp部分也是可以利用的，而我们想要去执行gbuffer中存储的gadgets，最简单的方法就是将栈设置在gbuffer上，利用<code>ret</code> 将栈顶地址pop给 <code>rip</code>。那么我们现在就是要想办法利用old rbp的8字节和溢出的8字节将栈顶指针转移到<code>gbuffer</code>上，这时想到了上课讲的<code>leave</code>。<code>leave</code>就是将rbp赋值给了rsp，然后弹出新的rbp。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>leave -&gt;
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    mov %rbp, %rsp
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    pop %rbp
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>ret -&gt;
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    pop rip
-</code></pre></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>leave -&gt;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>    mov %rbp, %rsp
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>    pop %rbp
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>ret -&gt;
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>    pop rip
+</span></code></pre></div></td></tr></table></div>
 <p>在<code>func</code>函数调用完成后，程序先执行了<code>leave ret</code>，将现有的rbp赋值给了rsp，那么随后弹出的新的rbp便是old rbp位置上存储的值，而<code>ret</code>弹出的便是溢出的8字节给了<code>rip</code>。那么要将栈迁移到<code>gbuffer</code>上，16字节中必有8字节要存储gbuffer的地址，而溢出的8字节按照这样的逻辑应该存储gadget的地址，所以我们将<code>gbuffer</code>的地址存储在old rbp的位置。这样一来，<code>func</code>函数调用完毕返回后，栈底指针<code>rbp</code>的值是<code>gbuffer</code>的地址，那么我们迁移栈，最重要的就是迁移栈顶指针<code>rsp</code>，要想将将<code>rbp</code>的值赋值给<code>rsp</code>，<code>leave</code>无疑是一个好的选择，为了方便后续gadget的继续运行，我选择了<code>leave ret</code>的gadget，<code>leave</code>将<code>rbp</code>的值赋给<code>rsp</code>后，栈顶指针就完成了迁移，但是这时候还需要pop出一个值给<code>rbp</code>，不过这时的栈顶是在<code>gbuffer</code>的首字节，所以在<code>gbuffer</code>的payload构造时，首字节需要留给新的栈底指针，由于<code>gbuffer</code>长度为0x100，方便起见便将new rbp设置为<code>addr(gbuffer)+0x100</code>。此时栈顶指针和栈底指针都转移到了<code>gbuffer</code>的地址下，那么按道理应该和上道题一样了。</p>
 <p>但这时我发现利用ROPgadget查看<code>rop3</code>并没有<code>syscall</code>函数和<code>"/bin/sh"</code>字符串，这时我想到了ret2libc，并在libc中找到了<code>syscall</code>函数和<code>"/bin/sh"</code>字符串。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ROPgadget --binary /lib/x86_64-linux-gnu/libc.so.6 --only &quot;syscall&quot;
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ROPgadget --binary /lib/x86_64-linux-gnu/libc.so.6 --string &quot;/bin/sh&quot;
-</code></pre></div></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ROPgadget linenums=&quot;1&quot; --binary /lib/x86_64-linux-gnu/libc.so.6 --only &quot;syscall&quot;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ROPgadget --binary /lib/x86_64-linux-gnu/libc.so.6 --string &quot;/bin/sh&quot;
+</span></code></pre></div></p>
 <p>然后通过原文件输出的system的地址计算出来libc.6的基地址，并计算出了<code>/bin/sh</code>的地址。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s2">&quot;/lib/x86_64-linux-gnu/libc.so.6&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">libc_base</span> <span class="o">=</span> <span class="n">system_addr</span> <span class="o">-</span> <span class="n">libc</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">bin_sh_offset</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">libc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">))</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">bin_sh_addr</span> <span class="o">=</span> <span class="n">libc_base</span> <span class="o">+</span> <span class="n">bin_sh_offset</span>
-</code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s2">&quot;/lib/x86_64-linux-gnu/libc.so.6&quot;</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">libc_base</span> <span class="o">=</span> <span class="n">system_addr</span> <span class="o">-</span> <span class="n">libc</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">bin_sh_offset</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">libc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">))</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">bin_sh_addr</span> <span class="o">=</span> <span class="n">libc_base</span> <span class="o">+</span> <span class="n">bin_sh_offset</span>
+</span></code></pre></div></td></tr></table></div>
 <p>我满怀欣喜的运行了攻击脚本，结果接到了Signal 11 SIGSEGV Error的报错。当时还不太清楚哪里出问题了，利用了pwntools的gdb调试，想看看计算出来的<code>/bin/sh</code>的地址到底指向的是什么，结果报错无法访问，这时突然意识到问题所在，通过<code>readelf -S rop3</code>得到libc中的<code>/bin/sh</code>在<code>rop3</code>中存储在不可访问的地址，好像只能另寻他法。这时候想到现在的栈中的所有数据都是通过<code>read</code>函数从<code>stdin</code>读取的，所以可否通过ret2text对<code>/bin/sh</code>进行访问。我将<code>/bin/sh</code>写入在<code>addr(gbuffer)+0x28</code>，也就是所有的gadget之后，最后成功弹出了shell，和前面一样将本地连接改为远程，得到了flag。
 <img alt="" src="../lab1-assets/flag3.png" /></p>
 </div>
@@ -3146,11 +3192,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
     <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年4月3日 19:44:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年4月4日 01:00:33</span>
     
         <br />
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年4月3日 19:44:25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年4月4日 01:00:33</span>
     
 
     <!-- mkdocs-git-revision-date-plugin -->

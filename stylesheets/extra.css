@@ -2,3 +2,113 @@
 	--md-text-font: "LXGW WenKai GB Screen", sans-serif;
 	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen", monospace;
 }
+
+/* 代码块自动换行 */
+.md-typeset code {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.md-typeset pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* ========== 代码块美化 ========== */
+
+/* 代码块容器样式 */
+.md-typeset div.highlight {
+	overflow-x: auto;
+	border-radius: 8px;
+	margin: 1.5em 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* 暗色模式适配 */
+[data-md-color-scheme="slate"] .md-typeset div.highlight {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 代码块内边距 */
+.md-typeset div.highlight pre {
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow-wrap: break-word;
+	padding: 16px;
+	border-radius: 8px;
+}
+
+/* 行内代码样式 */
+.md-typeset code:not(pre code) {
+	padding: 2px 6px;
+	border-radius: 4px;
+	border: 1px solid rgba(128, 128, 128, 0.3);
+	font-size: 0.85em;
+}
+
+/* 代码块顶部添加类似 macOS 的窗口装饰点 */
+.md-typeset div.highlight {
+	position: relative;
+}
+
+/* 代码块添加顶部间距 */
+.md-typeset div.highlight + div.highlight {
+	margin-top: 1em;
+}
+
+/* 代码块悬停效果 */
+.md-typeset div.highlight:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.3s ease;
+}
+
+/* 暗色模式悬停 */
+[data-md-color-scheme="slate"] .md-typeset div.highlight:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 代码块平滑过渡 */
+.md-typeset div.highlight {
+	transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========== 代码块行号美化 ========== */
+
+/* 强制行号 span 为行内元素,避免块级导致的额外高度 */
+.md-typeset .highlighttable .linenodiv span.normal {
+	display: inline !important;
+}
+
+/* 行号表格样式 */
+.md-typeset .highlighttable {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+/* 行号单元格 */
+.md-typeset .highlighttable .linenos {
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.04) 100%);
+	border-right: 2px solid rgba(0, 0, 0, 0.06);
+	user-select: none;
+}
+
+/* 暗色模式行号 */
+[data-md-color-scheme="slate"] .md-typeset .highlighttable .linenos {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%);
+	border-right: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+/* 行号悬停 */
+.md-typeset .highlighttable tr:hover .linenos {
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.06) 100%);
+	border-right-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlighttable tr:hover .linenos {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.06) 100%);
+	border-right-color: rgba(255, 255, 255, 0.1);
+}

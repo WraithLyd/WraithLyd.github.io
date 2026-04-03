@@ -1330,6 +1330,8 @@
           
         
       
+        
+      
     
     
       
@@ -1345,7 +1347,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Oop/" class="md-nav__link ">
+            <a href="../../oop/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1354,6 +1356,11 @@
   
 
             </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
             
           </div>
         
@@ -1364,6 +1371,27 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -3172,58 +3200,60 @@
 <h3 id="222-linked-list">2.2.2 Linked List<a class="headerlink" href="#222-linked-list" title="Permanent link">&para;</a></h3>
 <div class="admonition hint">
 <p class="admonition-title">implementation</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_node</span><span class="w"> </span><span class="o">*</span><span class="n">list_ptr</span><span class="p">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_node</span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">list_ptr</span><span class="w"> </span><span class="n">next</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">}</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list_ptr</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_node</span><span class="w"> </span><span class="o">*</span><span class="n">list_ptr</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_node</span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">list_ptr</span><span class="w"> </span><span class="n">next</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">}</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list_ptr</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
 </div>
 <h4 id="2221-onsertion">2.2.2.1 Onsertion<a class="headerlink" href="#2221-onsertion" title="Permanent link">&para;</a></h4>
 <p>Insertion takes O(1) time.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/*Insert temp after node in the list*/</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span>
-</code></pre></div></p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cm">/*Insert temp after node in the list*/</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div></p>
 <h4 id="2222-deletion">2.2.2.2 Deletion<a class="headerlink" href="#2222-deletion" title="Permanent link">&para;</a></h4>
 <p>Deletion takes O(1) time.
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cm">/*Delete node*/</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">pre</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">free</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div></p>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cm">/*Delete node*/</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">pre</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">free</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div></p>
 <h4 id="2223-find">2.2.2.3 Find<a class="headerlink" href="#2223-find" title="Permanent link">&para;</a></h4>
 <p>Find takes O(N) time.</p>
 <h3 id="223-doubly-linked-lists">2.2.3 Doubly Linked Lists<a class="headerlink" href="#223-doubly-linked-lists" title="Permanent link">&para;</a></h3>
 <div class="admonition hint">
 <p class="admonition-title">implementation</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
 <span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="n">node_ptr</span><span class="p">;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="n">node_ptr</span><span class="w"> </span><span class="n">llink</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="n">element</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">node_ptr</span><span class="w"> </span><span class="n">rlink</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">};</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="n">node_ptr</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="n">node_ptr</span><span class="w"> </span><span class="n">llink</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="n">element</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">node_ptr</span><span class="w"> </span><span class="n">rlink</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div>
 </div>
 <h3 id="224-circular-lists">2.2.4 Circular Lists<a class="headerlink" href="#224-circular-lists" title="Permanent link">&para;</a></h3>
 <p>The data structure is the same as Linked List. But circular list links head and tail.
 A empty list is:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">llink</span><span class="o">=</span><span class="n">node</span><span class="p">;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">rlink</span><span class="o">=</span><span class="n">node</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">llink</span><span class="o">=</span><span class="n">node</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">rlink</span><span class="o">=</span><span class="n">node</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div></p>
 <h3 id="225-cursor-implementation-linked-list">2.2.5 Cursor Implementation Linked List<a class="headerlink" href="#225-cursor-implementation-linked-list" title="Permanent link">&para;</a></h3>
 <p>The data are stored in a collection of structurees. Each structure contains data and a pointer to the next structure. A <code>int</code> type cursor can point the data you want, instead of the list pointer.</p>
 <p>A new structure can be obtained from the system's global memory by a call to <code>malloc</code> and released by a call to <code>free</code>.</p>
@@ -3246,33 +3276,33 @@ A empty list is:
 </div>
 <h3 id="231-linked-list-implementation-with-a-header-node">2.3.1 Linked List Implementation (with a header node)<a class="headerlink" href="#231-linked-list-implementation-with-a-header-node" title="Permanent link">&para;</a></h3>
 <h4 id="2311-push">2.3.1.1 Push<a class="headerlink" href="#2311-push" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">TmpCell</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TmpCell</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">TmpCell</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TmpCell</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
 <h4 id="2312-top">2.3.1.2 Top<a class="headerlink" href="#2312-top" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="o">-&gt;</span><span class="n">Element</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="o">-&gt;</span><span class="n">Element</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
 <h4 id="2313-pop">2.3.1.3 Pop<a class="headerlink" href="#2313-pop" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">FirstCell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">free</span><span class="p">(</span><span class="n">FirstCell</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">FirstCell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">Next</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">free</span><span class="p">(</span><span class="n">FirstCell</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
 <h3 id="232-array-implementation">2.3.2 Array Implementation<a class="headerlink" href="#232-array-implementation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
 <span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">StackRecord</span><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Capacity</span><span class="p">;</span><span class="w">   </span><span class="cm">/*size of stack*/</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">TopOfStack</span><span class="p">;</span><span class="w"> </span><span class="cm">/*the top pointer*/</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="cm">/*++ for push, --for pop, -1 for empty stack*/</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="n">Array</span><span class="p">;</span><span class="cm">/*array for stack elements*/</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">StackRecord</span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Capacity</span><span class="p">;</span><span class="w">   </span><span class="cm">/*size of stack*/</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">TopOfStack</span><span class="p">;</span><span class="w"> </span><span class="cm">/*the top pointer*/</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="cm">/*++ for push, --for pop, -1 for empty stack*/</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="n">Array</span><span class="p">;</span><span class="cm">/*array for stack elements*/</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="24-the-queue-adt">2.4 The Queue ADT<a class="headerlink" href="#24-the-queue-adt" title="Permanent link">&para;</a></h2>
 <p>A queue is a First-In-First-Out (FIFO) list, that is, an ordered list in which insertions take place at one end and deletions take place at the opposite end.</p>
 <div class="admonition note">
@@ -3290,20 +3320,20 @@ A empty list is:
 </ul>
 </div>
 <h3 id="241-array-implementation">2.4.1 Array Implementation<a class="headerlink" href="#241-array-implementation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
 <span class="normal"><a href="#__codelineno-9-5">5</a></span>
 <span class="normal"><a href="#__codelineno-9-6">6</a></span>
-<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">QueueRecord</span><span class="p">{</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Capacity</span><span class="p">;</span><span class="w">   </span><span class="cm">/*max size of queue*/</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Front</span><span class="p">;</span><span class="w">      </span><span class="cm">/*the front pointer*/</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Rear</span><span class="p">;</span><span class="w">           </span><span class="cm">/*the rear pointer*/</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Size</span><span class="p">;</span><span class="w">           </span><span class="cm">/*Optional - the current size of queue*/</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="n">Array</span><span class="p">;</span><span class="w"> </span><span class="cm">/*array for queue elements*/</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">QueueRecord</span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Capacity</span><span class="p">;</span><span class="w">   </span><span class="cm">/*max size of queue*/</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Front</span><span class="p">;</span><span class="w">      </span><span class="cm">/*the front pointer*/</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Rear</span><span class="p">;</span><span class="w">           </span><span class="cm">/*the rear pointer*/</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Size</span><span class="p">;</span><span class="w">           </span><span class="cm">/*Optional - the current size of queue*/</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="o">*</span><span class="n">Array</span><span class="p">;</span><span class="w"> </span><span class="cm">/*array for queue elements*/</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 
 
 <!-- taken from 

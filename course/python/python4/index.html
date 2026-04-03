@@ -1222,6 +1222,8 @@
           
         
       
+        
+      
     
     
       
@@ -1237,7 +1239,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Program/Oop/" class="md-nav__link ">
+            <a href="../../Program/oop/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1246,6 +1248,11 @@
   
 
             </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
             
           </div>
         
@@ -1256,6 +1263,27 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Program/oop/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2927,45 +2955,44 @@
 <p>如果需要调用列表中的数据，就需要用到<strong>索引</strong>，列表索引类似于字符串索引，第一个数据的索引为0，第二个数据的索引为1，以此类推。列表索引的性质也和字符串索引类似，都可以逆向访问，即list[-1]代表列表最后一个数据，list[-2]代表列表倒数第二个数据，以此类推。</p>
 <div class="admonition tip">
 <p class="admonition-title">基本结构</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="n">element1</span><span class="p">,</span> <span class="n">element2</span><span class="p">,</span> <span class="n">element3</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>      <span class="c1"># 输出第（index+1）个数据</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="n">element1</span><span class="p">,</span> <span class="n">element2</span><span class="p">,</span> <span class="n">element3</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>      <span class="c1"># 输出第（index+1）个数据</span>
+</span></code></pre></div></td></tr></table></div>
 </div>
 <h3 id="_4">更改列表元素<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>列表索引和字符串不同的一点就在于列表可以利用索引更改列表中元素。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>[&#39;change&#39;,&#39;your&#39;,&#39;icon&#39;]
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[&#39;change&#39;,&#39;your&#39;,&#39;icon&#39;]
+</span></code></pre></div>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;print&quot;</span><span class="p">,</span><span class="s2">&quot;your&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nb">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;change&quot;</span>      <span class="c1"># 更改list中第一个元素</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;icon&quot;</span>       <span class="c1"># 更改list中第三个元素</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;print&quot;</span><span class="p">,</span><span class="s2">&quot;your&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nb">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;change&quot;</span>      <span class="c1"># 更改list中第一个元素</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;icon&quot;</span>       <span class="c1"># 更改list中第三个元素</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 <h3 id="_5">多重列表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>列表中可以嵌套列表，将其变为多重列表。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>list[1] = [4,5,6]
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>list[1][1] = 5
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>list[1] = [4,5,6]
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>list[1][1] = 5
+</span></code></pre></div>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1"># 双重列表的元素是普通列表</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list[1] =&quot;</span><span class="p">,</span><span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># 嵌套使用索引可以得到具体的元素</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list[1][1] =&quot;</span><span class="p">,</span><span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1"># 双重列表的元素是普通列表</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list[1] =&quot;</span><span class="p">,</span><span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># 嵌套使用索引可以得到具体的元素</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list[1][1] =&quot;</span><span class="p">,</span><span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></div></td></tr></table></div>
 <details class="warning">
 <summary>Index Error 报错</summary>
 <p>当试图访问超过列表的索引来访问元素时，会发生Index Error报错。</p>
@@ -2979,18 +3006,14 @@
 </ul>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>#基本运算符
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>list1+list2= [1, 2, 4, 5]
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>list1*2= [1, 2, 1, 2]
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>#函数
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>len(list1) = 2
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>#基本运算符
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>list1+list2= [1, 2, 4, 5]
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>list1*2= [1, 2, 1, 2]
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>#函数
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>len(list1) = 2
+</span></code></pre></div>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
@@ -2998,45 +3021,40 @@
 <span class="normal"><a href="#__codelineno-6-6">6</a></span>
 <span class="normal"><a href="#__codelineno-6-7">7</a></span>
 <span class="normal"><a href="#__codelineno-6-8">8</a></span>
-<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">#基本运算符</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#基本运算符&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list1+list2=&quot;</span><span class="p">,</span><span class="n">list1</span><span class="o">+</span><span class="n">list2</span><span class="p">)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list1*2=&quot;</span><span class="p">,</span><span class="n">list1</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1">#函数</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#函数&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;len(list1) =&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">))</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">#基本运算符</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#基本运算符&quot;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list1+list2=&quot;</span><span class="p">,</span><span class="n">list1</span><span class="o">+</span><span class="n">list2</span><span class="p">)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list1*2=&quot;</span><span class="p">,</span><span class="n">list1</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1">#函数</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#函数&quot;</span><span class="p">)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;len(list1) =&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
 <h3 id="_7">列表当中添加元素<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>在已定义列表中添加元素一般用<strong>append( )</strong>函数或<strong>insert( )</strong>函数。</p>
 <ul>
 <li><strong>append( )</strong>函数：只能在列表最后端添加元素。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>列表名.append(元素)
-</code></pre></div></li>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>列表名.append(元素)
+</span></code></pre></div></li>
 <li><strong>insert( )</strong>函数：可以在列表指定位置添加元素。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>列表名.insert(位置，元素)
-</code></pre></div></li>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>列表名.insert(位置，元素)
+</span></code></pre></div></li>
 <li><strong>extend()</strong>函数：可以在列表最后端添加多个元素。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>列表名.extend(元素组成的列表)
-</code></pre></div></li>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>列表名.extend(元素组成的列表)
+</span></code></pre></div></li>
 </ul>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span>
-<span class="normal"><a href="#__codelineno-10-4">4</a></span>
-<span class="normal"><a href="#__codelineno-10-5">5</a></span>
-<span class="normal"><a href="#__codelineno-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>#在列表的最后端添加元素
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>[1, 2, 3, 4, 5]
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a>#在列表的指定位置添加元素
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>[0, 1, 2, 3, 4, 5]
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a>#在列表的最后端添加多个元素
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a>[0, 1, 2, 3, 4, 5, 6, 7]
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>#在列表的最后端添加元素
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>[1, 2, 3, 4, 5]
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>#在列表的指定位置添加元素
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>[0, 1, 2, 3, 4, 5]
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>#在列表的最后端添加多个元素
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>[0, 1, 2, 3, 4, 5, 6, 7]
+</span></code></pre></div>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
@@ -3047,37 +3065,37 @@
 <span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-11-10">10</a></span>
 <span class="normal"><a href="#__codelineno-11-11">11</a></span>
-<span class="normal"><a href="#__codelineno-11-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#在列表的最后端添加元素&quot;</span><span class="p">)</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#在列表的指定位置添加元素&quot;</span><span class="p">)</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nb">list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#在列表的最后端添加多个元素&quot;</span><span class="p">)</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="n">listn</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="nb">list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">listn</span><span class="p">)</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#在列表的最后端添加元素&quot;</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#在列表的指定位置添加元素&quot;</span><span class="p">)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nb">list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#在列表的最后端添加多个元素&quot;</span><span class="p">)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="n">listn</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="nb">list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">listn</span><span class="p">)</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 <details class="tip">
 <summary>列表连接运算符和插入元素之间的区别</summary>
 <p><strong>列表连接运算符</strong>和<strong>extend( )函数</strong>的功能十分相似，但是在得到运算结果时有所不同。</p>
 <ul>
 <li><strong>列表连接运算符</strong>在连接过程中不会对原列表变量的值做出改变</li>
 <li><strong>extend( )函数</strong>会将连接后的新列表赋值给原列表变量
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
 <span class="normal"><a href="#__codelineno-12-5">5</a></span>
-<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># output -&gt; [1, 2, 3, 4]</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">a</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># output -&gt; [1, 2, 3, 4, 5, 6, 7, 8]</span>
-</code></pre></div></td></tr></table></div></li>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># output -&gt; [1, 2, 3, 4]</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">a</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># output -&gt; [1, 2, 3, 4, 5, 6, 7, 8]</span>
+</span></code></pre></div></td></tr></table></div></li>
 </ul>
 </details>
 <h3 id="_8">从列表中删除元素<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
@@ -3085,24 +3103,21 @@
 <p>根据元素的位置信息删除元素一般引用<strong>del关键字</strong>或<strong>pop( )函数</strong>。</p>
 <ul>
 <li><strong>del关键字</strong>代码执行时可删除索引值所在位置的元素。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>del 列表名称[索引]
-</code></pre></div></li>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>del linenums=&quot;1&quot; 列表名称[索引]
+</span></code></pre></div></li>
 <li><strong>pop( )函数</strong>也删除索引值指定位置中的元素，如果未输入参数，则删除最后一个元素。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>列表名.pop(索引)
-</code></pre></div></li>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>列表名.pop(索引)
+</span></code></pre></div></li>
 </ul>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span>
-<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a># del删除第2个元素
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a>[1, 3, 4, 5]
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a># pop删除最后一个元素
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a>[1, 3, 4]
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a># del删除第2个元素
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>[1, 3, 4, 5]
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a># pop删除最后一个元素
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>[1, 3, 4]
+</span></code></pre></div>
 </div>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<p><div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
 <span class="normal"><a href="#__codelineno-16-2">2</a></span>
 <span class="normal"><a href="#__codelineno-16-3">3</a></span>
 <span class="normal"><a href="#__codelineno-16-4">4</a></span>
@@ -3110,23 +3125,23 @@
 <span class="normal"><a href="#__codelineno-16-6">6</a></span>
 <span class="normal"><a href="#__codelineno-16-7">7</a></span>
 <span class="normal"><a href="#__codelineno-16-8">8</a></span>
-<span class="normal"><a href="#__codelineno-16-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="c1"># del删除第2个元素</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# del删除第2个元素&quot;</span><span class="p">)</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="k">del</span> <span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="c1"># pop删除最后一个元素</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# pop删除最后一个元素&quot;</span><span class="p">)</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="nb">list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-16-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="c1"># del删除第2个元素</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# del删除第2个元素&quot;</span><span class="p">)</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="k">del</span> <span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="c1"># pop删除最后一个元素</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# pop删除最后一个元素&quot;</span><span class="p">)</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="nb">list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 两者不同的是<strong>pop( )函数</strong>作为<strong>print( )函数</strong>的参数可以输出删除的这个元素，如：
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
 <span class="normal"><a href="#__codelineno-17-2">2</a></span>
-<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>         <span class="c1"># output -&gt; 5</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>                 <span class="c1"># output -&gt; [1, 2, 3, 4]</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>         <span class="c1"># output -&gt; 5</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>                 <span class="c1"># output -&gt; [1, 2, 3, 4]</span>
+</span></code></pre></div></td></tr></table></div>
 当使用<strong>del关键字</strong>时，还可以删除列表中指定范围的元素，当del[ ]中的指定范围为[a:b] (a</p>
 
 
