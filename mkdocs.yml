@@ -22,10 +22,10 @@ theme:
         icon: material/weather-night 
         name: Switch to light mode
   language: 'zh'
-  font: false
-#    text: LXGW WenKai GB Screen 
-#    code: JetBrains Mono Regular, LXGW WenKai GB Screen
-  logo: assets/images/clipboard.svg # logo.jpg
+  # font: 
+  #   text: LXGW WenKai Screen 
+  #   code: JetBrains Mono Regular, LXGW WenKai Screen
+  logo: assets/images/logo.jpg #clipboard.svg
   favicon: assets/images/clipboard2.svg
   features:
     - navigation.indexes
@@ -37,10 +37,11 @@ theme:
     - navigation.indexes
     - navigation.top
 extra_css:
+#   - https://cdn.tonycrane.cc/utils/katex.min.css
+#   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+#   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - stylesheets/extra.css
-  - https://cdn.tonycrane.cc/utils/katex.min.css
-  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - stylesheets/extratest.css
 markdown_extensions:
   - toc:
       permalink: true
@@ -72,6 +73,16 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+      pygments_style: colorful
+      auto_title: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.arithmatex:
       generic: true
 
@@ -114,7 +125,8 @@ nav:
         - course/Program/cpp/index.md
         - book: course/Program/cpp/1.md
       - Object-oriented Programming: 
-        - course/Program/Oop/index.md
+        - course/Program/oop/index.md
+        - string: course/Program/oop/string.md
     - ComputerSystem:
       - System1:
         - 单周期CPU复习: course/ComputerSystem/ComputerSystem1/preview.md
@@ -142,6 +154,8 @@ nav:
     - IdeologyAndPoitics:
       - Military:
         - course/IdeologyAndPoitics/military1.md
+    - SoftwareSecurity:
+      - course/SoftwareSecurity/lab1.md
   - Book Notes:
     - 社会认知论:
       - read/社会认知论/index.md
@@ -149,6 +163,7 @@ nav:
     - tool/index.md
     - Mkdocs: tool/MkDocs.md
     - Photograph: tool/photography.md
+    - Qwen Code: tool/Qwen.md
 #   - C Code Display: c.md
   - Collection:
     - collection/index.md
@@ -164,7 +179,3 @@ nav:
     - life/index.md
     - Music: life/music.md
     - plan: life/plan.md
-  - Task:
-    - task/index.md
-    - 2023.11.29: task/plan.md
-    - 欢乐大巡游: task/欢乐大巡游.md

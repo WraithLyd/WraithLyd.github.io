@@ -1,4 +1,4 @@
-### How to design CPU?
+﻿### How to design CPU?
 + 理解ISA eg. RISC-V
     + CPU设计需要知道指令执行的规则是什么
     + 指令集(IS)：CPU能够执行的所有操作指令的集合

@@ -1,4 +1,4 @@
-# 1. Algorithm Analysis
+﻿# 1. Algorithm Analysis
 ## 1.1 Algorithm Definition
 A algorithm must satisfy:
 
@@ -27,7 +27,7 @@ A algorithm must satisfy:
 Typically the following two functions are analyzed:
 $T_{avg}(N)$&$T_{wrost}(N)$:the average and worst case time complexities, a function of input size N.
 !!! example "Matrix Addition"
-	```c
+	```c linenums="1"
 	void add(int a[][MAX_SIZE], int b[][MAX_SIZE], int c[][MAX_SIZE], int rows, int cols)
 	{
 		int i,j;
@@ -36,11 +36,11 @@ $T_{avg}(N)$&$T_{wrost}(N)$:the average and worst case time complexities, a func
 				c[i][j]=a[i][j]+b[i][j]; /*rows*cols*/
 	}
 	```
-	T(rows, cols)=2rows·cols+2**rows**+1(**rows** can be selected in {rows, cols})
+	T linenums="1"(rows, cols)=2rows·cols+2**rows**+1(**rows** can be selected in {rows, cols})
 
 === "Iterative function for summing a list of numbers"
 	!!! example "Iterative function"
-		```c linenums='1'
+		```c linenums="1"
 		float sum(float list[], int n)
 		{
 			/*add a list of numbers*/
@@ -55,7 +55,7 @@ $T_{avg}(N)$&$T_{wrost}(N)$:the average and worst case time complexities, a func
 		T(n)=2n+3
 === "Recursive function for summing a list of numbers"
 	!!! example "Recursive function"
-		```c
+		```c linenums="1"
 		float rsum(float list[], int n)
 		{
 			/*add a list of numbers*/

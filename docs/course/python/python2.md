@@ -1,4 +1,4 @@
-# 数据类型
+﻿# 数据类型
 !!! note "数据类型"
 	Python中最基本的数据类型有：
 
@@ -37,7 +37,7 @@ print("the \"wolves\"")
 	# python
 	```
 	+ **制表符**：`\t`
-	```python linenums='1'
+	```python linenums="1"
 	print("name\tage\taddress")
 	print("Tom\t8\tWhite House")
 	print("Jerry\t8\tWhite House")
@@ -96,14 +96,14 @@ print("""壮岁旌旗拥万夫
 **字符串连接运算符 "+"**
 
 字符串连接运算符执行结果是将两个字符串连接起来创建新的字符串。
-```python linenums='1'
+```python linenums="1"
 print('Hello'+' '+'world')
 # Hello world
 ```
 **字符串重复运算符 "*"**
 
 字符串重复运算符连接字符串和数字，可以重复该字符串。
-```python linenums='1'
+```python linenums="1"
 print('Wraith'*3)
 # WraithWraithWraith
 print(3*'Wraith')
@@ -111,7 +111,7 @@ print(3*'Wraith')
 ```
 !!! Info "字符串运算符优先级"
 	和数字运算优先级类似，字符串重复运算符(`*`)优先级高于字符串连接运算符(`+`)。
-	```python linenums='1'
+	```python linenums="1"
 	print('o'+'h'*3)
 	# ohhh
 	```
@@ -121,7 +121,7 @@ print(3*'Wraith')
 选取该字符串中的单个字符的运算符。在`[ ]`中指定要选取的位置，该数字称为索引。python中的索引和C语言一样，是从0开始的。而索引为负数时可以进行逆向计数。
 === "正数"
 	!!! example inline end "执行结果"	
-		```linenums='1'
+		```python
 		W
 		r
 		a
@@ -129,7 +129,7 @@ print(3*'Wraith')
 		t
 		h
 		```
-	```python linenums='1'
+	```python linenums="1"
 	str='Wraith'
 	print(str[0])
 	print(str[1])
@@ -140,7 +140,7 @@ print(3*'Wraith')
 	```
 === "负数"
 	!!! example inline end "执行结果"
-		```linenums='1'
+		```python
 		h
 		t
 		i
@@ -148,7 +148,7 @@ print(3*'Wraith')
 		r
 		W
 		```
-	```python linenums='1'
+	```python linenums="1"
 	str='Wraith'
 	print(str[-1])
 	print(str[-2])
@@ -162,14 +162,14 @@ print(3*'Wraith')
 
 字符串切片运算符是用来在某个字符串中选取特定范围的运算符，冒号隔开两个数字，代表上下界，其中左边的数字较小，右边数字较大。选取的字符串就是原字符串中从前面数字索引开始到后面数字索引的一段子字符串，不过前面数字索引的字符包括在内，而后面数字索引的字符不包括在内。
 
-```python linenums='1'
+```python linenums="1"
 print('Wraith'[1:4])
 # rai
 print('Wraith'[4:6])
 # th
 ```
 有时也省略方括号中两个数字其中一个。如果省略前面的数字，则表示此时自动指定最前面的位置（第一个字符）；如果省略后面的数字，则表示此时自动指定最后面的位置（最后一个字符）。
-```python linenums='1'
+```python linenums="1"
 print('Wraith'[1:])
 # raith
 print('Wraith'[:3])
@@ -179,7 +179,7 @@ print('Wraith'[:3])
 !!! info inline end "warning"
 	和C语言不同的是，python是没有字符串结束符的，不过C语言的strlen( )函数并不统计字符串结束符，所以和python的len( )的值相等。
 使用 **len( )** 函数可以求得字符串的长度。
-```python linenums='1'
+```python linenums="1"
 print("The length of string is:")
 print(len("Hello world!"))
 # The length of string is:
@@ -188,7 +188,7 @@ print(len("Hello world!"))
 ## 数字
 ### 数字的种类
 数字分为**整型**和**浮点型**，python中有小数点的称为浮点数(float)，没有小数点的称为整数(int)。
-```python linenums='1'
+```python linenums="1"
 print(type(0))
 # <class 'int'>
 print(type(0.0))
@@ -199,29 +199,29 @@ print(type(0.0))
 **四则运算符 "+" "-" "*" "/"**
 
 === "加"
-	```python linenums='1'
+	```python linenums="1"
 	print("1 + 2 =",1+2)
 	# 1 + 2 = 3
 	```
 === "减"
-	```shell linenums='1'
+	```shell linenums="1"
 	print("1 - 2 =",1-2)
 	# 1 - 2 = -1
 	```
 === "乘"
-	```python linenums='1'
+	```python linenums="1"
 	print("1 * 2 =",1*2)
 	# 1 * 2 = 2
 	```
 === "除"
-	```shell linenums='1'
+	```shell linenums="1"
 	print("1 / 2 =",1/2)
 	# 1 / 2 = 0.5
 	```
 **整除运算符 "//"**
 
 整除运算符是将数字进行除法运算后向下取整，如果针对正数来说即为直接取整数部分。
-```python linenums='1'
+```python linenums="1"
 print("3 // 2 =",3//2)
 # 3 // 2 = 1
 print("-3 // 2 =",-3//2)
@@ -230,14 +230,14 @@ print("-3 // 2 =",-3//2)
 **求余运算符 "%"**
 
 求余运算符即取两数做整数除法运算得到的余数。
-```python linenums='1'
+```python linenums="1"
 print("5 % 3 =",5%3)
 # 5 % 3 = 2
 ```
 **乘方运算符 "\*\*"**
 
 乘方运算符用于求第一个数的第二个数次方。
-```python linenums='1'
+```python linenums="1"
 print("2 ** 3 =",2**3)
 # 2 ** 3 = 8
 ```
@@ -247,13 +247,13 @@ print("2 ** 3 =",2**3)
 ### 变量的定义和引用
 在Python当中，变量使用的一般过程为：定义变量 → 为变量赋值 → 引用变量
 !!! Example inline end "执行结果"
-	```linenums='1'
+	```python
 	圆周率 = 3.1415926
 	半径 = 10
 	圆的周长 = 62.831852
 	圆的面积 = 314.15926
 	```
-```python linenums='1'
+```python linenums="1"
 # 定义变量并赋初值
 pi = 3.1415926
 r  = 10
@@ -267,13 +267,13 @@ print("圆的面积 =",pi*r**2)
 不过变量在Python中和C,Java等语言有所不同，Python中变量并没有固定的类型，而不像其他语言使用变量前必须定义便令的数据类型。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	string
 	True
 	0
 	```
 
-```python linenums='1'
+```python linenums="1"
 a = 'string'
 print(a)	# string
 a = True
@@ -345,13 +345,13 @@ print(a)	# int
 
 === "应用于数字的复合运算符"
 	!!! Example inline end "执行结果"
-		```linenums='1'
+		```python
 		110
 		105
 		210
 		42.0
 		```
-	```python linenums='1'
+	```python linenums="1"
 	num = 100
 	num += 10
 	print(num)
@@ -364,11 +364,11 @@ print(a)	# int
 	```
 === "应用于字符串的复合运算符"
 	!!! Example inline end "执行结果"
-		```linenums='1'
+		```python
 		ohh
 		ohhohh
 		```
-	```python linenums='1'
+	```python linenums="1"
 	str = 'oh'
 	str += 'h'
 	str += 'h'
@@ -380,12 +380,12 @@ print(a)	# int
 ### 输入函数 "input( )"
 
 输入在input函数括号内的内容被称为**提示字符串**，如下述代码运行时，会弹出“请输入内容：”，程序在未退出的状态下等待，直到user使用enter弹入输入。这种程序在运行的过程中的暂停叫做**阻塞**。
-```python linenums='1'
+```python linenums="1"
 input("请输入内容：")	
 ```
 input函数输出的值称为input函数的**返回值**，如果需要使用这个返回值，那就可以用input函数直接对其他变量进行赋值。
 
-```python linenums='1'
+```python linenums="1"
 string = input("请输入内容：")
 # 请输入内容：Hello
 print(string)
@@ -394,7 +394,7 @@ print(string)
 !!! tip "input( )函数输入的数据类型"
 	无论输入的是什么内容，input( )函数的返回值都是**字符串**。
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	string:abc
 	abc : <class 'str'>
 	number:123
@@ -403,7 +403,7 @@ print(string)
 	True : <class 'str'>
 	```
 
-```python linenums='1'
+```python linenums="1"
 # input( )
 str = input("string:")		# 输入str为abc
 print(str,":",type(str))
@@ -425,14 +425,14 @@ print(bool,":",type(bool))
 	+ int( )和float( )都无法转换非纯数字的输入。
 	+ int( )无法转换带有小数点的纯数字输入。
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	input:123
 	int(): 123
 	int(): <class 'int'>
 	float(): 123.0
 	float(): <class 'float'>
 	```
-```python linenums='1'
+```python linenums="1"
 str = input("input:")
 # int( )
 int = int(str)
@@ -446,11 +446,11 @@ print("float():",type(float))
 #### 数字转为字符串
 数字利用str( )函数可以转为字符串。
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	123
 	<class 'str'>
 	```
-```python linenums='1'
+```python linenums="1"
 # str( )
 num = 123
 str = str(num)
@@ -468,11 +468,11 @@ print(type(str))
 	反之，"{ }"只替换相对于的参数的字符串形式，多余的参数不予处理。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	第1003次尝试
 	string 2 is True
 	```
-```python linenums='1'
+```python linenums="1"
 # format( )
 str1 = "第{}次尝试".format(1003)
 print(str1)
@@ -490,13 +490,13 @@ format( )函数在处理数字时可以通过"{ }"中添加字符来对数字转
 + { }中加入`:g`，舍去小数后面的所有0，如果小数部分为0则直接输出int型。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	123
 	21.712000
 	24.5
 	12
 	```
-```python linenums='1'
+```python linenums="1"
 str1 = "{:d}".format(123)
 print(str1)
 str2 = "{:f}".format(21.712)
@@ -511,7 +511,7 @@ print(str4)
 如果在`{:d}`中d的前面加上一个数字，那么就表示这个数字占多长的空间，用空格填充前面的空白；如果数字前有0，则用0填充。当应用空格填充时，符号的位置就需要去根据`:`后紧接着是否是`=`来决定，如果没有等号，那么符号紧跟在数字之前；如果有等号，那么符号写在空格之前。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	  123
 	       123
 	00123
@@ -519,7 +519,7 @@ print(str4)
 	      -123
     -      123
 	```
-```python linenums='1'
+```python linenums="1"
 str1 = "{:5d}".format(123)
 print(str1)
 str2 = "{:10d}".format(123)
@@ -539,13 +539,13 @@ print(str6)
 在`{:d}`的d前加上+后，`{:+d}`的"+"代表输出时数字必须带有符号，如果是正数，在数字前加"+"号，如果是负数，在数字前维持"-"。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	+123
 	-123
 	+123.456000
 	-123.456000
 	```
-```python linenums='1'
+```python linenums="1"
 str1 = "{:+d}".format(123)
 print(str1)
 str2 = "{:+d}".format(-123)
@@ -565,11 +565,11 @@ print(str4)
 upper( )函数使字符串中的字母变成大写，而lower( )函数使字符串中的字母变为小写。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	WELCOME TO PYTHON!
 	welcome to python!
 	```
-```python linenums='1'
+```python linenums="1"
 str = "Welcome to Python!"
 print(str.upper())
 print(str.lower())
@@ -580,7 +580,7 @@ print(str.lower())
 strip( )函数可以删除字符串两边的空格，包括空格、制表符和换行符。另外，lstrip( )函数可以删除字符串左侧的空格，rstrip( )函数可以删除字符串右边的空格。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	# original
 
 	                Hello!
@@ -591,7 +591,7 @@ strip( )函数可以删除字符串两边的空格，包括空格、制表符和
 	Hello!
 	Welcome to Python!
 	```
-```python linenums='1'
+```python linenums="1"
 str = """
 		Hello!
 Welcome to Python!
@@ -618,11 +618,11 @@ print(str.strip())
 + isupper( ):确认字符串是否仅由大写字母组成
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	True
 	False
 	```
-```python linenums='1'
+```python linenums="1"
 # 判断是否由字母组成
 # 是则输出True，不是则输出False
 print("Python".isalpha())
@@ -639,11 +639,11 @@ print("Python".islower())
 + rfind( )从后到左查找，输出第一个出现的位置
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	0
 	12
 	```
-```python linenums='1'
+```python linenums="1"
 str = "decide your destiny"
 print(str.find("de"))
 print(str.rfind("de"))
@@ -654,11 +654,11 @@ print(str.rfind("de"))
 **in运算符**可以确认字符串的内容。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	True
 	False
 	```
-```python linenums='1'
+```python linenums="1"
 str = "decide your destiny"
 print("your" in str)
 print("my" in str)
@@ -669,10 +669,10 @@ print("my" in str)
 使用**split( )函数**可以将字符串拆分为特定子字符串，split( )函数括号中的是拆分的依据，示例是按照空格进行拆分。
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	['true', 'or', 'false']
 	```
-```python linenums='1'
+```python linenums="1"
 str = "true or false"
 print(str.split(" "))
 ```

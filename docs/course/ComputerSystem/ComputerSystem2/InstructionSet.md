@@ -1,4 +1,4 @@
-## 指令集设计原则
+﻿## 指令集设计原则
 兼容性
 多功能性
 高效率性
@@ -72,7 +72,7 @@ I
 
 === "栈架构"
 	
-	```asm
+	```asm linenums="1"
 	push A
 	push B
 	mul
@@ -88,7 +88,7 @@ I
 === "累加器架构"
 	
 	```
-	load B
+	load linenums="1" B
 	mul C
 	add A
 	store D
@@ -100,7 +100,7 @@ I
 === "RM架构"
 
 	```
-	load R1, A
+	load linenums="1" R1, A
 	mul R1, B
 	load R2, B
 	mul R2, C

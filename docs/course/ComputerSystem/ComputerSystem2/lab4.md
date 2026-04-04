@@ -1,4 +1,4 @@
-# Lab4：RV64 时钟中断处理
+﻿# Lab4：RV64 时钟中断处理
 
 ## 实验目的
 
@@ -299,7 +299,7 @@ Machine Mode 异常相关寄寄存器:
 
 按照下方模版修改 `arch/riscv/kernel/head.S`， 并补全 `_start` 中的逻辑。
 
-```asm
+```asm linenums="1"
 
 .extern start_kernel
 
@@ -377,7 +377,7 @@ _start:
 
 按照下方模版修改 `arch/riscv/kernel/entry.S`， 并补全 `_traps` 中的逻辑。
 
-```asm
+```asm linenums="1"
 
     .section .text.entry
 
@@ -424,7 +424,7 @@ _traps:
 1. 修改 `arch/riscv/kernel/` 目录下的 `trap.c` 文件。
 2. 在 `trap.c` 中实现异常处理函数 `trap_handler()`, 其接收的两个参数分别是 `scause` 和 `sepc` 两个寄存器中的值。
 
-```c
+```c linenums="1"
 
 // trap.c 
 
@@ -455,7 +455,7 @@ voidtrap_handler(unsignedlongscause,unsignedlongsepc){
 2. 在 `clock.c` 中实现 get_cycles：使用 `rdtime` 汇编指令获得当前 `time` 寄存器中的值。
 3. 在 `clock.c` 中实现 clock_set_next_event：调用 `sbi_ecall`，设置下一个时钟中断事件。
 
-```c
+```c linenums="1"
 
 // clock.c
 
@@ -523,7 +523,7 @@ kernel is running! Time: 4s
 
 1. 在我们使用make run时， OpenSBI 会产生如下输出:
 
-   ```bash
+   ```bash linenums="1"
 
    OpenSBI v0.9
 

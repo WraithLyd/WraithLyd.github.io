@@ -1,4 +1,4 @@
-# 5 The Disjoint Set ADT
+﻿# 5 The Disjoint Set ADT
 ## 5.1 Equivalence relations
 A relation $R$ is defined on a set $S$ if for every pair of elements (a, b), $a, b\in S$, a R b is either true or false.  If a R b is true, then we say that a is related to b.
 
@@ -19,7 +19,7 @@ Given an equivalence relation ~, decide for any a and b if a ~ b.
 ## 5.3 Basic Data Structure
 ### Implementation of Disjoint Set
 
-```c
+```c linenums="1"
 ElementType S[number];
 S[root] = 0;
 S[element] = the index of the element's parent;
@@ -31,7 +31,7 @@ Idea: Make $S_i$ a subtree of $S_j$ or vice versa. That is, we can set the paren
 
 Implementation:
 
-```c
+```c linenums="1"
 void SetUnion(DisjSet S, SetType Rtt1, SetType Rt2)
 {
 	S[Rt2] = Rt1;
@@ -44,7 +44,7 @@ Idea: Find the parent of element by set and judge if the parent element is root.
 
 Implementation:
 
-```c
+```c linenums="1"
 SetType Find(ElementType X, DisjSet S)
 {
 	for(;S[X]>0;X=S[X]);
@@ -64,7 +64,7 @@ Always change the shallow tree. Other is similar with Union-by-Size.
 
 An algorithm for Union-by-Rank is below.
 
-```c
+```c linenums="1"
 void SetUnion(DisjSet S, SetType Root1, SetRoot Root2)
 {
 	if(S[Root2] < S[Root1])
@@ -80,7 +80,7 @@ void SetUnion(DisjSet S, SetType Root1, SetRoot Root2)
 
 ## 5.5 Path Compression
 
-```c
+```c linenums="1"
 SetType Find(ElementType X, DisjSet S)
 {
 	ElementType root, trail, lead;
@@ -93,9 +93,9 @@ SetType Find(ElementType X, DisjSet S)
 }
 ```
 
-Another algorithm in textbook is below.
+Another linenums="1" algorithm in textbook is below.
 
-```c
+```c linenums="1"
 SetType Find(ElementType X, DisjSet S)
 {
 	if(S[X] <= 0)
@@ -113,7 +113,7 @@ Let T( M, N ) be the maximum time required to process an intermixed sequence of 
 
 $$k1M \alpha ( M, N )\leq T( M, N ) \leq k2M \alpha ( M, N )$$
 
-!!! hint Ackermann’s Function and  ( M, N )
+!!! hint "Ackermann’s Function and  ( M, N )"
 	$A(1,j) = 2^j\ ( j\geq 1)$
 	
 	$A(i,1) = A(i-1,2)\ (i\geq 2)$
@@ -124,4 +124,4 @@ $$k1M \alpha ( M, N )\leq T( M, N ) \leq k2M \alpha ( M, N )$$
 
 	$\alpha(M,N) = \min\{i\geq1|A(i,[M/N])>\log N\}$
 
-	For example, $ \min\{i\geq1|A(i,[M/N])>\log N\}\leq O(\log^*N)\leq 4$. Since $\log\log\log\log\log(2^{65536})=1$, $\log^*2^{65536}=5$.
+	For example, $\min\{i\geq1|A(i,[M/N])>\log N\}\leq O(\log^*N)\leq 4$. Since $\log\log\log\log\log(2^{65536})=1$, $\log^*2^{65536}=5$.

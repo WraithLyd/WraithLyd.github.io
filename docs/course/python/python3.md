@@ -1,4 +1,4 @@
-# 条件语句
+﻿# 条件语句
 ## 布尔数据类型
 布尔只有True和False两个值，且True和False的首字母必须是大写。
 
@@ -22,20 +22,20 @@ Python有六个比较运算符，且通过比较运算符创建布尔。
 Python中**if条件语句**时根据if后的条件去选择执行某些代码或不执行某些代码。
 
 !!! tip "基本结构"
-	```linenums='1'
-	if 布尔值的条件语句:	# if中的条件语句后面必须加上冒号(:)。  
-		当布尔值为True时执行的语句	# if条件语句的下一行语句输入时需要先输入4个空格或一个制表符；  
-		当布尔值为True时执行的语句	# 如果后续还有条件执行的语句也需要加上制表符，直到结束该条件分支。  
+	```python
+	if 布尔值的条件语句:	# if中的条件语句后面必须加上冒号(:)。
+		当布尔值为True时执行的语句	# if条件语句的下一行语句输入时需要先输入4个空格或一个制表符；
+		当布尔值为True时执行的语句	# 如果后续还有条件执行的语句也需要加上制表符，直到结束该条件分支。
 	```
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	5
 	>
 	4
 	end
 	```
-```python linenums='1'
+```python linenums="1"
 if 5>4:
 	print("5")
 	print(">")
@@ -47,7 +47,7 @@ print("end")
 else语句用于if条件语句执行之后，当if条件语句中的条件为假时执行该语句。
 
 !!! tip "基本结构"
-	```linenums='1'
+	```python
 	if 布尔值的条件语句:	# if中的条件语句后面必须加上冒号(:)。  
 		当布尔值为True时执行的语句	# if条件语句的下一行语句输入时需要先输入4个空格或一个制表符；  
 		当布尔值为True时执行的语句	# 如果后续还有条件执行的语句也需要加上制表符，直到结束该条件分支。  
@@ -56,11 +56,11 @@ else语句用于if条件语句执行之后，当if条件语句中的条件为假
 	```
 
 !!! example inline end "执行结果"
-	```linenums='1'
+	```python
 	请输入整数 9
 	奇数
 	```
-```python linenums='1'
+```python linenums="1"
 number = input("请输入整数 ")
 number = int(number)
 if number % 2 == 0:
@@ -74,7 +74,7 @@ else:
 有时if语句会有两个或以上的条件，不同的条件组合会得到不同的结果时，第一个分支用if语句，最后一个分支用else语句，那么中间的分支就需要用到elif语句，elif语句相当于是else语句和if语句的结合。
 
 !!! tip "基本结构"
-	```linenums='1'
+	```python
 	if 布尔值的条件语句A:
 		当布尔值A为True时执行的语句
 	elif 布尔值的条件语句B:
@@ -90,26 +90,26 @@ else:
 	
 	pass关键字可以理解为什么都不做，后续会补充功能的地方。
 	=== "error-none"
-		```python linenums='1'
+		```python linenums="1"
 		if number > 0:
 		else:
 		```
 	=== "error-comment"
-		```python linenums='1'
+		```python linenums="1"
 		if number > 0:
 			# 正数
 		else:
 			# 负数
 		```
 	=== "正常运行-0"
-		```python linenums='1'
+		```python linenums="1"
 		if number > 0:
 			0
 		else:
 			0
 		```
 	=== "正常运行-pass"
-		```python linenums='1'
+		```python linenums="1"
 		if number > 0:
 			pass
 		else:

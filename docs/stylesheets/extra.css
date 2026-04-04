@@ -1,4 +1,181 @@
 :root {
-	--md-text-font: "LXGW WenKai Screen"; 
-	--md-code-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+	--md-text-font: "LXGW WenKai GB Screen", sans-serif;
+	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen", monospace;
+}
+
+/* 代码块自动换行 */
+.md-typeset code {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.md-typeset pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* ========== 代码块美化 ========== */
+
+/* 代码块容器样式 */
+.md-typeset div.highlight {
+	overflow-x: auto;
+	border-radius: 8px;
+	margin: 1.5em 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* 暗色模式适配 */
+[data-md-color-scheme="slate"] .md-typeset div.highlight {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 代码块内边距 */
+.md-typeset div.highlight pre {
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow-wrap: break-word;
+	padding: 16px;
+	border-radius: 8px;
+}
+
+/* 行内代码样式 */
+.md-typeset code:not(pre code) {
+	padding: 2px 6px;
+	border-radius: 4px;
+	border: 1px solid rgba(128, 128, 128, 0.3);
+	font-size: 0.85em;
+}
+
+/* 代码块顶部添加类似 macOS 的窗口装饰点 */
+.md-typeset div.highlight {
+	position: relative;
+}
+
+/* 代码块添加顶部间距 */
+.md-typeset div.highlight + div.highlight {
+	margin-top: 1em;
+}
+
+/* 代码块悬停效果 */
+.md-typeset div.highlight:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.3s ease;
+}
+
+/* 暗色模式悬停 */
+[data-md-color-scheme="slate"] .md-typeset div.highlight:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 代码块平滑过渡 */
+.md-typeset div.highlight {
+	transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========== 代码块行号美化 ========== */
+
+/* 隐藏原始行号列 */
+.md-typeset .highlighttable .linenos {
+	display: none;
+}
+
+/* 代码容器 - 相对定位 */
+.md-typeset .highlighttable td.code {
+	position: relative;
+}
+
+/* 行号背景区域 */
+.md-typeset .highlighttable td.code::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3.5em;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.025) 0%, rgba(0, 0, 0, 0.045) 100%);
+	border-right: 2px solid rgba(0, 0, 0, 0.08);
+	z-index: 0;
+	pointer-events: none;
+}
+
+/* 暗色模式行号背景 */
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code::before {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%);
+	border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+/* 代码容器 */
+.md-typeset .highlighttable td.code pre {
+	counter-reset: line;
+	position: relative;
+	z-index: 1;
+}
+
+/* 每行代码 */
+.md-typeset .highlighttable td.code pre code > span {
+	counter-increment: line;
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow-wrap: break-word;
+	position: relative;
+	padding-left: 3.5em;
+	transition: background 0.2s ease;
+}
+
+/* 代码行悬停效果 */
+.md-typeset .highlighttable td.code pre code > span:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+/* 行号 */
+.md-typeset .highlighttable td.code pre code > span::before {
+	content: counter(line);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3em;
+	text-align: right;
+	padding-right: 0.5em;
+	color: rgba(0, 0, 0, 0.3);
+	user-select: none;
+	font-size: 0.85em;
+	font-family: var(--md-code-font);
+	transition: color 0.2s ease;
+}
+
+/* 暗色模式行号颜色 */
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span::before {
+	color: rgba(255, 255, 255, 0.25);
+}
+
+/* 行号悬停 */
+.md-typeset .highlighttable td.code pre code > span:hover::before {
+	color: rgba(0, 0, 0, 0.55);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover::before {
+	color: rgba(255, 255, 255, 0.45);
+}
+
+/* 代码 padding */
+.md-typeset .highlighttable td.code pre,
+.md-typeset .highlighttable td.code pre code {
+	margin: 0;
+	padding: 16px;
+}
+
+/* 表格无边距 */
+.md-typeset .highlighttable {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
 }

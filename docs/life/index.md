@@ -1,4 +1,4 @@
-# Life
+﻿# Life
 !!! tip "life"
 	<br><br>
     <div align="center" style="font-size:32px;font-weight:bold">

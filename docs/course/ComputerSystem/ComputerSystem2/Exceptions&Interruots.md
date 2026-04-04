@@ -1,4 +1,4 @@
-### Handler Action
+﻿### Handler Action
 + read cause, and transfer to relevant handler
 + determine action required
 + If restartable:

@@ -1,4 +1,4 @@
-# 6 Graph
+﻿# 6 Graph
 ## 6.1 Definitions
 ### G(V,E)
 where  **G**::=graph, **V=V(G)**::=finite nonempty set of vertices, and **E=E(G)**::=finite set of edges.
@@ -66,7 +66,7 @@ $$adj\_mat[3][3]=\left[\begin{matrix}
 ### Adjacency Lists
 If we replace each row by a linked list in adjacency martix, there's adjacency lists. For the example above, 
 
-```c
+```c linenums="1"
 graph[0]->data = 1;
 graph[1]->data = 0;
 graph[1]->next->data = 2;
@@ -95,7 +95,7 @@ For undirected G:S = `n`heads+`2e`nodes = `(n+2e)`ptrs+`2e`ints.
 ### 6.2.2 Topological Order
 A topological order is a linear ordering of the vertices of a graph such that, for any two vertices, `i`, `j`, if `i` is a predecessor of `j` in the network then `i` precedes `j` in the linear ordering.
 
-```c
+```c linenums="1"
 void Topsort( Graph G )
 {   
 	Queue  Q;
@@ -126,13 +126,13 @@ Given a digraph G = (V,E), and a cost function `c(e)` for $e\in E(G)$. The lengt
 
 BFS implementation is below:
 
-```c
+```c linenums="1"
 Table[i].Dist ::= distance from s to vi/* initialized to be infty except for s */
 Table[i].Known ::= 1 if vi is checked; or 0 if not
 Table[i].Path ::= for tracking the path   /* initialized to be 0 */
 ```
 
-```c
+```c linenums="1"
 void Unweighted( Table T )
 {   
 	int  CurrDist;
@@ -165,7 +165,7 @@ u is chosen so that distance[u] = $\min\{ w\in S|distance[w]\}$  (If u is not un
 
 If `distance[u1] < distance[u2]` and we add u1 into S, then distance[u2] may change. If so, a shorter path from s to u2 must go through u1 and `distance[u2] = distance[u1] + length`(length means the weight< u1, u2>).
 
-```c
+```c linenums="1"
 void Dijkstra( Table T )
 {   /* T is initialized by Figure 9.30 on p.303 */
 Vertex  V, W;
@@ -186,7 +186,7 @@ while(){
 
 ### 6.3.3 SPFA(for Graphs with Negative Edge Costs)
 
-```c
+```c linenums="1"
 void  WeightedNegative( Table T )
 {   /* T is initialized by Figure 9.30 on p.303 */
 	Queue  Q;
@@ -269,7 +269,7 @@ In Kruskal's Algorithm, we need to judge whether addition of a edge can lead a g
 
 ## 6.7 Depth-First Search
 ### Implementation
-```c
+```c linenums="1"
 void DFS ( Vertex V )  /* this is only a template */
 {   
 	visited[ V ] = true;  /* mark this vertex to avoid cycles */

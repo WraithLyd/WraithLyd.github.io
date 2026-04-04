@@ -1,4 +1,4 @@
-# 4 Priority Queues(Heaps)
+﻿# 4 Priority Queues(Heaps)
 !!! note "ADT"
 	Objects: A finite ordered list with zero or more elements.
 	
@@ -73,7 +73,7 @@ A **min tree** is a tree in which the key value in each node is no larger than t
 #### 4.2.3.1 Insertion
 The possible position for a new node is only since a heap must be a complete binary tree.
 
-```c
+```c linenums="1"
 /*H->Elements[0] is a sentinel*/
 void Insert(ElementType X, PriorityQueue H)
 {
@@ -88,10 +88,10 @@ void Insert(ElementType X, PriorityQueue H)
 	H->Elements[i]=X;
 }
 ```
-T(N)=O(log N)
+T linenums="1"(N)=O(log N)
 #### 4.2.3.2 DeleteMin
 
-```c
+```c linenums="1"
 ElementType DeleteMin(PriorityQueue H)
 {
 	/*Percolate Down*/
@@ -119,7 +119,7 @@ ElementType DeleteMin(PriorityQueue H)
 	return MinElement;
 }
 ```
-T(N)=O(log N)
+T linenums="1"(N)=O(log N)
 
 #### 4.2.3.3 Other Heap Operations
 Finding any key except the minimum one will have to take a linear scan through the entire heap.

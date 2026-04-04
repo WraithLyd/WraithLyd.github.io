@@ -1,4 +1,4 @@
-# 2 Lists, Stacks and Queues
+﻿# 2 Lists, Stacks and Queues
 ## 2.1 Abstract Data Type(ADT)
 Data type={Objects} $\cup$ {Operations}
 
@@ -30,7 +30,7 @@ Definition: An Abstract Data Type(ADT) is a data type that is organized in such 
 
 ### 2.2.2 Linked List
 !!! hint "implementation"
-	```c linenums='1'
+	```c linenums="1"
 	typedef struct list_node *list_ptr;
 	typedef struct list_node{
 		char data[4];
@@ -40,14 +40,14 @@ Definition: An Abstract Data Type(ADT) is a data type that is organized in such 
 	```
 #### 2.2.2.1 Onsertion
 Insertion takes O(1) time.
-```c
+```c linenums="1"
 /*Insert temp after node in the list*/
 temp->next=node->next;
 node->next=temp;
 ```
 #### 2.2.2.2 Deletion
 Deletion takes O(1) time.
-```c linenums='1'
+```c linenums="1"
 /*Delete node*/
 pre->next=node->next;
 free(node);
@@ -57,7 +57,7 @@ Find takes O(N) time.
 
 ### 2.2.3 Doubly Linked Lists
 !!! hint "implementation"
-	```c linenums='1'
+	```c linenums="1"
 	typedef struct node *node_ptr;
 	typedef struct node{
 		node_ptr llink;
@@ -68,7 +68,7 @@ Find takes O(N) time.
 ### 2.2.4 Circular Lists
 The data structure is the same as Linked List. But circular list links head and tail.
 A empty list is:
-```c linenums='1'
+```c linenums="1"
 node->llink=node;
 node->rlink=node;
 ```
@@ -99,22 +99,22 @@ A stack is a Last-In-First-Out list, that is, an ordered list in which insertion
 ### 2.3.1 Linked List Implementation (with a header node)
 
 #### 2.3.1.1 Push
-```c linenums='1'
+```c linenums="1"
 TmpCell->Next = S->Next;
 S->Next = TmpCell;
 ```
 #### 2.3.1.2 Top
-```c linenums='1'
+```c linenums="1"
 return S->Next->Element;
 ```
 #### 2.3.1.3 Pop
-```c linenums='1'
+```c linenums="1"
 FirstCell = S->Next;
 S->Next = S->Next->Next;
 free(FirstCell);
 ```
 ### 2.3.2 Array Implementation
-```c linenums='1'
+```c linenums="1"
 struct StackRecord{
 	int Capacity;	/*size of stack*/
 	int TopOfStack;	/*the top pointer*/
@@ -139,7 +139,7 @@ A queue is a First-In-First-Out (FIFO) list, that is, an ordered list in which i
 	+ Dequeue(queue Q)
 
 ### 2.4.1 Array Implementation
-```c linenums='1'
+```c linenums="1"
 struct QueueRecord{
 	int Capacity;	/*max size of queue*/
 	int Front;		/*the front pointer*/

@@ -1,4 +1,4 @@
-
+﻿
 
 # MkDocs使用记录
 !!! Abstract "Reference"
@@ -14,17 +14,17 @@
 
 先在vscode中新建一个终端 <font color = grey>(Ctrl+Shift+`)</font>，执行以下命令，生成python环境。
 
-```powershell
+```powershell linenums="1"
 py -m venv venv
 venv\Scripts\activate
 ```
 
 执行以下命令下载mkdocs-material包
-```powershell
+```powershell linenums="1"
 pip install mkdocs-material
 ```
 
-```shell
+```shell linenums="1"
 pip install mkdocs-git-revision-date-localized-plugin
 ```
 
@@ -39,19 +39,19 @@ pip install mkdocs-git-revision-date-localized-plugin
 具体功能实现参考 [mkdocs-material官方文档](https://squidfunk.github.io/mkdocs-material/)。
 
 在编写过程中，如果需要在浏览器中预览网站，那么需要在 `mkdocs.yml` 中添加`dev_addr`的值，作为预览的地址。如果没有给`dev_addr`赋值，那么系统会默认为`127.0.0.1:8000`，由于我的8000端口是占用的，所以我将其改为了5500端口。
-```yml
+```yml linenums="1"
 dev_addr: '127.0.0.1:5500'
 ```
 在由venv产生的python虚拟环境中执行指令，再在浏览器中打开所设立的地址。
 
-```powershell
+```powershell linenums="1"
 mkdocs serve
 ```
 
 ## 发布网站
 
 在python环境中执行
-```powershell
+```powershell linenums="1"
 mkdocs build
 mkdocs gh-deploy
 ```
@@ -60,7 +60,7 @@ mkdocs gh-deploy
 ## 高级功能
 ### 字体设置
 首先在 `./docs/stylesheets` 目录下放入下载的字体文件，如`Font1.ttf`和`Font2.ttf`，再新建一个 `extra.css`，内容如下：
-```css
+```css linenums="1"
 @font-face {
     font-family:"Font1","Font2";
 	src: url('./Font1.ttf'), format('ttf') ,"./Font2.ttf",format('ttf');
@@ -73,7 +73,7 @@ mkdocs gh-deploy
 ```
 
 在 `mkdocs.yml` 中添加
-```yml
+```yml linenums="1"
 theme:
 	font: 
     	text: Font1 
@@ -83,7 +83,7 @@ extra_css:
 ```
 ### C code in website
 
-```markdown
+```markdown linenums="1"
  ```c linenums="1"
  printf("%d");
  for(i=0;i<n;i++)
@@ -91,7 +91,7 @@ extra_css:
  ```
 ```
 
-This type can let website give you the orders of line. It displays:
+This linenums="1" type can let website give you the orders of line. It displays:
 
 ```c linenums="1"
 printf("%d");
@@ -99,14 +99,14 @@ for(i=0;i<n;i++)
 	flag++;
 ```
 If it doesn't content `linenums="1"`, it displays:
-```c
+```c linenums="1"
 printf("%d");
 for(i=0;i<n;i++)
 	flag++;
 ```
 ### 提示、警告栏
 
-``` yml
+``` yml linenums="1"
 # mkdocs.yml 相关配置
 markdown_extensions:
   - admonition
@@ -128,7 +128,7 @@ markdown_extensions:
 
         木有标题的note标签。
 
-	``` markdown
+	``` markdown linenums="1"
 	!!! note
 
     	默认note标签。
@@ -150,7 +150,7 @@ markdown_extensions:
 
 		The three are able and use the same icon.
 
-	``` markdown
+	``` markdown linenums="1"
 	!!! abstract
 
     	abstract, summary, tldr.
@@ -166,7 +166,7 @@ markdown_extensions:
 
 		The three are able and use the same icon.
     
-	``` markdown
+	``` markdown linenums="1"
     !!! info
 
     	info, todo.
@@ -182,7 +182,7 @@ markdown_extensions:
 
         The three are able and use the same icon.
     
-    ``` markdown
+    ``` markdown linenums="1"
     !!! tip
 
         tip, hint, important.
@@ -198,7 +198,7 @@ markdown_extensions:
 
         The three are able and use the same icon.
     
-    ``` markdown
+    ``` markdown linenums="1"
     !!! success
 
         success, check, done.
@@ -214,7 +214,7 @@ markdown_extensions:
 
         The three are able and use the same icon.
     
-    ``` markdown
+    ``` markdown linenums="1"
     !!! question
 
         question, help, faq.
@@ -230,7 +230,7 @@ markdown_extensions:
 
         The three are able and use the same icon.
     
-    ``` markdown
+    ``` markdown linenums="1"
     !!! warning
 
         warning, caution, attention.
@@ -246,7 +246,7 @@ markdown_extensions:
 
 		The three are able and use the same icon.
 
-    ``` markdown
+    ``` markdown linenums="1"
     !!! failure
 
         failure, fail, missing.
@@ -262,7 +262,7 @@ markdown_extensions:
 
         The three are able and use the same icon.
     
-    ``` markdown
+    ``` markdown linenums="1"
     !!! danger
 
         danger, error.
@@ -276,7 +276,7 @@ markdown_extensions:
 
         This is bug's style.
     
-    ``` markdown
+    ``` markdown linenums="1"
     !!! bug
 
         This is bug's style.
@@ -288,7 +288,7 @@ markdown_extensions:
         
 		This is example's style.
     
-    ``` markdown
+    ``` markdown linenums="1"
     !!! example
 
         This is example's style.
@@ -302,7 +302,7 @@ markdown_extensions:
 
         The three are able and use the same icon.
     
-	``` markdown
+	``` markdown linenums="1"
     	!!! quote
 
         	quote, cite.

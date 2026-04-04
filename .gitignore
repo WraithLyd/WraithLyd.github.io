@@ -1,0 +1,20 @@
+# MkDocs 构建产物
+site/
+
+# Python 虚拟环境
+venv/
+
+# 调试文件
+debug/
+
+# 编辑器配置
+docs/.obsidian/
+*.code-workspace
+
+# OS 文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志文件
+*.log

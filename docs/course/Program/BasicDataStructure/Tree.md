@@ -1,4 +1,4 @@
-# 3 Trees
+﻿# 3 Trees
 ## 3.1  Terminology
 A tree is a collection of nodes. The collection can be empty. Otherwise, a tree consists of: 
 
@@ -55,7 +55,7 @@ All the nodes along the path from the node up to the root.
 All the nodes in its subtrees.
 
 ## 3.2 Implementation - List representation
-```c linenums='1'
+```c linenums="1"
 typedef struct *node node_ptr;
 typedef struct node{
 	ElementType value;
@@ -64,9 +64,9 @@ typedef struct node{
 	...
 }
 ```
-The number of children is unclear, so we select **FirstChild-NextSibling Representation** to translate the tree into a **binary tree**.
+The linenums="1" number of children is unclear, so we select **FirstChild-NextSibling Representation** to translate the tree into a **binary tree**.
 
-```c linenums='1'
+```c linenums="1"
 typedef struct *node node_ptr;
 typedef struct node{
 	ElementType value;
@@ -79,7 +79,7 @@ typedef struct node{
 ### 3.3.1 Introduction
 A binary tree is a tree in which no node can have more than two children.
 
-```c linenums='1'
+```c linenums="1"
 typedef struct *node node_ptr;
 typedef struct node{
 	ElementType value;
@@ -91,7 +91,7 @@ typedef struct node{
 #### 3.3.2.1 Preorder Traversal
 Access the current node first and then access the left and right child as follow.
 
-```c linenums='1'
+```c linenums="1"
 void  preorder(tree_ptr tree)
 {
 	if(tree)
@@ -105,7 +105,7 @@ void  preorder(tree_ptr tree)
 #### 3.3.2.2 Postorder Traversal
 Access the left and right child first and then access the current node as follow.
 
-```c linenums='1'
+```c linenums="1"
 void postorder(tree_ptr tree)
 {
 	if(tree)
@@ -119,7 +119,7 @@ void postorder(tree_ptr tree)
 #### 3.3.2.3 Levelorder Traversal
 Put the root into a empty queue. Then insert its children into the queue, and the node dequeues. Then follow the order inqueue the first node's children and dequeue the node.
 
-```c linenums='1'
+```c linenums="1"
 void levelorder(tree_ptr tree)
 {
 	enqueue(tree);
@@ -134,7 +134,7 @@ void levelorder(tree_ptr tree)
 #### 3.3.2.4 Inorder Traversal
 Access the left child first and then access the current node, access the right child at last as follow.
 
-```c linenums='1'
+```c linenums="1"
 void inorder(tree_ptr tree)
 {  
 	if(tree)   
@@ -152,7 +152,7 @@ Rule 2: If Tree->Right is null, replace it with a pointer to the inorder success
 
 Rule 3: There must not be any loose threads. Therefore, a threaded binary tree must have a head node of which the left child points to the first node.
 
-```c linenums='1'
+```c linenums="1"
 typedef struct ThreadedTreeNode *PtrTo ThreadedNode;
 typedef struct PtrToThreadedNode ThreadedTree;
 typedef struct ThreadedTreeNode
@@ -198,7 +198,7 @@ A binary search tree is a binary tree. It may be empty. If it is not empty, it s
 + check if the element is already in the tree.
 + compare the element and nodes in the tree.
 
-```c linenums='1'
+```c linenums="1"
 // insert X into Search Tree T
 SearchTree Insert(ElementType X, SearchTree T)
 {
@@ -233,7 +233,7 @@ Delete a degree 2 node:
 + Replace the node by the largest one in its left subtree or the smallest one in its right subtree.
 + Delete the replacing node from the subtree.
 
-```c
+```c linenums="1"
 SearchTree Delete(ElementType X, SearchTree T)
 {    
 	Position TmpCell;

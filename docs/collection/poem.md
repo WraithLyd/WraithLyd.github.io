@@ -1,4 +1,4 @@
-## 秦观
+﻿## 秦观
 !!! quote "江城子"
 	<div align="center" style="font-size:14px; line-height:2.5">西城杨柳弄春柔，动离忧，泪难收。  
 	犹记多情、曾为系归舟。  
