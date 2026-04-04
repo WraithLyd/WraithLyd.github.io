@@ -83,29 +83,17 @@
 	display: none;
 }
 
-/* 代码容器 - 相对定位 */
+/* 代码块容器 */
+.md-typeset .highlighttable {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+/* 代码单元格 */
 .md-typeset .highlighttable td.code {
 	position: relative;
-}
-
-/* 行号背景区域 */
-.md-typeset .highlighttable td.code::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 3.5em;
-	height: 100%;
-	background: linear-gradient(135deg, rgba(0, 0, 0, 0.025) 0%, rgba(0, 0, 0, 0.045) 100%);
-	border-right: 2px solid rgba(0, 0, 0, 0.08);
-	z-index: 0;
-	pointer-events: none;
-}
-
-/* 暗色模式行号背景 */
-[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code::before {
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%);
-	border-right-color: rgba(255, 255, 255, 0.08);
+	padding: 0 !important;
 }
 
 /* 代码容器 */
@@ -113,6 +101,8 @@
 	counter-reset: line;
 	position: relative;
 	z-index: 1;
+	margin: 0;
+	padding: 16px;
 }
 
 /* 每行代码 */
@@ -125,18 +115,20 @@
 	position: relative;
 	padding-left: 3.5em;
 	transition: background 0.2s ease;
+	border-radius: 0;
 }
 
 /* 代码行悬停效果 */
 .md-typeset .highlighttable td.code pre code > span:hover {
-	background: rgba(0, 0, 0, 0.03);
+	background: rgba(0, 0, 0, 0.04);
+	border-radius: 4px;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover {
-	background: rgba(255, 255, 255, 0.05);
+	background: rgba(255, 255, 255, 0.06);
 }
 
-/* 行号 */
+/* 行号 - 定位在 span 的 padding 区域内 */
 .md-typeset .highlighttable td.code pre code > span::before {
 	content: counter(line);
 	position: absolute;
@@ -145,37 +137,49 @@
 	width: 3em;
 	text-align: right;
 	padding-right: 0.5em;
-	color: rgba(0, 0, 0, 0.3);
+	color: rgba(0, 0, 0, 0.4);
 	user-select: none;
-	font-size: 0.85em;
+	font-size: 0.8em;
 	font-family: var(--md-code-font);
-	transition: color 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 /* 暗色模式行号颜色 */
 [data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span::before {
-	color: rgba(255, 255, 255, 0.25);
+	color: rgba(255, 255, 255, 0.35);
 }
 
 /* 行号悬停 */
 .md-typeset .highlighttable td.code pre code > span:hover::before {
-	color: rgba(0, 0, 0, 0.55);
+	color: rgba(0, 0, 0, 0.7);
+	font-weight: 600;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover::before {
-	color: rgba(255, 255, 255, 0.45);
+	color: rgba(255, 255, 255, 0.6);
 }
 
-/* 代码 padding */
-.md-typeset .highlighttable td.code pre,
-.md-typeset .highlighttable td.code pre code {
-	margin: 0;
-	padding: 16px;
+/* 行号背景 - 覆盖在每行的 padding 区域 */
+.md-typeset .highlighttable td.code pre code > span::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 3.5em;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.025) 0%, rgba(0, 0, 0, 0.05) 100%);
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	z-index: -1;
+	pointer-events: none;
 }
 
-/* 表格无边距 */
-.md-typeset .highlighttable {
-	border-spacing: 0;
-	border-collapse: collapse;
-	width: 100%;
+/* 暗色模式行号背景 */
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span::after {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.05) 100%);
+	border-right-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 代码块圆角 */
+.md-typeset .highlighttable td.code pre {
+	border-radius: 8px;
 }
