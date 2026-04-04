@@ -42,12 +42,40 @@
 	border-radius: 8px;
 }
 
-/* 行内代码样式 */
+/* 行内代码样式 - 左侧高亮条风格 */
 .md-typeset code:not(pre code) {
-	padding: 2px 6px;
-	border-radius: 4px;
-	border: 1px solid rgba(128, 128, 128, 0.3);
+	font-family: var(--md-code-font);
 	font-size: 0.85em;
+	font-weight: 500;
+	padding: 0.15em 0.5em 0.15em 0.4em;
+	border-radius: 0.25em;
+	background: rgba(0, 0, 0, 0.05);
+	border: none;
+	border-left: 3px solid rgba(0, 0, 0, 0.25);
+	color: var(--md-code-fg-color, inherit);
+	white-space: nowrap;
+	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	vertical-align: baseline;
+	margin: 0 0.1em;
+}
+
+/* 暗色模式适配 */
+[data-md-color-scheme="slate"] .md-typeset code:not(pre code) {
+	background: rgba(255, 255, 255, 0.08);
+	border-left-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 悬停微交互 - 左侧条加深，背景微亮 */
+.md-typeset code:not(pre code):hover {
+	background: rgba(0, 0, 0, 0.08);
+	border-left-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code:not(pre code):hover {
+	background: rgba(255, 255, 255, 0.12);
+	border-left-color: rgba(255, 255, 255, 0.6);
 }
 
 /* 代码块顶部添加类似 macOS 的窗口装饰点 */
@@ -78,37 +106,158 @@
 
 /* ========== 代码块行号美化 ========== */
 
-/* 强制行号 span 为行内元素,避免块级导致的额外高度 */
-.md-typeset .highlighttable .linenodiv span.normal {
-	display: inline !important;
+/* 隐藏原始行号列 */
+.md-typeset .highlighttable .linenos {
+	display: none;
 }
 
-/* 行号表格样式 */
+/* 代码块容器 */
 .md-typeset .highlighttable {
 	border-spacing: 0;
 	border-collapse: collapse;
+	width: 100%;
+	position: relative;
 }
 
-/* 行号单元格 */
-.md-typeset .highlighttable .linenos {
-	background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.04) 100%);
-	border-right: 2px solid rgba(0, 0, 0, 0.06);
+/* 代码单元格 */
+.md-typeset .highlighttable td.code {
+	position: relative;
+	padding: 0 !important;
+}
+
+/* 代码容器 */
+.md-typeset .highlighttable td.code pre {
+	counter-reset: line;
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	padding: 16px;
+}
+
+/* 代码块顶部装饰条 */
+.md-typeset .highlighttable td.code pre::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 3.2em;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, transparent 100%);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre::before {
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
+}
+
+/* 每行代码 */
+.md-typeset .highlighttable td.code pre code > span {
+	counter-increment: line;
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow-wrap: break-word;
+	position: relative;
+	padding-left: 3.5em;
+	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	border-radius: 0;
+	border-left: 3px solid transparent;
+}
+
+/* 代码行悬停效果 */
+.md-typeset .highlighttable td.code pre code > span:hover {
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.02) 100%);
+	border-radius: 6px;
+	border-left-color: rgba(0, 0, 0, 0.2);
+	transform: translateX(2px);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover {
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+	border-left-color: rgba(255, 255, 255, 0.25);
+}
+
+/* 行号 - 定位在 span 的 padding 区域内 */
+.md-typeset .highlighttable td.code pre code > span::before {
+	content: counter(line);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2.8em;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.45);
 	user-select: none;
+	font-size: 0.8em;
+	font-family: var(--md-code-font);
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.5px;
+	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* 暗色模式行号 */
-[data-md-color-scheme="slate"] .md-typeset .highlighttable .linenos {
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%);
-	border-right: 2px solid rgba(255, 255, 255, 0.06);
+/* 暗色模式行号颜色 */
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span::before {
+	color: rgba(255, 255, 255, 0.4);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* 行号悬停 */
-.md-typeset .highlighttable tr:hover .linenos {
-	background: linear-gradient(135deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.06) 100%);
-	border-right-color: rgba(0, 0, 0, 0.1);
+.md-typeset .highlighttable td.code pre code > span:hover::before {
+	color: rgba(0, 0, 0, 0.8);
+	transform: scale(1.1);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-[data-md-color-scheme="slate"] .md-typeset .highlighttable tr:hover .linenos {
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.06) 100%);
-	border-right-color: rgba(255, 255, 255, 0.1);
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover::before {
+	color: rgba(255, 255, 255, 0.75);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 行号背景 - 覆盖在每行的 padding 区域 */
+.md-typeset .highlighttable td.code pre code > span::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 3.2em;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.015) 0%, rgba(0, 0, 0, 0.035) 50%, rgba(0, 0, 0, 0.015) 100%);
+	border-right: 1px solid rgba(0, 0, 0, 0.06);
+	z-index: -1;
+	pointer-events: none;
+	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 暗色模式行号背景 */
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span::after {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0.035) 50%, rgba(255, 255, 255, 0.015) 100%);
+	border-right-color: rgba(255, 255, 255, 0.06);
+}
+
+/* 首行圆角 */
+.md-typeset .highlighttable td.code pre code > span:first-child::after {
+	border-radius: 8px 0 0 0;
+}
+
+/* 末行圆角 */
+.md-typeset .highlighttable td.code pre code > span:last-child::after {
+	border-radius: 0 0 0 8px;
+}
+
+/* 单行圆角 */
+.md-typeset .highlighttable td.code pre code > span:only-child::after {
+	border-radius: 8px 0 0 8px;
+}
+
+/* 偶数行行号背景微调 */
+.md-typeset .highlighttable td.code pre code > span:nth-child(even)::after {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.04) 50%, rgba(0, 0, 0, 0.02) 100%);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:nth-child(even)::after {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+/* 代码块圆角 */
+.md-typeset .highlighttable td.code pre {
+	border-radius: 8px;
 }
