@@ -355,24 +355,26 @@
 	padding: 0.5em 0;
 }
 
-/* ========== 修复移动端导航栏无法点击 ========== */
+/* ========== 终极修复：手机端导航栏点击穿透问题 ========== */
 @media screen and (max-width: 76.1875em) {
-    /* 恢复遮罩层默认层级（在内容之上） */
+    /* 1. 让遮罩层沉底 (z-index: 1) */
     .md-overlay {
-        z-index: 2 !important;
+        z-index: 1 !important;
+        pointer-events: auto; /* 允许点击关闭，但在链接下面 */
     }
 
-    /* 恢复导航栏默认层级（在遮罩层之上） */
+    /* 2. 让导航栏主体浮起 (z-index: 3) */
     .md-drawer {
-        z-index: 4 !important;
-        background-color: var(--md-default-bg-color);
+        z-index: 3 !important;
+        pointer-events: auto;
+        background: var(--md-default-bg-color); /* 确保不透明 */
     }
     
-    /* 确保导航栏内的链接和按钮可以响应点击 */
+    /* 3. 关键：让具体的链接层级最高 (z-index: 5) */
     .md-nav__link,
-    .md-nav__button,
-    .md-nav__title {
+    .md-nav__link * {
+        position: relative;
+        z-index: 5 !important;
         pointer-events: auto !important;
-        cursor: pointer;
     }
 }
