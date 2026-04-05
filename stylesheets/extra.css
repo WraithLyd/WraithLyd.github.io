@@ -347,19 +347,30 @@
 	}
 }
 
-/* 9. 页面加载淡入动画 */
-.md-main {
-	opacity: 0;
-	animation: fadeIn 0.3s ease forwards;
-}
-
-@keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
+/* 9. 页面加载动画已移除（导致手机端导航栏层级冲突） */
 
 /* 10. 数学公式样式 */
 .md-typeset .arithmatex {
 	overflow-x: auto;
 	padding: 0.5em 0;
+}
+
+/* ========== 【核心修复】移动端导航栏层级与点击修复 ========== */
+@media screen and (max-width: 76.1875em) {
+    /* 强制导航抽屉 (Drawer) 在所有内容之上 */
+    .md-drawer {
+        z-index: 1000 !important; 
+    }
+
+    /* 强制遮罩层 (Overlay) 在导航抽屉之下 */
+    .md-overlay {
+        z-index: 999 !important;
+    }
+    
+    /* 确保导航栏内的链接可以正常点击 */
+    .md-drawer a, 
+    .md-drawer button,
+    .md-nav__link {
+        pointer-events: auto !important;
+    }
 }
