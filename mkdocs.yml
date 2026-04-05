@@ -22,11 +22,12 @@ theme:
         icon: material/weather-night 
         name: Switch to light mode
   language: 'zh'
+  font: false
   # font: 
   #   text: LXGW WenKai Screen 
   #   code: JetBrains Mono Regular, LXGW WenKai Screen
   logo: assets/images/logo.jpg #clipboard.svg
-  favicon: assets/images/clipboard2.svg
+  favicon: assets/images/logo.jpg #assets/images/clipboard2.svg
   features:
     - navigation.instant
     - navigation.instant.prefetch
@@ -35,14 +36,13 @@ theme:
     - navigation.tabs.sticky
     - navigation.indexes
     - navigation.top
-    - navigation.expand
     - search.suggest
     - search.highlight
 extra_css:
 #   - https://cdn.tonycrane.cc/utils/katex.min.css
 #   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
 #   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - stylesheets/extra.css
+  - stylesheets/extra.css?v=2
   - stylesheets/extratest.css
 markdown_extensions:
   - toc:
