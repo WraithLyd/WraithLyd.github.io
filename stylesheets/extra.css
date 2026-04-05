@@ -181,7 +181,7 @@
 	content: counter(line);
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 2px;
 	width: 2.8em;
 	text-align: center;
 	color: rgba(0, 0, 0, 0.45);
