@@ -355,22 +355,24 @@
 	padding: 0.5em 0;
 }
 
-/* ========== 【核心修复】移动端导航栏层级与点击修复 ========== */
+/* ========== 修复移动端导航栏无法点击 ========== */
 @media screen and (max-width: 76.1875em) {
-    /* 强制导航抽屉 (Drawer) 在所有内容之上 */
-    .md-drawer {
-        z-index: 1000 !important; 
+    /* 恢复遮罩层默认层级（在内容之上） */
+    .md-overlay {
+        z-index: 2 !important;
     }
 
-    /* 强制遮罩层 (Overlay) 在导航抽屉之下 */
-    .md-overlay {
-        z-index: 999 !important;
+    /* 恢复导航栏默认层级（在遮罩层之上） */
+    .md-drawer {
+        z-index: 4 !important;
+        background-color: var(--md-default-bg-color);
     }
     
-    /* 确保导航栏内的链接可以正常点击 */
-    .md-drawer a, 
-    .md-drawer button,
-    .md-nav__link {
+    /* 确保导航栏内的链接和按钮可以响应点击 */
+    .md-nav__link,
+    .md-nav__button,
+    .md-nav__title {
         pointer-events: auto !important;
+        cursor: pointer;
     }
 }
