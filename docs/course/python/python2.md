@@ -120,8 +120,8 @@ print(3*'Wraith')
 
 选取该字符串中的单个字符的运算符。在`[ ]`中指定要选取的位置，该数字称为索引。python中的索引和C语言一样，是从0开始的。而索引为负数时可以进行逆向计数。
 === "正数"
-	!!! example inline end "执行结果"	
-		```python
+	!!! example inline end "执行结果"
+		```text
 		W
 		r
 		a
@@ -140,7 +140,7 @@ print(3*'Wraith')
 	```
 === "负数"
 	!!! example inline end "执行结果"
-		```python
+		```text
 		h
 		t
 		i
@@ -247,7 +247,7 @@ print("2 ** 3 =",2**3)
 ### 变量的定义和引用
 在Python当中，变量使用的一般过程为：定义变量 → 为变量赋值 → 引用变量
 !!! Example inline end "执行结果"
-	```python
+	```text
 	圆周率 = 3.1415926
 	半径 = 10
 	圆的周长 = 62.831852
@@ -267,7 +267,7 @@ print("圆的面积 =",pi*r**2)
 不过变量在Python中和C,Java等语言有所不同，Python中变量并没有固定的类型，而不像其他语言使用变量前必须定义便令的数据类型。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	string
 	True
 	0
@@ -345,7 +345,7 @@ print(a)	# int
 
 === "应用于数字的复合运算符"
 	!!! Example inline end "执行结果"
-		```python
+		```text
 		110
 		105
 		210
@@ -364,7 +364,7 @@ print(a)	# int
 	```
 === "应用于字符串的复合运算符"
 	!!! Example inline end "执行结果"
-		```python
+		```text
 		ohh
 		ohhohh
 		```
@@ -394,7 +394,7 @@ print(string)
 !!! tip "input( )函数输入的数据类型"
 	无论输入的是什么内容，input( )函数的返回值都是**字符串**。
 !!! example inline end "执行结果"
-	```python
+	```text
 	string:abc
 	abc : <class 'str'>
 	number:123
@@ -425,7 +425,7 @@ print(bool,":",type(bool))
 	+ int( )和float( )都无法转换非纯数字的输入。
 	+ int( )无法转换带有小数点的纯数字输入。
 !!! example inline end "执行结果"
-	```python
+	```text
 	input:123
 	int(): 123
 	int(): <class 'int'>
@@ -446,7 +446,7 @@ print("float():",type(float))
 #### 数字转为字符串
 数字利用str( )函数可以转为字符串。
 !!! example inline end "执行结果"
-	```python
+	```text
 	123
 	<class 'str'>
 	```
@@ -468,7 +468,7 @@ print(type(str))
 	反之，"{ }"只替换相对于的参数的字符串形式，多余的参数不予处理。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	第1003次尝试
 	string 2 is True
 	```
@@ -490,7 +490,7 @@ format( )函数在处理数字时可以通过"{ }"中添加字符来对数字转
 + { }中加入`:g`，舍去小数后面的所有0，如果小数部分为0则直接输出int型。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	123
 	21.712000
 	24.5
@@ -511,7 +511,7 @@ print(str4)
 如果在`{:d}`中d的前面加上一个数字，那么就表示这个数字占多长的空间，用空格填充前面的空白；如果数字前有0，则用0填充。当应用空格填充时，符号的位置就需要去根据`:`后紧接着是否是`=`来决定，如果没有等号，那么符号紧跟在数字之前；如果有等号，那么符号写在空格之前。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	  123
 	       123
 	00123
@@ -539,7 +539,7 @@ print(str6)
 在`{:d}`的d前加上+后，`{:+d}`的"+"代表输出时数字必须带有符号，如果是正数，在数字前加"+"号，如果是负数，在数字前维持"-"。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	+123
 	-123
 	+123.456000
@@ -565,7 +565,7 @@ print(str4)
 upper( )函数使字符串中的字母变成大写，而lower( )函数使字符串中的字母变为小写。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	WELCOME TO PYTHON!
 	welcome to python!
 	```
@@ -580,7 +580,7 @@ print(str.lower())
 strip( )函数可以删除字符串两边的空格，包括空格、制表符和换行符。另外，lstrip( )函数可以删除字符串左侧的空格，rstrip( )函数可以删除字符串右边的空格。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	# original
 
 	                Hello!
@@ -618,7 +618,7 @@ print(str.strip())
 + isupper( ):确认字符串是否仅由大写字母组成
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	True
 	False
 	```
@@ -639,7 +639,7 @@ print("Python".islower())
 + rfind( )从后到左查找，输出第一个出现的位置
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	0
 	12
 	```
@@ -654,7 +654,7 @@ print(str.rfind("de"))
 **in运算符**可以确认字符串的内容。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	True
 	False
 	```
@@ -669,7 +669,7 @@ print("my" in str)
 使用**split( )函数**可以将字符串拆分为特定子字符串，split( )函数括号中的是拆分的依据，示例是按照空格进行拆分。
 
 !!! example inline end "执行结果"
-	```python
+	```text
 	['true', 'or', 'false']
 	```
 ```python linenums="1"

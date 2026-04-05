@@ -28,7 +28,6 @@ theme:
   logo: assets/images/logo.jpg #clipboard.svg
   favicon: assets/images/clipboard2.svg
   features:
-    - navigation.indexes
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.tracking
@@ -36,6 +35,9 @@ theme:
     - navigation.tabs.sticky
     - navigation.indexes
     - navigation.top
+    - navigation.expand
+    - search.suggest
+    - search.highlight
 extra_css:
 #   - https://cdn.tonycrane.cc/utils/katex.min.css
 #   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css

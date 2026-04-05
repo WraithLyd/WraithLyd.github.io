@@ -51,7 +51,7 @@
 	border-radius: 0.25em;
 	background: rgba(0, 0, 0, 0.05);
 	border: none;
-	border-left: 3px solid rgba(0, 0, 0, 0.25);
+	border-left: 3px solid var(--md-primary-fg-color);
 	color: var(--md-code-fg-color, inherit);
 	white-space: nowrap;
 	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,19 +63,19 @@
 /* 暗色模式适配 */
 [data-md-color-scheme="slate"] .md-typeset code:not(pre code) {
 	background: rgba(255, 255, 255, 0.08);
-	border-left-color: rgba(255, 255, 255, 0.4);
+	border-left-color: var(--md-primary-fg-color);
 }
 
 /* 悬停微交互 - 左侧条加深，背景微亮 */
 .md-typeset code:not(pre code):hover {
 	background: rgba(0, 0, 0, 0.08);
-	border-left-color: rgba(0, 0, 0, 0.5);
+	border-left-color: var(--md-accent-fg-color);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 [data-md-color-scheme="slate"] .md-typeset code:not(pre code):hover {
 	background: rgba(255, 255, 255, 0.12);
-	border-left-color: rgba(255, 255, 255, 0.6);
+	border-left-color: var(--md-accent-fg-color);
 }
 
 /* 代码块顶部添加类似 macOS 的窗口装饰点 */
@@ -181,7 +181,7 @@
 	content: counter(line);
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 2px;
 	width: 2.8em;
 	text-align: center;
 	color: rgba(0, 0, 0, 0.45);
@@ -260,4 +260,106 @@
 /* 代码块圆角 */
 .md-typeset .highlighttable td.code pre {
 	border-radius: 8px;
+}
+
+/* ========== 其他样式优化 ========== */
+
+/* 4. 滚动条美化 */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+/* 4. 表格美化 */
+.md-typeset table:not([class]) {
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset table:not([class]) th {
+	background: rgba(0, 0, 0, 0.04);
+	font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+	background: rgba(255, 255, 255, 0.06);
+}
+
+/* 4. 引用块美化 */
+.md-typeset blockquote {
+	border-left: 4px solid var(--md-primary-fg-color);
+	background: rgba(0, 0, 0, 0.02);
+	padding: 0.5em 1em;
+	border-radius: 0 8px 8px 0;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+	background: rgba(255, 255, 255, 0.03);
+}
+
+/* 6. 返回顶部按钮样式 */
+.md-top {
+	border-radius: 20px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 7. 移动端代码块适配 */
+@media screen and (max-width: 768px) {
+	.md-typeset div.highlight {
+		margin: 1em -0.8em;
+		border-radius: 0;
+		border-left: none;
+		border-right: none;
+	}
+	
+	.md-typeset .highlighttable td.code pre code > span {
+		padding-left: 2.5em;
+	}
+	
+	.md-typeset .highlighttable td.code pre code > span::before {
+		width: 2.2em;
+	}
+	
+	.md-typeset .highlighttable td.code pre code > span::after {
+		width: 2.6em;
+	}
+}
+
+/* 9. 页面加载淡入动画 */
+.md-main {
+	opacity: 0;
+	animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* 10. 数学公式样式 */
+.md-typeset .arithmatex {
+	overflow-x: auto;
+	padding: 0.5em 0;
 }
