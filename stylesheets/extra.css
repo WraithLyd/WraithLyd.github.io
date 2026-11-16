@@ -34,6 +34,9 @@
 	--md-code-bg-color: rgba(38, 34, 31, 0.045);
 	--md-code-fg-color: #4a413c;
 	--md-typeset-table-color: var(--rule);
+	--code-bg: #f8f6f1;
+	--code-header-bg: rgba(38, 34, 31, 0.035);
+	--code-gutter-bg: rgba(38, 34, 31, 0.022);
 }
 
 [data-md-color-scheme="slate"] {
@@ -60,6 +63,9 @@
 	--md-code-bg-color: rgba(231, 227, 222, 0.07);
 	--md-code-fg-color: #cdd4d8;
 	--md-typeset-table-color: var(--rule);
+	--code-bg: #1b1f23;
+	--code-header-bg: rgba(231, 227, 222, 0.045);
+	--code-gutter-bg: rgba(231, 227, 222, 0.03);
 }
 
 /* 正文字体（woff2 由 _build_fonts.py 生成） */
@@ -578,128 +584,199 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   8. 代码
+   8. 代码（行内 + 代码块，重新设计；line numbers 只在你写了 linenums 时出现）
    -------------------------------------------------------------------------- */
-/* 行内代码：印章红的小标签 */
+
+/* 行内代码：安静的小药丸，不再用左侧色条 */
 .md-typeset code:not(pre code) {
 	font-family: var(--md-code-font);
-	font-size: 0.82em;
-	font-weight: 500;
-	padding: 0.1em 0.4em;
-	border-radius: 5px;
+	font-size: 0.84em;
+	font-weight: 400;
+	padding: 0.1em 0.36em;
+	border-radius: 6px;
 	background: var(--md-code-bg-color);
-	color: var(--md-code-fg-color);
-	box-shadow: inset 2px 0 0 var(--seal);
+	color: var(--ink);
+	box-shadow: inset 0 0 0 1px var(--rule);
 	white-space: nowrap;
+	vertical-align: baseline;
 }
 
-/* 代码块容器 */
-.md-typeset .highlight,
-.md-typeset div.highlight {
+/* 代码块：一整张卡片，标题栏 + 正文，只有一个背景层 */
+.md-typeset .highlight {
+	position: relative;
+	margin: 1.5em 0;
 	border: 1px solid var(--rule);
 	border-radius: var(--radius-lg);
-	box-shadow: var(--shadow-1);
-	background: var(--md-code-bg-color);
+	background: var(--code-bg);
 	overflow: hidden;
-	margin: 1.4em 0;
-	transition: box-shadow 0.25s ease, border-color 0.25s ease;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .md-typeset .highlight:hover {
-	box-shadow: var(--shadow-2);
 	border-color: var(--rule-strong);
+	box-shadow: var(--shadow-1);
 }
 
-/* 语言/文件名标题栏 */
+/* 标题栏（div 版：<span class="filename">；表格版：<th class="filename">） */
 .md-typeset .highlight > .filename,
-.md-typeset .highlight span.filename {
-	display: block;
-	padding: 0.5em 1em;
-	font-family: var(--md-code-font);
-	font-size: 0.66rem;
-	letter-spacing: 0.04em;
-	color: var(--ink-soft);
-	background: rgba(38, 34, 31, 0.03);
+.md-typeset .highlight th.filename {
+	display: flex;
+	align-items: center;
+	height: 2.1rem;
+	margin: 0;
+	padding: 0 0.85em 0 52px;
+	border: 0;
 	border-bottom: 1px solid var(--rule);
+	background-color: var(--code-header-bg);
+	/* macOS 三点：用背景图，div 标题栏和表格标题栏都能画 */
+	background-image:
+		radial-gradient(circle at 4px 50%, #e0665a 0 3.5px, transparent 4px),
+		radial-gradient(circle at 4px 50%, #ddb25c 0 3.5px, transparent 4px),
+		radial-gradient(circle at 4px 50%, #79b06b 0 3.5px, transparent 4px);
+	background-position: 14px 50%, 26px 50%, 38px 50%;
+	background-size: 8px 8px;
+	background-repeat: no-repeat;
+	color: var(--ink-soft);
+	font-family: var(--md-code-font);
+	font-size: 0.6rem;
+	font-weight: 400;
+	letter-spacing: 0.06em;
+	line-height: 1;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
-[data-md-color-scheme="slate"] .md-typeset .highlight > .filename {
-	background: rgba(231, 227, 222, 0.05);
+/* 表格里再套一层 span.filename，清掉主题给它的小标签样式 */
+.md-typeset .highlight th.filename > .filename {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	color: inherit;
+	font: inherit;
 }
 
-/* 代码本体：自动换行 */
-.md-typeset pre > code,
-.md-typeset .highlight pre {
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-	word-break: break-word;
-	line-height: 1.65;
-	font-size: 0.74rem;
-	padding: 0.9em 1em;
-	background: transparent;
-}
-
-.md-typeset pre > code {
-	display: block;
-}
-
-/* 行号（pymdownx.highlight: anchor_linenums + line_spans: __span） */
-.md-typeset .highlighttable {
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
-	background: transparent;
-}
-
-.md-typeset .highlighttable .linenos {
+/* 没有语言的代码块：不显示 "Text Only" 标题栏 */
+.md-typeset .highlight.language-text > .filename {
 	display: none;
 }
 
-.md-typeset .highlighttable td.code {
-	padding: 0 !important;
-}
-
-.md-typeset .highlighttable td.code pre {
+/* 代码正文 */
+.md-typeset .highlight pre {
 	margin: 0;
-	padding: 0.9em 1em;
-	counter-reset: line;
-	border-radius: 0;
+	padding: 0.9em 1.05em;
 	background: transparent;
+	font-size: 0.72rem;
+	line-height: 1.72;
 }
 
-.md-typeset .highlighttable td.code pre code > span {
-	display: block;
-	counter-increment: line;
-	position: relative;
-	padding-left: 2.6em;
+.md-typeset .highlight pre > code,
+.md-typeset .highlight code {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	color: inherit;
+	font-size: inherit;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 	word-break: break-word;
-	border-radius: 4px;
-	transition: background 0.18s ease;
 }
 
-.md-typeset .highlighttable td.code pre code > span::before {
-	content: counter(line);
-	position: absolute;
-	left: 0;
-	width: 2em;
-	text-align: right;
-	color: var(--ink-soft);
-	opacity: 0.5;
-	font-size: 0.86em;
-	user-select: none;
-	font-variant-numeric: tabular-nums;
+/* 带行号时：把 Pygments 的表格重排成 flex（一行标题 + 一行 [行号栏 | 代码]），
+   这样标题栏的高度、三点、内边距都能完全由我们控制 */
+.md-typeset .highlighttable,
+.md-typeset .highlighttable > tbody,
+.md-typeset .highlighttable tr {
+	display: block;
+	width: 100%;
 }
 
-.md-typeset .highlighttable td.code pre code > span:hover {
-	background: var(--seal-soft);
-}
-
-.md-typeset .highlight code {
+.md-typeset .highlighttable {
+	border: 0;
+	border-collapse: collapse;
 	background: transparent;
-	box-shadow: none;
+}
+
+.md-typeset .highlighttable th.filename,
+.md-typeset .highlighttable > tbody > tr > th.filename {
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.md-typeset .highlighttable tr:last-child {
+	display: flex;
+	align-items: stretch;
+}
+
+.md-typeset .highlighttable td.linenos {
+	display: block;
+	flex: 0 0 auto;
+	width: 2.7em;
+	box-sizing: border-box;
+	padding: 0.9em 0.55em 0.9em 0;
+	background: var(--code-gutter-bg);
+	border-right: 1px solid var(--rule);
+	vertical-align: top;
+	user-select: none;
+}
+
+.md-typeset .highlighttable td.linenos pre {
+	margin: 0;
 	padding: 0;
+	background: transparent;
+	color: var(--ink-soft);
+	opacity: 0.6;
+	font-size: 0.72rem;
+	line-height: 1.72;
+	text-align: right;
+}
+
+.md-typeset .highlighttable td.linenos .normal,
+.md-typeset .highlighttable td.linenos a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.md-typeset .highlighttable td.code {
+	display: block;
+	flex: 1 1 0;
+	min-width: 0;
+	padding: 0;
+}
+
+.md-typeset .highlighttable td.code > div > pre,
+.md-typeset .highlighttable td.code pre {
+	margin: 0;
+	padding: 0.9em 1.05em;
+}
+
+/* 复制按钮：放在标题栏右侧，平时半透明 */
+.md-typeset .md-clipboard {
+	top: 0.32rem;
+	right: 0.4rem;
+	width: 1.45rem;
+	height: 1.45rem;
+	border: 1px solid var(--rule);
+	border-radius: 6px;
+	background: var(--code-header-bg);
+	color: var(--ink-soft);
+	opacity: 0.55;
+	transition: opacity 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.md-typeset .highlight:hover .md-clipboard {
+	opacity: 1;
+}
+
+.md-typeset .md-clipboard:hover {
+	background: var(--seal-soft);
+	color: var(--seal);
+	border-color: color-mix(in srgb, var(--seal) 30%, var(--rule));
 }
 
 /* --------------------------------------------------------------------------
@@ -814,16 +891,18 @@ body {
 		border-right: 0;
 	}
 
+	.md-typeset .highlight pre {
+		padding: 0.85em 0.9em;
+	}
+
+	.md-typeset .highlighttable .linenos {
+		width: 2.2em;
+		padding: 0.85em 0.5em 0.85em 0.6em;
+	}
+
+	.md-typeset .highlighttable td.code > div > pre,
 	.md-typeset .highlighttable td.code pre {
-		padding: 0.8em;
-	}
-
-	.md-typeset .highlighttable td.code pre code > span {
-		padding-left: 2.2em;
-	}
-
-	.md-typeset .highlighttable td.code pre code > span::before {
-		width: 1.7em;
+		padding: 0.85em 0.9em;
 	}
 
 	.md-header__title {
@@ -1098,84 +1177,6 @@ body {
 .md-typeset .nb-recent p,
 .md-typeset td p {
 	text-indent: 0;
-}
-
-/* --- 代码块标题栏：macOS 三点 + 语言名 --- */
-.md-typeset .highlight > .filename {
-	display: block;
-}
-
-/* 注意：表格版代码块的标题是 <th>，不能改 display，否则整张表错位 */
-/* 表格里 th > span.filename 是主题的小标签样式，这里清掉，只留三点 + 语言名 */
-.md-typeset .highlight span.filename {
-	display: inline;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	border-radius: 0;
-	background: none;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	line-height: inherit;
-}
-
-.md-typeset .highlight > .filename,
-.md-typeset .highlight th.filename {
-	padding: 0.5em 2.4em 0.5em 3.6em;
-	border-bottom: 1px solid var(--rule);
-	background: rgba(38, 34, 31, 0.035);
-	color: var(--ink-soft);
-	font-family: var(--md-code-font);
-	font-size: 0.62rem;
-	font-weight: 400;
-	letter-spacing: 0.05em;
-	text-align: left;
-	position: relative;
-}
-
-.md-typeset .highlight > .filename::before,
-.md-typeset .highlight th.filename::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 1.2em;
-	width: 0.4em;
-	height: 0.4em;
-	border-radius: 50%;
-	background: #dd6b5f;
-	box-shadow: 0.75em 0 0 #dfb45c, 1.5em 0 0 #78b06b;
-	transform: translateY(-50%);
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlight > .filename,
-[data-md-color-scheme="slate"] .md-typeset .highlight th.filename {
-	background: rgba(231, 227, 222, 0.05);
-}
-
-/* --- 复制按钮 --- */
-.md-typeset .md-clipboard {
-	top: 0.4rem;
-	right: 0.5rem;
-	width: 1.6rem;
-	height: 1.6rem;
-	border: 1px solid var(--rule);
-	border-radius: 6px;
-	background: var(--paper-raise);
-	color: var(--ink-soft);
-	opacity: 0;
-	transition: opacity 0.18s ease, color 0.18s ease, background 0.18s ease;
-}
-
-.md-typeset .highlight:hover .md-clipboard,
-.md-typeset .md-clipboard:focus {
-	opacity: 1;
-}
-
-.md-typeset .md-clipboard:hover {
-	background: var(--seal-soft);
-	color: var(--seal);
 }
 
 /* --- 代码配色：按明暗两套低饱和（主题支持按 class 着色） --- */

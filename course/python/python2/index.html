@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css?v=6">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css?v=7">
     
       <link rel="stylesheet" href="../../../stylesheets/extratest.css?v=4">
     
@@ -4023,131 +4023,131 @@
 </ul>
 </div>
 <h2 id="_2">数据类型的确认<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">))</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1"># &lt;class 'str'&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">124</span><span class="p">))</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># &lt;class 'int'&gt;</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">))</span>
+<span class="c1"># &lt;class 'str'&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">124</span><span class="p">))</span>
+<span class="c1"># &lt;class 'int'&gt;</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h2 id="_3">字符串<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <h3 id="_4">字符串内含引号<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <ul>
 <li>使用<strong>不同引号套用</strong>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'the "wolves"'</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># the "wolves"</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"the 'wolves'"</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># the 'wolves'</span>
-</span></code></pre></div></td></tr></tbody></table></div></li>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'the "wolves"'</span><span class="p">)</span>
+<span class="c1"># the "wolves"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"the 'wolves'"</span><span class="p">)</span>
+<span class="c1"># the 'wolves'</span>
+</code></pre></div></td></tr></tbody></table></div></li>
 <li>使用<strong>转义字符</strong>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'the </span><span class="se">\'</span><span class="s1">wolves</span><span class="se">\'</span><span class="s1">'</span><span class="p">)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># the 'wolves'</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"the </span><span class="se">\"</span><span class="s2">wolves</span><span class="se">\"</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># the "wolves"</span>
-</span></code></pre></div></td></tr></tbody></table></div></li>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'the </span><span class="se">\'</span><span class="s1">wolves</span><span class="se">\'</span><span class="s1">'</span><span class="p">)</span>
+<span class="c1"># the 'wolves'</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"the </span><span class="se">\"</span><span class="s2">wolves</span><span class="se">\"</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># the "wolves"</span>
+</code></pre></div></td></tr></tbody></table></div></li>
 </ul>
 <details class="example">
 <summary>其他转义字符</summary>
 <ul>
 <li><strong>换行符</strong>：<code>\n</code>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello</span><span class="se">\n</span><span class="s2">python"</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># Hello</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># python</span>
-</span></code></pre></div></td></tr></tbody></table></div></li>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello</span><span class="se">\n</span><span class="s2">python"</span><span class="p">)</span>
+<span class="c1"># Hello</span>
+<span class="c1"># python</span>
+</code></pre></div></td></tr></tbody></table></div></li>
 <li><strong>制表符</strong>：<code>\t</code>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"name</span><span class="se">\t</span><span class="s2">age</span><span class="se">\t</span><span class="s2">address"</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Tom</span><span class="se">\t</span><span class="s2">8</span><span class="se">\t</span><span class="s2">White House"</span><span class="p">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Jerry</span><span class="se">\t</span><span class="s2">8</span><span class="se">\t</span><span class="s2">White House"</span><span class="p">)</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># name    age     address</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="c1"># Tom     8       White House</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1"># Jerry   8       White House</span>
-</span></code></pre></div></td></tr></tbody></table></div></li>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"name</span><span class="se">\t</span><span class="s2">age</span><span class="se">\t</span><span class="s2">address"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tom</span><span class="se">\t</span><span class="s2">8</span><span class="se">\t</span><span class="s2">White House"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Jerry</span><span class="se">\t</span><span class="s2">8</span><span class="se">\t</span><span class="s2">White House"</span><span class="p">)</span>
+<span class="c1"># name    age     address</span>
+<span class="c1"># Tom     8       White House</span>
+<span class="c1"># Jerry   8       White House</span>
+</code></pre></div></td></tr></tbody></table></div></li>
 </ul>
 </details>
 <h3 id="_5">创建多行字符串<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p>重复三次使用单引号或双引号，则变成多行字符串。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span>
-<span class="normal"><a href="#__codelineno-5-6">6</a></span>
-<span class="normal"><a href="#__codelineno-5-7">7</a></span>
-<span class="normal"><a href="#__codelineno-5-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"""壮岁旌旗拥万夫</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="s2">锦襜突骑渡江初</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="s2">燕兵夜娖银胡䩮</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="s2">汉箭朝飞金仆姑"""</span><span class="p">)</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c1"># 壮岁旌旗拥万夫</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1"># 锦襜突骑渡江初</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1"># 燕兵夜娖银胡䩮</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c1"># 汉箭朝飞金仆姑</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"""壮岁旌旗拥万夫</span>
+<span class="s2">锦襜突骑渡江初</span>
+<span class="s2">燕兵夜娖银胡䩮</span>
+<span class="s2">汉箭朝飞金仆姑"""</span><span class="p">)</span>
+<span class="c1"># 壮岁旌旗拥万夫</span>
+<span class="c1"># 锦襜突骑渡江初</span>
+<span class="c1"># 燕兵夜娖银胡䩮</span>
+<span class="c1"># 汉箭朝飞金仆姑</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <div class="admonition tip">
 <p class="admonition-title">在多行字符串中隐藏换行</p>
 <p>在创建多行字符串时，有时字符串不需要换行，但是为了查看代码方便增加了换行，那么就需要将有些换行隐藏起来。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">隐藏换行</label><label for="__tabbed_1_2">不隐藏换行</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"""</span><span class="se">\</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="s2">壮岁旌旗拥万夫</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="s2">锦襜突骑渡江初</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="s2">燕兵夜娖银胡䩮</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="s2">汉箭朝飞金仆姑</span><span class="se">\</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="s2">"""</span><span class="p">)</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1"># 壮岁旌旗拥万夫</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="c1"># 锦襜突骑渡江初</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="c1"># 燕兵夜娖银胡䩮</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1"># 汉箭朝飞金仆姑</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"""</span><span class="se">\</span>
+<span class="s2">壮岁旌旗拥万夫</span>
+<span class="s2">锦襜突骑渡江初</span>
+<span class="s2">燕兵夜娖银胡䩮</span>
+<span class="s2">汉箭朝飞金仆姑</span><span class="se">\</span>
+<span class="s2">"""</span><span class="p">)</span>
+<span class="c1"># 壮岁旌旗拥万夫</span>
+<span class="c1"># 锦襜突骑渡江初</span>
+<span class="c1"># 燕兵夜娖银胡䩮</span>
+<span class="c1"># 汉箭朝飞金仆姑</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span>
-<span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"""</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="s2">壮岁旌旗拥万夫</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="s2">锦襜突骑渡江初</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="s2">燕兵夜娖银胡䩮</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="s2">汉箭朝飞金仆姑</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="s2">"""</span><span class="p">)</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1"># </span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="c1"># 壮岁旌旗拥万夫</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="c1"># 锦襜突骑渡江初</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="c1"># 燕兵夜娖银胡䩮</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="c1"># 汉箭朝飞金仆姑</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="c1"># </span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">壮岁旌旗拥万夫</span>
+<span class="s2">锦襜突骑渡江初</span>
+<span class="s2">燕兵夜娖银胡䩮</span>
+<span class="s2">汉箭朝飞金仆姑</span>
+<span class="s2">"""</span><span class="p">)</span>
+<span class="c1"># </span>
+<span class="c1"># 壮岁旌旗拥万夫</span>
+<span class="c1"># 锦襜突骑渡江初</span>
+<span class="c1"># 燕兵夜娖银胡䩮</span>
+<span class="c1"># 汉箭朝飞金仆姑</span>
+<span class="c1"># </span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -4155,27 +4155,27 @@
 <h3 id="_6">字符串运算符<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p><strong>字符串连接运算符 "+"</strong></p>
 <p>字符串连接运算符执行结果是将两个字符串连接起来创建新的字符串。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Hello'</span><span class="o">+</span><span class="s1">' '</span><span class="o">+</span><span class="s1">'world'</span><span class="p">)</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c1"># Hello world</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'Hello'</span><span class="o">+</span><span class="s1">' '</span><span class="o">+</span><span class="s1">'world'</span><span class="p">)</span>
+<span class="c1"># Hello world</span>
+</code></pre></div></td></tr></tbody></table></div>
 *<em>字符串重复运算符 "<em>"</em></em><p></p>
 <p>字符串重复运算符连接字符串和数字，可以重复该字符串。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="c1"># WraithWraithWraith</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="s1">'Wraith'</span><span class="p">)</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="c1"># WraithWraithWraith</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># WraithWraithWraith</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="s1">'Wraith'</span><span class="p">)</span>
+<span class="c1"># WraithWraithWraith</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <div class="admonition info">
 <p class="admonition-title">字符串运算符优先级</p>
 <p>和数字运算优先级类似，字符串重复运算符(<code>*</code>)优先级高于字符串连接运算符(<code>+</code>)。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'o'</span><span class="o">+</span><span class="s1">'h'</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="c1"># ohhh</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'o'</span><span class="o">+</span><span class="s1">'h'</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># ohhh</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 </div>
 <p><strong>字符串索引运算符 "[ ]"</strong></p>
 <p>选取该字符串中的单个字符的运算符。在<code>[ ]</code>中指定要选取的位置，该数字称为索引。python中的索引和C语言一样，是从0开始的。而索引为负数时可以进行逆向计数。</p>
@@ -4184,200 +4184,200 @@
 <div class="tabbed-block">
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>W
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>r
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>a
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>i
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>t
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>h
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>W
+r
+a
+i
+t
+h
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span>
-<span class="normal"><a href="#__codelineno-12-6">6</a></span>
-<span class="normal"><a href="#__codelineno-12-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nb">str</span><span class="o">=</span><span class="s1">'Wraith'</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span><span class="o">=</span><span class="s1">'Wraith'</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 <div class="tabbed-block">
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>h
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>t
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>i
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>a
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>r
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>W
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>h
+t
+i
+a
+r
+W
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span>
-<span class="normal"><a href="#__codelineno-14-6">6</a></span>
-<span class="normal"><a href="#__codelineno-14-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nb">str</span><span class="o">=</span><span class="s1">'Wraith'</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">])</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span><span class="o">=</span><span class="s1">'Wraith'</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">])</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
 <p><strong>字符串切片运算符 "[ : ]"</strong></p>
 <p>字符串切片运算符是用来在某个字符串中选取特定范围的运算符，冒号隔开两个数字，代表上下界，其中左边的数字较小，右边数字较大。选取的字符串就是原字符串中从前面数字索引开始到后面数字索引的一段子字符串，不过前面数字索引的字符包括在内，而后面数字索引的字符不包括在内。</p>
-<p></p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span>
-<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="c1"># rai</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="c1"># th</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<p></p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<span class="c1"># rai</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+<span class="c1"># th</span>
+</code></pre></div></td></tr></tbody></table></div>
 有时也省略方括号中两个数字其中一个。如果省略前面的数字，则表示此时自动指定最前面的位置（第一个字符）；如果省略后面的数字，则表示此时自动指定最后面的位置（最后一个字符）。
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span>
-<span class="normal"><a href="#__codelineno-16-3">3</a></span>
-<span class="normal"><a href="#__codelineno-16-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="c1"># raith</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="c1"># Wra</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="c1"># raith</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Wraith'</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># Wra</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <h3 id="_7">求字符串长度<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <div class="admonition info inline end">
 <p class="admonition-title">warning</p>
 <p>和C语言不同的是，python是没有字符串结束符的，不过C语言的strlen( )函数并不统计字符串结束符，所以和python的len( )的值相等。</p>
 </div>
 <p>使用 <strong>len( )</strong> 函数可以求得字符串的长度。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
-<span class="normal"><a href="#__codelineno-17-2">2</a></span>
-<span class="normal"><a href="#__codelineno-17-3">3</a></span>
-<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"The length of string is:"</span><span class="p">)</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">))</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="c1"># The length of string is:</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="c1"># 12</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"The length of string is:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">))</span>
+<span class="c1"># The length of string is:</span>
+<span class="c1"># 12</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <h2 id="_8">数字<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
 <h3 id="_9">数字的种类<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <p>数字分为<strong>整型</strong>和<strong>浮点型</strong>，python中有小数点的称为浮点数(float)，没有小数点的称为整数(int)。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
-<span class="normal"><a href="#__codelineno-18-2">2</a></span>
-<span class="normal"><a href="#__codelineno-18-3">3</a></span>
-<span class="normal"><a href="#__codelineno-18-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="c1"># &lt;class 'int'&gt;</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="c1"># &lt;class 'float'&gt;</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="c1"># &lt;class 'int'&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
+<span class="c1"># &lt;class 'float'&gt;</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <h3 id="_10">数字运算符<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
 <p>*<em>四则运算符 "+" "-" "<em>" "/"</em></em></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">加</label><label for="__tabbed_3_2">减</label><label for="__tabbed_3_3">乘</label><label for="__tabbed_3_4">除</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
-<span class="normal"><a href="#__codelineno-19-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"1 + 2 ="</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="c1"># 1 + 2 = 3</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"1 + 2 ="</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 1 + 2 = 3</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
-<span class="normal"><a href="#__codelineno-20-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a>print<span class="o">(</span><span class="s2">"1 - 2 ="</span>,1-2<span class="o">)</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="c1"># 1 - 2 = -1</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>print<span class="o">(</span><span class="s2">"1 - 2 ="</span>,1-2<span class="o">)</span>
+<span class="c1"># 1 - 2 = -1</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
-<span class="normal"><a href="#__codelineno-21-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"1 * 2 ="</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="c1"># 1 * 2 = 2</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"1 * 2 ="</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 1 * 2 = 2</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
-<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a>print<span class="o">(</span><span class="s2">"1 / 2 ="</span>,1/2<span class="o">)</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="c1"># 1 / 2 = 0.5</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>print<span class="o">(</span><span class="s2">"1 / 2 ="</span>,1/2<span class="o">)</span>
+<span class="c1"># 1 / 2 = 0.5</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
 <p><strong>整除运算符 "//"</strong></p>
 <p>整除运算符是将数字进行除法运算后向下取整，如果针对正数来说即为直接取整数部分。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
-<span class="normal"><a href="#__codelineno-23-2">2</a></span>
-<span class="normal"><a href="#__codelineno-23-3">3</a></span>
-<span class="normal"><a href="#__codelineno-23-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"3 // 2 ="</span><span class="p">,</span><span class="mi">3</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="c1"># 3 // 2 = 1</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"-3 // 2 ="</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="c1"># -3 // 2 = -2</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"3 // 2 ="</span><span class="p">,</span><span class="mi">3</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 3 // 2 = 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-3 // 2 ="</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># -3 // 2 = -2</span>
+</code></pre></div></td></tr></tbody></table></div>
 <strong>求余运算符 "%"</strong><p></p>
 <p>求余运算符即取两数做整数除法运算得到的余数。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
-<span class="normal"><a href="#__codelineno-24-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"5 % 3 ="</span><span class="p">,</span><span class="mi">5</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="c1"># 5 % 3 = 2</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"5 % 3 ="</span><span class="p">,</span><span class="mi">5</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># 5 % 3 = 2</span>
+</code></pre></div></td></tr></tbody></table></div>
 <strong>乘方运算符 "**"</strong><p></p>
 <p>乘方运算符用于求第一个数的第二个数次方。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
-<span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"2 ** 3 ="</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="c1"># 2 ** 3 = 8</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"2 ** 3 ="</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># 2 ** 3 = 8</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <h2 id="_11">变量和输入<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
 <h3 id="_12">变量的定义和引用<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
 <p>在Python当中，变量使用的一般过程为：定义变量 → 为变量赋值 → 引用变量</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>圆周率 = 3.1415926
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>半径 = 10
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>圆的周长 = 62.831852
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>圆的面积 = 314.15926
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>圆周率 = 3.1415926
+半径 = 10
+圆的周长 = 62.831852
+圆的面积 = 314.15926
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
-<span class="normal"><a href="#__codelineno-27-2">2</a></span>
-<span class="normal"><a href="#__codelineno-27-3">3</a></span>
-<span class="normal"><a href="#__codelineno-27-4">4</a></span>
-<span class="normal"><a href="#__codelineno-27-5">5</a></span>
-<span class="normal"><a href="#__codelineno-27-6">6</a></span>
-<span class="normal"><a href="#__codelineno-27-7">7</a></span>
-<span class="normal"><a href="#__codelineno-27-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="c1"># 定义变量并赋初值</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="n">r</span>  <span class="o">=</span> <span class="mi">10</span>
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="c1"># 变量引用</span>
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"圆周率 ="</span><span class="p">,</span><span class="n">pi</span><span class="p">)</span>
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"半径 ="</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
-</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"圆的周长 ="</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
-</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"圆的面积 ="</span><span class="p">,</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 定义变量并赋初值</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>
+<span class="n">r</span>  <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># 变量引用</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"圆周率 ="</span><span class="p">,</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"半径 ="</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"圆的周长 ="</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"圆的面积 ="</span><span class="p">,</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 <p>不过变量在Python中和C,Java等语言有所不同，Python中变量并没有固定的类型，而不像其他语言使用变量前必须定义便令的数据类型。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>string
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>True
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>0
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>string
+True
+0
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
-<span class="normal"><a href="#__codelineno-29-2">2</a></span>
-<span class="normal"><a href="#__codelineno-29-3">3</a></span>
-<span class="normal"><a href="#__codelineno-29-4">4</a></span>
-<span class="normal"><a href="#__codelineno-29-5">5</a></span>
-<span class="normal"><a href="#__codelineno-29-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="n">a</span> <span class="o">=</span> <span class="s1">'string'</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c1"># string</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c1"># boolean</span>
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c1"># int</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="s1">'string'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c1"># string</span>
+<span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c1"># boolean</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c1"># int</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h3 id="_13">复合赋值运算符<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -4443,94 +4443,94 @@
 <div class="tabbed-block">
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>110
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>105
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>210
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>42.0
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>110
+105
+210
+42.0
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
-<span class="normal"><a href="#__codelineno-31-2">2</a></span>
-<span class="normal"><a href="#__codelineno-31-3">3</a></span>
-<span class="normal"><a href="#__codelineno-31-4">4</a></span>
-<span class="normal"><a href="#__codelineno-31-5">5</a></span>
-<span class="normal"><a href="#__codelineno-31-6">6</a></span>
-<span class="normal"><a href="#__codelineno-31-7">7</a></span>
-<span class="normal"><a href="#__codelineno-31-8">8</a></span>
-<span class="normal"><a href="#__codelineno-31-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="n">num</span> <span class="o">=</span> <span class="mi">100</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="n">num</span> <span class="o">+=</span> <span class="mi">10</span>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="n">num</span> <span class="o">-=</span> <span class="mi">5</span>
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="n">num</span> <span class="o">*=</span> <span class="mi">2</span>
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="n">num</span> <span class="o">/=</span> <span class="mi">5</span>
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">num</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">num</span> <span class="o">+=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">-=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">/=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 <div class="tabbed-block">
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>ohh
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>ohhohh
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>ohh
+ohhohh
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
-<span class="normal"><a href="#__codelineno-33-2">2</a></span>
-<span class="normal"><a href="#__codelineno-33-3">3</a></span>
-<span class="normal"><a href="#__codelineno-33-4">4</a></span>
-<span class="normal"><a href="#__codelineno-33-5">5</a></span>
-<span class="normal"><a href="#__codelineno-33-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s1">'oh'</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="nb">str</span> <span class="o">+=</span> <span class="s1">'h'</span>
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="nb">str</span> <span class="o">+=</span> <span class="s1">'h'</span>
-</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="nb">str</span> <span class="o">*=</span> <span class="mi">2</span>
-</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s1">'oh'</span>
+<span class="nb">str</span> <span class="o">+=</span> <span class="s1">'h'</span>
+<span class="nb">str</span> <span class="o">+=</span> <span class="s1">'h'</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="nb">str</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
 <h3 id="input">输入函数 "input( )"<a class="headerlink" href="#input" title="Permanent link">¶</a></h3>
 <p>输入在input函数括号内的内容被称为<strong>提示字符串</strong>，如下述代码运行时，会弹出“请输入内容：”，程序在未退出的状态下等待，直到user使用enter弹入输入。这种程序在运行的过程中的暂停叫做<strong>阻塞</strong>。
-</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="nb">input</span><span class="p">(</span><span class="s2">"请输入内容："</span><span class="p">)</span> 
-</span></code></pre></div></td></tr></tbody></table></div>
+</p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">input</span><span class="p">(</span><span class="s2">"请输入内容："</span><span class="p">)</span> 
+</code></pre></div></td></tr></tbody></table></div>
 input函数输出的值称为input函数的<strong>返回值</strong>，如果需要使用这个返回值，那就可以用input函数直接对其他变量进行赋值。<p></p>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
-<span class="normal"><a href="#__codelineno-35-2">2</a></span>
-<span class="normal"><a href="#__codelineno-35-3">3</a></span>
-<span class="normal"><a href="#__codelineno-35-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="n">string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"请输入内容："</span><span class="p">)</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="c1"># 请输入内容：Hello</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="c1"># Hello</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"请输入内容："</span><span class="p">)</span>
+<span class="c1"># 请输入内容：Hello</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="c1"># Hello</span>
+</code></pre></div></td></tr></tbody></table></div>
 <div class="admonition tip">
 <p class="admonition-title">input( )函数输入的数据类型</p>
 <p>无论输入的是什么内容，input( )函数的返回值都是<strong>字符串</strong>。</p>
 </div>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>string:abc
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>abc : &lt;class 'str'&gt;
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>number:123
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>123 : &lt;class 'str'&gt;
-</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>bool:True
-</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>True : &lt;class 'str'&gt;
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>string:abc
+abc : &lt;class 'str'&gt;
+number:123
+123 : &lt;class 'str'&gt;
+bool:True
+True : &lt;class 'str'&gt;
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
-<span class="normal"><a href="#__codelineno-37-2">2</a></span>
-<span class="normal"><a href="#__codelineno-37-3">3</a></span>
-<span class="normal"><a href="#__codelineno-37-4">4</a></span>
-<span class="normal"><a href="#__codelineno-37-5">5</a></span>
-<span class="normal"><a href="#__codelineno-37-6">6</a></span>
-<span class="normal"><a href="#__codelineno-37-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="c1"># input( )</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="nb">str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"string:"</span><span class="p">)</span>      <span class="c1"># 输入str为abc</span>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="s2">":"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"number:"</span><span class="p">)</span>      <span class="c1"># 输入num为123</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="s2">":"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6"></a><span class="nb">bool</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"bool:"</span><span class="p">)</span>       <span class="c1"># 输入bool为True</span>
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7"></a><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">,</span><span class="s2">":"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># input( )</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"string:"</span><span class="p">)</span>      <span class="c1"># 输入str为abc</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="s2">":"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"number:"</span><span class="p">)</span>      <span class="c1"># 输入num为123</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="s2">":"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+<span class="nb">bool</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"bool:"</span><span class="p">)</span>       <span class="c1"># 输入bool为True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">,</span><span class="s2">":"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h3 id="_14">字符串于数字的类型转换<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
 <h4 id="_15">字符串转数字<a class="headerlink" href="#_15" title="Permanent link">¶</a></h4>
 <p>由于input( )函数输入数据类型始终为字符串，因此在输入数字时，必须将输入的字符串转为数字，一般进行数学运算。主要使用以下两个函数。</p>
@@ -4548,49 +4548,49 @@ input函数输出的值称为input函数的<strong>返回值</strong>，如果�
 </details>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>input:123
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>int(): 123
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>int(): &lt;class 'int'&gt;
-</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>float(): 123.0
-</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>float(): &lt;class 'float'&gt;
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>input:123
+int(): 123
+int(): &lt;class 'int'&gt;
+float(): 123.0
+float(): &lt;class 'float'&gt;
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
-<span class="normal"><a href="#__codelineno-39-2">2</a></span>
-<span class="normal"><a href="#__codelineno-39-3">3</a></span>
-<span class="normal"><a href="#__codelineno-39-4">4</a></span>
-<span class="normal"><a href="#__codelineno-39-5">5</a></span>
-<span class="normal"><a href="#__codelineno-39-6">6</a></span>
-<span class="normal"><a href="#__codelineno-39-7">7</a></span>
-<span class="normal"><a href="#__codelineno-39-8">8</a></span>
-<span class="normal"><a href="#__codelineno-39-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"input:"</span><span class="p">)</span>
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="c1"># int( )</span>
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"int():"</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
-</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"int():"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
-</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6"></a><span class="c1"># float( )</span>
-</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7"></a><span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"float():"</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
-</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"float():"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"input:"</span><span class="p">)</span>
+<span class="c1"># int( )</span>
+<span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"int():"</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"int():"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+<span class="c1"># float( )</span>
+<span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"float():"</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"float():"</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h4 id="_16">数字转为字符串<a class="headerlink" href="#_16" title="Permanent link">¶</a></h4>
 <p>数字利用str( )函数可以转为字符串。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>123
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>&lt;class 'str'&gt;
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>123
+&lt;class 'str'&gt;
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span>
-<span class="normal"><a href="#__codelineno-41-2">2</a></span>
-<span class="normal"><a href="#__codelineno-41-3">3</a></span>
-<span class="normal"><a href="#__codelineno-41-4">4</a></span>
-<span class="normal"><a href="#__codelineno-41-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="c1"># str( )</span>
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="n">num</span> <span class="o">=</span> <span class="mi">123</span>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># str( )</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h2 id="_17">关于数字和字符串的函数<a class="headerlink" href="#_17" title="Permanent link">¶</a></h2>
 <h3 id="format">字符串format( )函数<a class="headerlink" href="#format" title="Permanent link">¶</a></h3>
 <p>在包含有"{ }"的字符串后面加上"."，再使用format( )函数，将字符串中的"{ }"替换为format( )函数中参数对应字符串，大括号的数量和format( )中参数的个数必须一致。</p>
@@ -4601,20 +4601,20 @@ input函数输出的值称为input函数的<strong>返回值</strong>，如果�
 </details>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>第1003次尝试
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>string 2 is True
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>第1003次尝试
+string 2 is True
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1">1</a></span>
-<span class="normal"><a href="#__codelineno-43-2">2</a></span>
-<span class="normal"><a href="#__codelineno-43-3">3</a></span>
-<span class="normal"><a href="#__codelineno-43-4">4</a></span>
-<span class="normal"><a href="#__codelineno-43-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="c1"># format( )</span>
-</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="n">str1</span> <span class="o">=</span> <span class="s2">"第</span><span class="si">{}</span><span class="s2">次尝试"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1003</span><span class="p">)</span>
-</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
-</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4"></a><span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"string"</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># format( )</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="s2">"第</span><span class="si">{}</span><span class="s2">次尝试"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1003</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"string"</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 <p>format( )函数在处理数字时可以通过"{ }"中添加字符来对数字转字符串的表现形式加以限制。</p>
 <p><strong>输出类型</strong></p>
 <ul>
@@ -4624,143 +4624,143 @@ input函数输出的值称为input函数的<strong>返回值</strong>，如果�
 </ul>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>123
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>21.712000
-</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>24.5
-</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>12
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>123
+21.712000
+24.5
+12
+</code></pre></div>
 </div>
-<p></p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1">1</a></span>
-<span class="normal"><a href="#__codelineno-45-2">2</a></span>
-<span class="normal"><a href="#__codelineno-45-3">3</a></span>
-<span class="normal"><a href="#__codelineno-45-4">4</a></span>
-<span class="normal"><a href="#__codelineno-45-5">5</a></span>
-<span class="normal"><a href="#__codelineno-45-6">6</a></span>
-<span class="normal"><a href="#__codelineno-45-7">7</a></span>
-<span class="normal"><a href="#__codelineno-45-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="n">str1</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
-</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">21.712</span><span class="p">)</span>
-</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
-</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5"></a><span class="n">str3</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:g}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">24.50</span><span class="p">)</span>
-</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
-</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7"></a><span class="n">str4</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:g}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.00</span><span class="p">)</span>
-</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">str4</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<p></p><div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">21.712</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+<span class="n">str3</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:g}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">24.50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
+<span class="n">str4</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:g}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.00</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str4</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 <strong>填充空格</strong><p></p>
 <p>如果在<code>{:d}</code>中d的前面加上一个数字，那么就表示这个数字占多长的空间，用空格填充前面的空白；如果数字前有0，则用0填充。当应用空格填充时，符号的位置就需要去根据<code>:</code>后紧接着是否是<code>=</code>来决定，如果没有等号，那么符号紧跟在数字之前；如果有等号，那么符号写在空格之前。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>  123
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>       123
-</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>00123
-</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>0000000123
-</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>      -123
-</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>-      123
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>  123
+       123
+00123
+0000000123
+      -123
+-      123
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-47-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-47-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-47-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-47-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-47-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-47-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-47-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-47-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-47-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-47-10">10</a></span>
-<span class="normal"><a href="#__codelineno-47-11">11</a></span>
-<span class="normal"><a href="#__codelineno-47-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="n">str1</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:5d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
-</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3"></a><span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:10d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
-</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5"></a><span class="n">str3</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:05d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
-</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7"></a><span class="n">str4</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:010d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">str4</span><span class="p">)</span>
-</span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9"></a><span class="n">str5</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:010d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">str5</span><span class="p">)</span>
-</span><span id="__span-47-11"><a id="__codelineno-47-11" name="__codelineno-47-11"></a><span class="n">str6</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:=010d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-47-12"><a id="__codelineno-47-12" name="__codelineno-47-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">str6</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:5d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:10d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+<span class="n">str3</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:05d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
+<span class="n">str4</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:010d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str4</span><span class="p">)</span>
+<span class="n">str5</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:010d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str5</span><span class="p">)</span>
+<span class="n">str6</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:=010d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str6</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 <p><strong>符号</strong></p>
 <p>在<code>{:d}</code>的d前加上+后，<code>{:+d}</code>的"+"代表输出时数字必须带有符号，如果是正数，在数字前加"+"号，如果是负数，在数字前维持"-"。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>+123
-</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>-123
-</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>+123.456000
-</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>-123.456000
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>+123
+-123
++123.456000
+-123.456000
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1">1</a></span>
-<span class="normal"><a href="#__codelineno-49-2">2</a></span>
-<span class="normal"><a href="#__codelineno-49-3">3</a></span>
-<span class="normal"><a href="#__codelineno-49-4">4</a></span>
-<span class="normal"><a href="#__codelineno-49-5">5</a></span>
-<span class="normal"><a href="#__codelineno-49-6">6</a></span>
-<span class="normal"><a href="#__codelineno-49-7">7</a></span>
-<span class="normal"><a href="#__codelineno-49-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="n">str1</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
-</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3"></a><span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">123</span><span class="p">)</span>
-</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
-</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5"></a><span class="n">str3</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">123.456</span><span class="p">)</span>
-</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
-</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7"></a><span class="n">str4</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mf">123.456</span><span class="p">)</span>
-</span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">str4</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+<span class="n">str3</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">123.456</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
+<span class="n">str4</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:+f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mf">123.456</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str4</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 <p><strong>排列顺序</strong></p>
 <p>顺序一般为"{:[=][+][整数]d/f/g}".format(数)</p>
 <h3 id="_18">替换大小写<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
 <p>upper( )函数使字符串中的字母变成大写，而lower( )函数使字符串中的字母变为小写。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>WELCOME TO PYTHON!
-</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>welcome to python!
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>WELCOME TO PYTHON!
+welcome to python!
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1">1</a></span>
-<span class="normal"><a href="#__codelineno-51-2">2</a></span>
-<span class="normal"><a href="#__codelineno-51-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">"Welcome to Python!"</span>
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">"Welcome to Python!"</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h3 id="_19">删除字符串两侧的空格<a class="headerlink" href="#_19" title="Permanent link">¶</a></h3>
 <p>strip( )函数可以删除字符串两边的空格，包括空格、制表符和换行符。另外，lstrip( )函数可以删除字符串左侧的空格，rstrip( )函数可以删除字符串右边的空格。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a># original
-</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
-</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>                Hello!
-</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>Welcome to Python!
-</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>
-</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>
-</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a># strip
-</span><span id="__span-52-8"><a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>Hello!
-</span><span id="__span-52-9"><a id="__codelineno-52-9" name="__codelineno-52-9" href="#__codelineno-52-9"></a>Welcome to Python!
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code># original
+
+                Hello!
+Welcome to Python!
+
+
+# strip
+Hello!
+Welcome to Python!
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-53-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-53-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-53-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-53-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-53-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-53-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-53-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-53-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-53-10">10</a></span>
-<span class="normal"><a href="#__codelineno-53-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">"""</span>
-</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2"></a><span class="s2">        Hello!</span>
-</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3"></a><span class="s2">Welcome to Python!</span>
-</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4"></a>
-</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5"></a><span class="s2">"""</span>
-</span><span id="__span-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6"></a><span class="c1"># original</span>
-</span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"# original"</span><span class="p">)</span>
-</span><span id="__span-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</span><span id="__span-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9"></a><span class="c1"># strip</span>
-</span><span id="__span-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"# strip"</span><span class="p">)</span>
-</span><span id="__span-53-11"><a id="__codelineno-53-11" name="__codelineno-53-11"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">        Hello!</span>
+<span class="s2">Welcome to Python!</span>
+
+<span class="s2">"""</span>
+<span class="c1"># original</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"# original"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="c1"># strip</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"# strip"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h3 id="is">is系列函数<a class="headerlink" href="#is" title="Permanent link">¶</a></h3>
 <p><strong>is函数</strong>一般用来确认字符串配置，具体功能如下：</p>
 <ul>
@@ -4775,22 +4775,22 @@ input函数输出的值称为input函数的<strong>返回值</strong>，如果�
 </ul>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>True
-</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>False
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>True
+False
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-55-1">1</a></span>
-<span class="normal"><a href="#__codelineno-55-2">2</a></span>
-<span class="normal"><a href="#__codelineno-55-3">3</a></span>
-<span class="normal"><a href="#__codelineno-55-4">4</a></span>
-<span class="normal"><a href="#__codelineno-55-5">5</a></span>
-<span class="normal"><a href="#__codelineno-55-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="c1"># 判断是否由字母组成</span>
-</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2"></a><span class="c1"># 是则输出True，不是则输出False</span>
-</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Python"</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
-</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4"></a><span class="c1"># 判断是否由小写字母组成</span>
-</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5"></a><span class="c1"># 是则输出True，不是则输出False</span>
-</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Python"</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 判断是否由字母组成</span>
+<span class="c1"># 是则输出True，不是则输出False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Python"</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
+<span class="c1"># 判断是否由小写字母组成</span>
+<span class="c1"># 是则输出True，不是则输出False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Python"</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h3 id="find-rfind">find( )函数和rfind( )函数<a class="headerlink" href="#find-rfind" title="Permanent link">¶</a></h3>
 <p>使用<strong>find( )函数</strong>和<strong>rfind( )函数</strong>可以查找指定字符串在字符串内部的位置，输出的数字则为子字符串的第一个字符在原字符串中的索引。</p>
 <ul>
@@ -4799,41 +4799,41 @@ input函数输出的值称为input函数的<strong>返回值</strong>，如果�
 </ul>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>0
-</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>12
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>0
+12
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-57-1">1</a></span>
-<span class="normal"><a href="#__codelineno-57-2">2</a></span>
-<span class="normal"><a href="#__codelineno-57-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">"decide your destiny"</span>
-</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"de"</span><span class="p">))</span>
-</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">"de"</span><span class="p">))</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">"decide your destiny"</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"de"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">"de"</span><span class="p">))</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h3 id="in">in运算符<a class="headerlink" href="#in" title="Permanent link">¶</a></h3>
 <p><strong>in运算符</strong>可以确认字符串的内容。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>True
-</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>False
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>True
+False
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1">1</a></span>
-<span class="normal"><a href="#__codelineno-59-2">2</a></span>
-<span class="normal"><a href="#__codelineno-59-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">"decide your destiny"</span>
-</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"your"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
-</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"my"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">"decide your destiny"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"your"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"my"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
 <h3 id="split">split( )函数<a class="headerlink" href="#split" title="Permanent link">¶</a></h3>
 <p>使用<strong>split( )函数</strong>可以将字符串拆分为特定子字符串，split( )函数括号中的是拆分的依据，示例是按照空格进行拆分。</p>
 <div class="admonition example inline end">
 <p class="admonition-title">执行结果</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>['true', 'or', 'false']
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>['true', 'or', 'false']
+</code></pre></div>
 </div>
-<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-61-1">1</a></span>
-<span class="normal"><a href="#__codelineno-61-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">"true or false"</span>
-</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">))</span>
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">"true or false"</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">))</span>
+</code></pre></div></td></tr></tbody></table></div>
 
 
 

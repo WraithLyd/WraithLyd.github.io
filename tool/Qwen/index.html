@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css?v=6">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=7">
     
       <link rel="stylesheet" href="../../stylesheets/extratest.css?v=4">
     
@@ -3493,27 +3493,27 @@
 </div>
 <h2 id="1-nodejs">1 安装Node.js<a class="headerlink" href="#1-nodejs" title="Permanent link">¶</a></h2>
 <p>在<a href="https://nodejs.org/zh-cn/download/">Node.js下载</a>中下载windows安装程序.msi，安装好后检查</p>
-<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>node<span class="w"> </span>-v
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>npm<span class="w"> </span>-v
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>node<span class="w"> </span>-v
+npm<span class="w"> </span>-v
+</code></pre></div></td></tr></tbody></table></div>
 <p>接下来配置npm的环境变量，执行</p>
-<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npm<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>prefix
-</span></code></pre></div></td></tr></tbody></table></div>
+<div class="language-shell highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>prefix
+</code></pre></div></td></tr></tbody></table></div>
 <p>获取npm安装位置，并将npm加入系统的PATH环境变量。</p>
 <h2 id="2-qwen-code">2 安装Qwen Code<a class="headerlink" href="#2-qwen-code" title="Permanent link">¶</a></h2>
 <p>在管理员模式下cmd中运行</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -fsSL -o %TEMP%\install-qwen.bat https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen.bat &amp;&amp; %TEMP%\install-qwen.bat
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>npm install -g @qwen-code/qwen-code@latest
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>curl -fsSL -o %TEMP%\install-qwen.bat https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen.bat &amp;&amp; %TEMP%\install-qwen.bat
+
+npm install -g @qwen-code/qwen-code@latest
+</code></pre></div>
 <h2 id="3-qwen-code">3 开始使用 Qwen Code<a class="headerlink" href="#3-qwen-code" title="Permanent link">¶</a></h2>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># 进入qwen
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>qwen
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code># 进入qwen
+qwen
+</code></pre></div>
 <p>后续按提示配置。</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/language output 中文
-</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>/language output 中文
+</code></pre></div>
 <p>可切换输出语言为中文。</p>
 
 

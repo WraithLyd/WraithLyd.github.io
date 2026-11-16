@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css?v=6">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css?v=7">
     
       <link rel="stylesheet" href="../../../../stylesheets/extratest.css?v=4">
     
@@ -3478,21 +3478,21 @@
 
 <h2 id="_1">动态分配内存<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>new &amp; delete
-</p><div class="language-cpp highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-cpp highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <h4 id="const">const<a class="headerlink" href="#const" title="Permanent link">¶</a></h4>
 <p><code>const</code> is equal to <code>#define</code> in C. 
 It declares a variable to have a constant value. And it can't change in program.
-</p><div class="language-cpp highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">illegal</span><span class="o">!</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-cpp highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">illegal</span><span class="o">!</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 <p>A linenums="1" const in C++ defaults to internal linkage.
 - the compiler tries to avoiding creating storage for a const.
     - hold the value in its sample table
 - unless you make an explicit extern declaration.
-</p><div class="language-cpp highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
-</span></code></pre></div></td></tr></tbody></table></div><p></p>
+</p><div class="language-cpp highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</code></pre></div></td></tr></tbody></table></div><p></p>
 
 
 
