@@ -1,273 +1,90 @@
+/* ==========================================================================
+   Wraith's Notebook — 主题美化层
+   只覆盖样式，不改主题结构；移动端导航请勿在此处动 z-index / transform / pointer-events。
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 设计变量
+   -------------------------------------------------------------------------- */
+:root,
+[data-md-color-scheme="default"] {
+	--ink: #26221f;
+	--ink-soft: #6b625c;
+	--paper: #fdfcf8;
+	--paper-raise: #ffffff;
+	--seal: #b3543a;
+	--seal-dark: #933f29;
+	--seal-soft: rgba(179, 84, 58, 0.08);
+	--rule: rgba(38, 34, 31, 0.10);
+	--rule-strong: rgba(38, 34, 31, 0.18);
+	--shadow-1: 0 1px 2px rgba(38, 34, 31, 0.06), 0 2px 8px rgba(38, 34, 31, 0.05);
+	--shadow-2: 0 2px 6px rgba(38, 34, 31, 0.08), 0 10px 28px rgba(38, 34, 31, 0.08);
+	--radius: 8px;
+	--radius-lg: 12px;
+
+	--md-default-bg-color: var(--paper);
+	--md-default-bg-color--light: rgba(253, 252, 248, 0.76);
+	--md-default-bg-color--lighter: rgba(253, 252, 248, 0.5);
+	--md-default-bg-color--lightest: rgba(253, 252, 248, 0.12);
+	--md-typeset-color: var(--ink);
+	--md-typeset-a-color: var(--seal-dark);
+	--md-accent-fg-color: var(--seal);
+	--md-accent-fg-color--transparent: var(--seal-soft);
+	--md-typeset-mark-color: rgba(230, 190, 80, 0.38);
+	--md-code-bg-color: rgba(38, 34, 31, 0.045);
+	--md-code-fg-color: #4a413c;
+	--md-typeset-table-color: var(--rule);
+}
+
+[data-md-color-scheme="slate"] {
+	--ink: #e7e3de;
+	--ink-soft: #a49b93;
+	--paper: #16181a;
+	--paper-raise: #1d2023;
+	--seal: #e08263;
+	--seal-dark: #ef9a7d;
+	--seal-soft: rgba(224, 130, 99, 0.12);
+	--rule: rgba(231, 227, 222, 0.12);
+	--rule-strong: rgba(231, 227, 222, 0.22);
+	--shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.28);
+	--shadow-2: 0 2px 6px rgba(0, 0, 0, 0.45), 0 10px 28px rgba(0, 0, 0, 0.4);
+
+	--md-default-bg-color: var(--paper);
+	--md-default-bg-color--light: rgba(22, 24, 26, 0.76);
+	--md-default-bg-color--lighter: rgba(22, 24, 26, 0.5);
+	--md-default-bg-color--lightest: rgba(22, 24, 26, 0.12);
+	--md-typeset-color: var(--ink);
+	--md-typeset-a-color: var(--seal-dark);
+	--md-accent-fg-color: var(--seal);
+	--md-accent-fg-color--transparent: var(--seal-soft);
+	--md-code-bg-color: rgba(231, 227, 222, 0.07);
+	--md-code-fg-color: #cdd4d8;
+	--md-typeset-table-color: var(--rule);
+}
+
+/* 正文字体（woff2 由 _build_fonts.py 生成） */
 :root {
-	--md-text-font: "LXGW WenKai GB Screen", sans-serif;
+	--md-text-font: "LXGW WenKai GB Screen", "Songti SC", "Noto Serif SC", sans-serif;
 	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen", monospace;
 }
 
-/* 代码块自动换行 */
-.md-typeset code {
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
+/* --------------------------------------------------------------------------
+   2. 基础
+   -------------------------------------------------------------------------- */
+body {
+	color: var(--ink);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.md-typeset pre {
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
+::selection {
+	background: var(--seal-soft);
+	color: inherit;
 }
 
-/* ========== 代码块美化 ========== */
-
-/* 代码块容器样式 */
-.md-typeset div.highlight {
-	overflow-x: auto;
-	border-radius: 8px;
-	margin: 1.5em 0;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(128, 128, 128, 0.2);
-}
-
-/* 暗色模式适配 */
-[data-md-color-scheme="slate"] .md-typeset div.highlight {
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* 代码块内边距 */
-.md-typeset div.highlight pre {
-	white-space: pre-wrap;
-	word-break: break-all;
-	overflow-wrap: break-word;
-	padding: 16px;
-	border-radius: 8px;
-}
-
-/* 行内代码样式 - 左侧高亮条风格 */
-.md-typeset code:not(pre code) {
-	font-family: var(--md-code-font);
-	font-size: 0.85em;
-	font-weight: 500;
-	padding: 0.15em 0.5em 0.15em 0.4em;
-	border-radius: 0.25em;
-	background: rgba(0, 0, 0, 0.05);
-	border: none;
-	border-left: 3px solid var(--md-primary-fg-color);
-	color: var(--md-code-fg-color, inherit);
-	white-space: nowrap;
-	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-	vertical-align: baseline;
-	margin: 0 0.1em;
-}
-
-/* 暗色模式适配 */
-[data-md-color-scheme="slate"] .md-typeset code:not(pre code) {
-	background: rgba(255, 255, 255, 0.08);
-	border-left-color: var(--md-primary-fg-color);
-}
-
-/* 悬停微交互 - 左侧条加深，背景微亮 */
-.md-typeset code:not(pre code):hover {
-	background: rgba(0, 0, 0, 0.08);
-	border-left-color: var(--md-accent-fg-color);
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-[data-md-color-scheme="slate"] .md-typeset code:not(pre code):hover {
-	background: rgba(255, 255, 255, 0.12);
-	border-left-color: var(--md-accent-fg-color);
-}
-
-/* 代码块顶部添加类似 macOS 的窗口装饰点 */
-.md-typeset div.highlight {
-	position: relative;
-}
-
-/* 代码块添加顶部间距 */
-.md-typeset div.highlight + div.highlight {
-	margin-top: 1em;
-}
-
-/* 代码块悬停效果 */
-.md-typeset div.highlight:hover {
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	transition: box-shadow 0.3s ease;
-}
-
-/* 暗色模式悬停 */
-[data-md-color-scheme="slate"] .md-typeset div.highlight:hover {
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* 代码块平滑过渡 */
-.md-typeset div.highlight {
-	transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* ========== 代码块行号美化 ========== */
-
-/* 隐藏原始行号列 */
-.md-typeset .highlighttable .linenos {
-	display: none;
-}
-
-/* 代码块容器 */
-.md-typeset .highlighttable {
-	border-spacing: 0;
-	border-collapse: collapse;
-	width: 100%;
-	position: relative;
-}
-
-/* 代码单元格 */
-.md-typeset .highlighttable td.code {
-	position: relative;
-	padding: 0 !important;
-}
-
-/* 代码容器 */
-.md-typeset .highlighttable td.code pre {
-	counter-reset: line;
-	position: relative;
-	z-index: 1;
-	margin: 0;
-	padding: 16px;
-}
-
-/* 代码块顶部装饰条 */
-.md-typeset .highlighttable td.code pre::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 3.2em;
-	right: 0;
-	height: 1px;
-	background: linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, transparent 100%);
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre::before {
-	background: linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
-}
-
-/* 每行代码 */
-.md-typeset .highlighttable td.code pre code > span {
-	counter-increment: line;
-	display: block;
-	white-space: pre-wrap;
-	word-break: break-all;
-	overflow-wrap: break-word;
-	position: relative;
-	padding-left: 3.5em;
-	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-	border-radius: 0;
-	border-left: 3px solid transparent;
-}
-
-/* 代码行悬停效果 */
-.md-typeset .highlighttable td.code pre code > span:hover {
-	background: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.02) 100%);
-	border-radius: 6px;
-	border-left-color: rgba(0, 0, 0, 0.2);
-	transform: translateX(2px);
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover {
-	background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
-	border-left-color: rgba(255, 255, 255, 0.25);
-}
-
-/* 行号 - 定位在 span 的 padding 区域内 */
-.md-typeset .highlighttable td.code pre code > span::before {
-	content: counter(line);
-	position: absolute;
-	left: 0;
-	top: 2px;
-	width: 2.8em;
-	text-align: center;
-	color: rgba(0, 0, 0, 0.45);
-	user-select: none;
-	font-size: 0.8em;
-	font-family: var(--md-code-font);
-	font-variant-numeric: tabular-nums;
-	letter-spacing: 0.5px;
-	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-/* 暗色模式行号颜色 */
-[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span::before {
-	color: rgba(255, 255, 255, 0.4);
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* 行号悬停 */
-.md-typeset .highlighttable td.code pre code > span:hover::before {
-	color: rgba(0, 0, 0, 0.8);
-	transform: scale(1.1);
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:hover::before {
-	color: rgba(255, 255, 255, 0.75);
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* 行号背景 - 覆盖在每行的 padding 区域 */
-.md-typeset .highlighttable td.code pre code > span::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 3.2em;
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.015) 0%, rgba(0, 0, 0, 0.035) 50%, rgba(0, 0, 0, 0.015) 100%);
-	border-right: 1px solid rgba(0, 0, 0, 0.06);
-	z-index: -1;
-	pointer-events: none;
-	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* 暗色模式行号背景 */
-[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span::after {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0.035) 50%, rgba(255, 255, 255, 0.015) 100%);
-	border-right-color: rgba(255, 255, 255, 0.06);
-}
-
-/* 首行圆角 */
-.md-typeset .highlighttable td.code pre code > span:first-child::after {
-	border-radius: 8px 0 0 0;
-}
-
-/* 末行圆角 */
-.md-typeset .highlighttable td.code pre code > span:last-child::after {
-	border-radius: 0 0 0 8px;
-}
-
-/* 单行圆角 */
-.md-typeset .highlighttable td.code pre code > span:only-child::after {
-	border-radius: 8px 0 0 8px;
-}
-
-/* 偶数行行号背景微调 */
-.md-typeset .highlighttable td.code pre code > span:nth-child(even)::after {
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.04) 50%, rgba(0, 0, 0, 0.02) 100%);
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlighttable td.code pre code > span:nth-child(even)::after {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0.02) 100%);
-}
-
-/* 代码块圆角 */
-.md-typeset .highlighttable td.code pre {
-	border-radius: 8px;
-}
-
-/* ========== 其他样式优化 ========== */
-
-/* 4. 滚动条美化 */
 ::-webkit-scrollbar {
-	width: 8px;
-	height: 8px;
+	width: 10px;
+	height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -275,82 +92,772 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	background: rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
+	background: var(--rule-strong);
+	border: 2px solid transparent;
+	background-clip: content-box;
+	border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: rgba(0, 0, 0, 0.3);
+	background: var(--ink-soft);
+	background-clip: content-box;
 }
 
-[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
-	background: rgba(255, 255, 255, 0.2);
+/* 页面宽度：正文略窄、代码更宽 */
+.md-grid {
+	max-width: 78rem;
 }
 
-[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
-	background: rgba(255, 255, 255, 0.3);
+.md-typeset {
+	font-size: 0.8rem;
+	line-height: 1.85;
+	letter-spacing: 0.012em;
 }
 
-/* 4. 表格美化 */
-.md-typeset table:not([class]) {
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+.md-typeset p {
+	margin: 0.9em 0;
 }
 
-.md-typeset table:not([class]) th {
-	background: rgba(0, 0, 0, 0.04);
+/* --------------------------------------------------------------------------
+   3. 页头 / 标签栏 / 搜索 / 仓库入口
+   -------------------------------------------------------------------------- */
+.md-header {
+	background-color: var(--paper);
+	color: var(--ink);
+	box-shadow: none;
+	border-bottom: 1px solid var(--rule);
+}
+
+.md-header[data-md-state="shadow"],
+.md-header--shadow {
+	box-shadow: var(--shadow-1);
+	border-bottom-color: transparent;
+}
+
+.md-header__title {
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+	border-radius: 6px;
+}
+
+.md-tabs {
+	background-color: var(--paper);
+	color: var(--ink-soft);
+	border-bottom: 1px solid var(--rule);
+}
+
+.md-tabs__link {
+	opacity: 0.72;
+	font-weight: 500;
+	transition: color 0.2s, opacity 0.2s;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link:focus {
+	opacity: 1;
+	color: var(--seal);
+}
+
+.md-tabs__link--active,
+.md-tabs__item--active .md-tabs__link {
+	opacity: 1;
+	color: var(--seal);
+	font-weight: 700;
+}
+
+/* 仓库入口 */
+.md-source {
+	border-radius: var(--radius);
+	transition: background 0.2s;
+}
+
+.md-source:hover {
+	background: var(--seal-soft);
+	opacity: 1;
+}
+
+.md-source__repository {
 	font-weight: 600;
 }
 
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
-	background: rgba(255, 255, 255, 0.06);
+/* 搜索框 */
+.md-search__form {
+	background: var(--paper-raise);
+	border: 1px solid var(--rule);
+	border-radius: 999px;
+	box-shadow: none;
+	transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* 4. 引用块美化 */
+.md-search__form:hover,
+.md-search__form:focus-within {
+	border-color: var(--seal);
+	box-shadow: 0 0 0 3px var(--seal-soft);
+}
+
+.md-search__input {
+	border-radius: 999px;
+}
+
+.md-search__output .md-search-result__meta {
+	background: var(--paper);
+	border-bottom: 1px solid var(--rule);
+}
+
+.md-search-result__link:hover {
+	background: var(--seal-soft);
+}
+
+/* --------------------------------------------------------------------------
+   4. 侧边栏 / 目录
+   -------------------------------------------------------------------------- */
+.md-nav__title {
+	color: var(--ink-soft);
+	font-size: 0.62rem;
+	letter-spacing: 0.12em;
+	text-transform: none;
+}
+
+.md-nav__link {
+	transition: color 0.2s ease, background 0.2s ease;
+}
+
+.md-nav__link:hover {
+	color: var(--seal);
+}
+
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+	color: var(--seal);
+	font-weight: 700;
+}
+
+/* 当前项淡淡底色（不改 padding，避免打乱缩进层级） */
+.md-nav__link--active,
+.md-sidebar--secondary .md-nav__link--active {
+	background: var(--seal-soft);
+	border-radius: 6px;
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+	font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   5. 正文排版
+   -------------------------------------------------------------------------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+	color: var(--ink);
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	line-height: 1.4;
+}
+
+.md-typeset h1 {
+	font-size: 1.9em;
+	margin: 0 0 1em;
+	padding-bottom: 0.4em;
+	border-bottom: 2px solid var(--rule);
+}
+
+.md-typeset h2 {
+	font-size: 1.45em;
+	margin: 2em 0 0.8em;
+	padding-left: 0.7em;
+	border-left: 4px solid var(--seal);
+	line-height: 1.3;
+}
+
+.md-typeset h3 {
+	font-size: 1.16em;
+	margin: 1.7em 0 0.6em;
+	padding-left: 0.6em;
+	border-left: 3px solid var(--rule-strong);
+}
+
+.md-typeset h4 {
+	font-size: 1.02em;
+	margin: 1.4em 0 0.5em;
+	color: var(--ink-soft);
+}
+
+.md-typeset h3 .headerlink,
+.md-typeset h4 .headerlink {
+	color: var(--ink-soft);
+}
+
+/* 标题后的永久链接符号：缩小，别抢标题的视觉重量 */
+.md-typeset .headerlink {
+	font-size: 0.6em;
+	vertical-align: 0.15em;
+	margin-left: 0.25em;
+	opacity: 0.28;
+	transition: opacity 0.2s, color 0.2s;
+}
+
+.md-typeset h1 .headerlink,
+.md-typeset h2 .headerlink {
+	font-size: 0.45em;
+	opacity: 0.2;
+}
+
+.md-typeset .headerlink:hover {
+	opacity: 1;
+	color: var(--seal);
+}
+
+.md-typeset a {
+	text-decoration: none;
+	background-image: linear-gradient(var(--seal), var(--seal));
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 0 1px;
+	transition: background-size 0.25s ease, color 0.2s;
+}
+
+.md-typeset a:hover {
+	background-size: 100% 1px;
+	color: var(--seal);
+}
+
+.md-typeset img,
+.md-typeset video {
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-1);
+}
+
+.md-typeset hr {
+	border: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--rule-strong), transparent);
+	margin: 2.2em 0;
+}
+
+.md-typeset mark {
+	padding: 0.05em 0.25em;
+	border-radius: 4px;
+}
+
+.md-typeset kbd {
+	border: 1px solid var(--rule-strong);
+	border-bottom-width: 2px;
+	border-radius: 6px;
+	background: var(--paper-raise);
+	padding: 0.05em 0.4em;
+	font-size: 0.75em;
+}
+
+.md-typeset del {
+	color: var(--ink-soft);
+}
+
+.md-typeset ul,
+.md-typeset ol {
+	margin: 0.8em 0;
+}
+
+.md-typeset li {
+	margin: 0.35em 0;
+}
+
+.md-typeset ul > li::marker {
+	color: var(--seal);
+}
+
+.md-typeset .footnote {
+	font-size: 0.72rem;
+	color: var(--ink-soft);
+	border-top: 1px solid var(--rule);
+	padding-top: 0.8em;
+}
+
+.md-typeset .footnote-backref {
+	color: var(--seal);
+	opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. 引用 / 提示框 / 折叠
+   -------------------------------------------------------------------------- */
 .md-typeset blockquote {
-	border-left: 4px solid var(--md-primary-fg-color);
-	background: rgba(0, 0, 0, 0.02);
+	margin: 1.2em 0;
+	padding: 0.7em 1.1em;
+	border-left: 4px solid var(--seal);
+	border-radius: 0 var(--radius) var(--radius) 0;
+	background: var(--seal-soft);
+	color: var(--ink);
+	font-style: normal;
+}
+
+.md-typeset blockquote p:first-child {
+	margin-top: 0;
+}
+
+.md-typeset blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* 提示框：统一成「低饱和纸卡片」——形状/间距/阴影一致，颜色按类型降饱和处理 */
+.md-typeset .admonition,
+.md-typeset details {
+	--adm: var(--seal);
+	border: 1px solid color-mix(in srgb, var(--adm) 30%, var(--rule)) !important;
+	border-left-width: 4px !important;
+	border-left-color: var(--adm) !important;
+	border-radius: var(--radius-lg);
+	background: var(--paper-raise) !important;
+	box-shadow: var(--shadow-1);
+	font-size: 0.76rem;
+	padding: 0 0.8rem;
+	overflow: hidden;
+	transition: box-shadow 0.25s ease;
+}
+
+.md-typeset .admonition:hover,
+.md-typeset details:hover {
+	box-shadow: var(--shadow-2);
+}
+
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+	background: color-mix(in srgb, var(--adm) 9%, transparent) !important;
+	border-bottom: 1px solid var(--rule);
+	border-radius: 0;
+	color: var(--ink);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	margin: 0 -0.8rem;
+	padding-top: 0.55em;
+	padding-bottom: 0.55em;
+}
+
+.md-typeset .admonition > .admonition-title:before,
+.md-typeset details > summary:before {
+	background-color: var(--adm) !important;
+}
+
+.md-typeset .admonition > :last-child,
+.md-typeset details > :last-child {
+	margin-bottom: 0;
+}
+
+/* 各类型的低饱和色：与印章红同一家族，避免主题默认那套荧光色 */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+	--adm: #4a6fa5;
+}
+
+.md-typeset .admonition.abstract,
+.md-typeset .admonition.summary,
+.md-typeset .admonition.tldr,
+.md-typeset details.abstract,
+.md-typeset details.summary,
+.md-typeset details.tldr {
+	--adm: #5b8fa8;
+}
+
+.md-typeset .admonition.info,
+.md-typeset .admonition.todo,
+.md-typeset details.info,
+.md-typeset details.todo {
+	--adm: #3f8e9e;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset .admonition.hint,
+.md-typeset .admonition.important,
+.md-typeset details.tip,
+.md-typeset details.hint,
+.md-typeset details.important {
+	--adm: #3f9e86;
+}
+
+.md-typeset .admonition.success,
+.md-typeset .admonition.check,
+.md-typeset .admonition.done,
+.md-typeset details.success,
+.md-typeset details.check,
+.md-typeset details.done {
+	--adm: #4f9e58;
+}
+
+.md-typeset .admonition.question,
+.md-typeset .admonition.help,
+.md-typeset .admonition.faq,
+.md-typeset details.question,
+.md-typeset details.help,
+.md-typeset details.faq {
+	--adm: #7a9e3f;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset .admonition.caution,
+.md-typeset .admonition.attention,
+.md-typeset details.warning,
+.md-typeset details.caution,
+.md-typeset details.attention {
+	--adm: #c58a3a;
+}
+
+.md-typeset .admonition.failure,
+.md-typeset .admonition.fail,
+.md-typeset .admonition.missing,
+.md-typeset details.failure,
+.md-typeset details.fail,
+.md-typeset details.missing {
+	--adm: #c2604a;
+}
+
+.md-typeset .admonition.danger,
+.md-typeset .admonition.error,
+.md-typeset details.danger,
+.md-typeset details.error {
+	--adm: #b3543a;
+}
+
+.md-typeset .admonition.bug,
+.md-typeset details.bug {
+	--adm: #a8517a;
+}
+
+.md-typeset .admonition.example,
+.md-typeset details.example {
+	--adm: #7a6aa8;
+}
+
+.md-typeset .admonition.quote,
+.md-typeset .admonition.cite,
+.md-typeset details.quote,
+.md-typeset details.cite {
+	--adm: #8a8580;
+}
+
+/* --------------------------------------------------------------------------
+   7. 表格
+   -------------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
+	display: table;
+	width: 100%;
+	border-radius: var(--radius);
+	overflow: hidden;
+	box-shadow: var(--shadow-1);
+	border: 1px solid var(--rule);
+	font-size: 0.74rem;
+}
+
+.md-typeset table:not([class]) th {
+	background: var(--seal-soft);
+	color: var(--ink);
+	font-weight: 700;
+	border-bottom: 1px solid var(--rule-strong);
+	white-space: nowrap;
+}
+
+.md-typeset table:not([class]) td {
+	border-top: 1px solid var(--rule);
+	vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td {
+	background: rgba(38, 34, 31, 0.018);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:nth-child(even) td {
+	background: rgba(231, 227, 222, 0.035);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+	background: var(--seal-soft);
+}
+
+/* --------------------------------------------------------------------------
+   8. 代码
+   -------------------------------------------------------------------------- */
+/* 行内代码：印章红的小标签 */
+.md-typeset code:not(pre code) {
+	font-family: var(--md-code-font);
+	font-size: 0.82em;
+	font-weight: 500;
+	padding: 0.1em 0.4em;
+	border-radius: 5px;
+	background: var(--md-code-bg-color);
+	color: var(--md-code-fg-color);
+	box-shadow: inset 2px 0 0 var(--seal);
+	white-space: nowrap;
+}
+
+/* 代码块容器 */
+.md-typeset .highlight,
+.md-typeset div.highlight {
+	border: 1px solid var(--rule);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-1);
+	background: var(--md-code-bg-color);
+	overflow: hidden;
+	margin: 1.4em 0;
+	transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.md-typeset .highlight:hover {
+	box-shadow: var(--shadow-2);
+	border-color: var(--rule-strong);
+}
+
+/* 语言/文件名标题栏 */
+.md-typeset .highlight > .filename,
+.md-typeset .highlight span.filename {
+	display: block;
 	padding: 0.5em 1em;
-	border-radius: 0 8px 8px 0;
+	font-family: var(--md-code-font);
+	font-size: 0.66rem;
+	letter-spacing: 0.04em;
+	color: var(--ink-soft);
+	background: rgba(38, 34, 31, 0.03);
+	border-bottom: 1px solid var(--rule);
 }
 
-[data-md-color-scheme="slate"] .md-typeset blockquote {
-	background: rgba(255, 255, 255, 0.03);
+[data-md-color-scheme="slate"] .md-typeset .highlight > .filename {
+	background: rgba(231, 227, 222, 0.05);
 }
 
-/* 6. 返回顶部按钮样式 */
+/* 代码本体：自动换行 */
+.md-typeset pre > code,
+.md-typeset .highlight pre {
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	line-height: 1.65;
+	font-size: 0.74rem;
+	padding: 0.9em 1em;
+	background: transparent;
+}
+
+.md-typeset pre > code {
+	display: block;
+}
+
+/* 行号（pymdownx.highlight: anchor_linenums + line_spans: __span） */
+.md-typeset .highlighttable {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background: transparent;
+}
+
+.md-typeset .highlighttable .linenos {
+	display: none;
+}
+
+.md-typeset .highlighttable td.code {
+	padding: 0 !important;
+}
+
+.md-typeset .highlighttable td.code pre {
+	margin: 0;
+	padding: 0.9em 1em;
+	counter-reset: line;
+	border-radius: 0;
+	background: transparent;
+}
+
+.md-typeset .highlighttable td.code pre code > span {
+	display: block;
+	counter-increment: line;
+	position: relative;
+	padding-left: 2.6em;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	border-radius: 4px;
+	transition: background 0.18s ease;
+}
+
+.md-typeset .highlighttable td.code pre code > span::before {
+	content: counter(line);
+	position: absolute;
+	left: 0;
+	width: 2em;
+	text-align: right;
+	color: var(--ink-soft);
+	opacity: 0.5;
+	font-size: 0.86em;
+	user-select: none;
+	font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .highlighttable td.code pre code > span:hover {
+	background: var(--seal-soft);
+}
+
+.md-typeset .highlight code {
+	background: transparent;
+	box-shadow: none;
+	padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. 底部 / 按钮
+   -------------------------------------------------------------------------- */
+.md-footer {
+	--md-footer-fg-color: var(--ink-soft);
+	--md-footer-fg-color--light: var(--ink-soft);
+	--md-footer-fg-color--lighter: var(--ink-soft);
+	--md-footer-bg-color: var(--paper);
+	--md-footer-bg-color--dark: var(--paper);
+	background: var(--paper);
+	color: var(--ink-soft);
+	border-top: 1px solid var(--rule);
+}
+
+.md-footer-meta {
+	background: transparent;
+}
+
+.md-copyright {
+	color: var(--ink-soft);
+	font-size: 0.62rem;
+}
+
+.md-copyright__highlight,
+.md-copyright a {
+	color: var(--seal);
+	text-decoration: none;
+}
+
+.md-copyright a:hover {
+	text-decoration: underline;
+}
+
 .md-top {
-	border-radius: 20px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	border-radius: 999px;
+	box-shadow: var(--shadow-2);
+	background: var(--paper-raise);
+	color: var(--seal);
+	border: 1px solid var(--rule);
+	font-weight: 600;
 }
 
-/* 7. 移动端代码块适配 */
-@media screen and (max-width: 768px) {
+.md-top:hover {
+	background: var(--seal);
+	color: #fff;
+	border-color: var(--seal);
+}
+
+.md-typeset .md-button {
+	border-radius: 999px;
+	border-color: var(--seal);
+	color: var(--seal);
+	transition: background 0.2s, color 0.2s;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button--primary {
+	background: var(--seal);
+	border-color: var(--seal);
+	color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   10. 数学公式
+   -------------------------------------------------------------------------- */
+.md-typeset .arithmatex {
+	overflow-x: auto;
+	padding: 0.4em 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. 移动端
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 76.1875em) {
+
+	.md-typeset {
+		font-size: 0.76rem;
+	}
+
+	.md-typeset h1 {
+		font-size: 1.6em;
+	}
+
+	.md-typeset h2 {
+		font-size: 1.3em;
+		padding-left: 0.55em;
+	}
+
+	/* 代码块在窄屏上贴边、圆角收缩 */
+	.md-typeset .highlight,
 	.md-typeset div.highlight {
 		margin: 1em -0.8em;
 		border-radius: 0;
-		border-left: none;
-		border-right: none;
+		border-left: 0;
+		border-right: 0;
 	}
-	
+
+	.md-typeset .highlighttable td.code pre {
+		padding: 0.8em;
+	}
+
 	.md-typeset .highlighttable td.code pre code > span {
-		padding-left: 2.5em;
+		padding-left: 2.2em;
 	}
-	
+
 	.md-typeset .highlighttable td.code pre code > span::before {
-		width: 2.2em;
+		width: 1.7em;
 	}
-	
-	.md-typeset .highlighttable td.code pre code > span::after {
-		width: 2.6em;
+
+	.md-header__title {
+		font-size: 0.9rem;
+	}
+
+	/* 手机上标题后的 ¶ 会换行，隐藏掉更清爽 */
+	.md-typeset .headerlink {
+		display: none;
 	}
 }
 
-/* 9. 页面加载动画已移除（导致手机端导航栏层级冲突） */
+/* 抽屉里的层级标题条统一成纸色 */
+.md-nav--primary > .md-nav__title,
+.md-nav--primary .md-nav > .md-nav__title {
+	background: var(--paper-raise) !important;
+	border-bottom: 1px solid var(--rule);
+	color: var(--ink);
+}
 
-/* 10. 数学公式样式 */
-.md-typeset .arithmatex {
-	overflow-x: auto;
-	padding: 0.5em 0;
+/* 刘海屏安全区 */
+@supports (padding: max(0px)) {
+
+	.md-header__inner,
+	.md-tabs > .md-grid {
+		padding-left: max(0.2rem, env(safe-area-inset-left));
+		padding-right: max(0.2rem, env(safe-area-inset-right));
+	}
+}
+
+/* --------------------------------------------------------------------------
+   12. 打印
+   -------------------------------------------------------------------------- */
+@media print {
+
+	.md-header,
+	.md-tabs,
+	.md-sidebar,
+	.md-footer,
+	.md-top {
+		display: none !important;
+	}
+
+	.md-typeset {
+		color: #000;
+	}
+
+	.md-typeset a {
+		color: #000;
+		background: none;
+	}
 }
