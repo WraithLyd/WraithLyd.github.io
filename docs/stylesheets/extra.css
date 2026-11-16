@@ -31,11 +31,13 @@
 	--md-accent-fg-color: var(--seal);
 	--md-accent-fg-color--transparent: var(--seal-soft);
 	--md-typeset-mark-color: rgba(230, 190, 80, 0.38);
-	--md-code-bg-color: rgba(38, 34, 31, 0.045);
+	/* 代码块一律用不透明色：否则落在告示块的绿/紫底上会被"染色" */
+	--md-code-bg-color: #eef3fd;
 	--md-code-fg-color: #4a413c;
 	--md-typeset-table-color: var(--rule);
-	--code-bg: rgba(38, 34, 31, 0.032);
-	--code-rule: rgba(38, 34, 31, 0.28);
+--code-bg: #f2f6fe;
+	--code-rule: #a8c0f2;
+	--code-label: #2563eb;
 }
 
 [data-md-color-scheme="slate"] {
@@ -59,11 +61,13 @@
 	--md-typeset-a-color: var(--seal-dark);
 	--md-accent-fg-color: var(--seal);
 	--md-accent-fg-color--transparent: var(--seal-soft);
-	--md-code-bg-color: rgba(231, 227, 222, 0.07);
+	/* 代码块一律用不透明色：否则落在告示块的绿/紫底上会被"染色" */
+	--md-code-bg-color: #1b212b;
 	--md-code-fg-color: #cdd4d8;
 	--md-typeset-table-color: var(--rule);
-	--code-bg: rgba(231, 227, 222, 0.05);
-	--code-rule: rgba(231, 227, 222, 0.26);
+--code-bg: #191f28;
+	--code-rule: #3c5f93;
+	--code-label: #7db4ff;
 }
 
 /* 正文字体（woff2 由 _build_fonts.py 生成） */
@@ -602,6 +606,8 @@ body {
 /* 代码块：一整块淡底 + 左边 2px 竖线；hover 时竖线变印章红 */
 .md-typeset .highlight {
 	position: relative;
+	/* flow-root：自成 BFC，右侧浮动的 !!! inline end 告示块不会让淡底撑出一块空白 */
+	display: flow-root;
 	margin: 1.7em 0;
 	padding: 0;
 	border: 0;
@@ -612,7 +618,7 @@ body {
 }
 
 .md-typeset .highlight:hover {
-	border-left-color: var(--seal);
+	border-left-color: var(--code-label);
 }
 
 /* 顶部小标签：语言/文件名 + 细线，像书页的栏目标记，不是标题栏色块 */
@@ -626,14 +632,14 @@ body {
 	padding: 0.62em 1.05em 0;
 	border: 0;
 	background: none;
-	color: var(--ink-soft);
-	font-family: var(--md-text-font);
-	font-size: 0.58rem;
-	font-weight: 700;
-	letter-spacing: 0.16em;
+	color: var(--code-label);
+	/* 类型标签：跟随代码字体（JetBrains Mono），只放大字号，不加粗、不加字距、不改大小写 */
+	font-family: var(--md-code-font);
+	font-size: 0.7rem;
+	font-weight: 400;
+	letter-spacing: normal;
 	line-height: 1.4;
 	text-align: left;
-	text-transform: uppercase;
 	white-space: nowrap;
 	overflow: hidden;
 }
@@ -1176,40 +1182,40 @@ body {
 	text-indent: 0;
 }
 
-/* --- 代码配色：按明暗两套低饱和（主题支持按 class 着色） --- */
+/* --- 语法配色：清爽高饱和（明暗两套，对应 JetBrains Mono 的等宽骨架） --- */
 :root,
 [data-md-color-scheme="default"] {
-	--md-code-hl-color: #b3543a;
-	--md-code-hl-color--light: rgba(179, 84, 58, 0.14);
-	--md-code-hl-comment-color: #8d857e;
-	--md-code-hl-keyword-color: #96486b;
-	--md-code-hl-string-color: #4c7a4a;
-	--md-code-hl-number-color: #a8692b;
-	--md-code-hl-function-color: #3f6a8a;
-	--md-code-hl-constant-color: #7a5a8a;
-	--md-code-hl-operator-color: #6b625c;
-	--md-code-hl-punctuation-color: #8d857e;
-	--md-code-hl-special-color: #a8514a;
-	--md-code-hl-name-color: #3f6a8a;
-	--md-code-hl-variable-color: #4a413c;
-	--md-code-hl-generic-color: #8d857e;
+	--md-code-hl-color: #2563eb;
+	--md-code-hl-color--light: rgba(37, 99, 235, 0.14);
+	--md-code-hl-comment-color: #6b7280;
+	--md-code-hl-keyword-color: #7c3aed;
+	--md-code-hl-string-color: #059669;
+	--md-code-hl-number-color: #d97706;
+	--md-code-hl-function-color: #2563eb;
+	--md-code-hl-constant-color: #9333ea;
+	--md-code-hl-operator-color: #475569;
+	--md-code-hl-punctuation-color: #64748b;
+	--md-code-hl-special-color: #db2777;
+	--md-code-hl-name-color: #2563eb;
+	--md-code-hl-variable-color: #334155;
+	--md-code-hl-generic-color: #64748b;
 }
 
 [data-md-color-scheme="slate"] {
-	--md-code-hl-color: #e08263;
-	--md-code-hl-color--light: rgba(224, 130, 99, 0.18);
-	--md-code-hl-comment-color: #8b949e;
-	--md-code-hl-keyword-color: #d98ab0;
-	--md-code-hl-string-color: #9ccf9a;
-	--md-code-hl-number-color: #e0b07a;
-	--md-code-hl-function-color: #8ab8e0;
-	--md-code-hl-constant-color: #c3a0e0;
-	--md-code-hl-operator-color: #b9b3ad;
-	--md-code-hl-punctuation-color: #8b949e;
-	--md-code-hl-special-color: #e08a7a;
-	--md-code-hl-name-color: #8ab8e0;
-	--md-code-hl-variable-color: #e7e3de;
-	--md-code-hl-generic-color: #8b949e;
+	--md-code-hl-color: #60a5fa;
+	--md-code-hl-color--light: rgba(96, 165, 250, 0.18);
+	--md-code-hl-comment-color: #94a3b8;
+	--md-code-hl-keyword-color: #c084fc;
+	--md-code-hl-string-color: #34d399;
+	--md-code-hl-number-color: #fbbf24;
+	--md-code-hl-function-color: #60a5fa;
+	--md-code-hl-constant-color: #e879f9;
+	--md-code-hl-operator-color: #cbd5e1;
+	--md-code-hl-punctuation-color: #94a3b8;
+	--md-code-hl-special-color: #f472b6;
+	--md-code-hl-name-color: #60a5fa;
+	--md-code-hl-variable-color: #e2e8f0;
+	--md-code-hl-generic-color: #94a3b8;
 }
 
 /* --- 图片灯箱（mkdocs-glightbox） --- */
