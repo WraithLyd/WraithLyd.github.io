@@ -1,4 +1,10 @@
 site_name: Wraith's Notebook
+site_url: https://wraithlyd.github.io/
+site_description: Wraith 的学习笔记：课程、读书、工具与生活记录。
+site_author: Wraith
+repo_url: https://github.com/WraithLyd/WraithLyd.github.io
+repo_name: WraithLyd.github.io
+edit_uri: edit/master/docs/
 dev_addr: '127.0.0.1:5500' #默认值
 theme:
   name: 'material'
@@ -38,6 +44,8 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
+    - content.action.edit
+    - content.action.view
 extra_css:
 #   - https://cdn.tonycrane.cc/utils/katex.min.css
 #   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
