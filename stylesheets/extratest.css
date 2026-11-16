@@ -1,5 +1,7 @@
 /* 字体：woff2 子集（GB2312 + 全站实际用到的字符），由 _build_fonts.py 生成。
-   源字体在 fonts-src/，不进站点目录。 */
+   源字体在 fonts-src/，不进站点目录。
+   正文：LXGW Bright（Ysabeau Office 西文 + 霞鹜文楷中文）；
+   代码：JetBrains Mono。 */
 
 @font-face {
     font-family: "JetBrains Mono Regular";
@@ -10,8 +12,8 @@
 }
 
 @font-face {
-    font-family: "LXGW WenKai GB Screen";
-    src: url("LXGWWenKaiGBScreen.woff2") format("woff2");
+    font-family: "LXGW Bright";
+    src: url("LXGWBright-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
