@@ -85,11 +85,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
       pygments_lang_class: true
       use_pygments: true
-      pygments_style: colorful
       auto_title: true
   - pymdownx.superfences:
       custom_fences:
