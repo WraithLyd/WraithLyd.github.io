@@ -18,6 +18,7 @@ FENCE_RE = re.compile(r'^```.*?^```', re.M | re.S)
 INLINE_CODE_RE = re.compile(r'`[^`\n]*`')
 FRONT_MATTER_RE = re.compile(r'^---\n.*?\n---\n', re.S)
 HEADING_RE = re.compile(r'^#\s+(.+)$', re.M)
+H2_RE = re.compile(r'^##\s+(.+)$', re.M)
 
 SECTION_NAMES = {
     'course': '课程',
@@ -50,12 +51,17 @@ def _git_last_commit(root: Path, src_uri: str) -> int | None:
 
 def _page_title(path: Path) -> str:
     try:
-        text = path.read_text(encoding='utf-8')
+        text = path.read_text(encoding='utf-8-sig')  # 去掉 BOM，否则第一行 # 匹配不到
     except OSError:
         return path.stem
-    m = HEADING_RE.search(text)
-    if m:
-        return m.group(1).strip()
+    # 先去掉 front matter / 代码块 / HTML 注释，否则代码里的 "# <class 'str'>" 会被当成标题
+    text = FRONT_MATTER_RE.sub('', text)
+    text = FENCE_RE.sub('', text)
+    text = re.sub(r'<!--.*?-->', '', text, flags=re.S)
+    for pattern in (HEADING_RE, H2_RE):
+        m = pattern.search(text)
+        if m:
+            return m.group(1).strip()
     return path.stem
 
 
