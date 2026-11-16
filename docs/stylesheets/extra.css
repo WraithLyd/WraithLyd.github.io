@@ -354,27 +354,3 @@
 	overflow-x: auto;
 	padding: 0.5em 0;
 }
-
-/* ========== 终极修复：手机端导航栏点击穿透问题 ========== */
-@media screen and (max-width: 76.1875em) {
-    /* 1. 让遮罩层沉底 (z-index: 1) */
-    .md-overlay {
-        z-index: 1 !important;
-        pointer-events: auto; /* 允许点击关闭，但在链接下面 */
-    }
-
-    /* 2. 让导航栏主体浮起 (z-index: 3) */
-    .md-drawer {
-        z-index: 3 !important;
-        pointer-events: auto;
-        background: var(--md-default-bg-color); /* 确保不透明 */
-    }
-    
-    /* 3. 关键：让具体的链接层级最高 (z-index: 5) */
-    .md-nav__link,
-    .md-nav__link * {
-        position: relative;
-        z-index: 5 !important;
-        pointer-events: auto !important;
-    }
-}
