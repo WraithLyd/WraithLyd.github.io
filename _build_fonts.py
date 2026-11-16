@@ -3,11 +3,16 @@
 依赖：pip install fonttools brotli
 
 源字体放在 fonts-src/（不进版本库，见 .gitignore）：
-  - LXGWBright-Regular.ttf   https://github.com/lxgw/LxgwBright/releases（LXGWBright.7z 里）
-  - JetBrainsMono.ttf        https://github.com/JetBrains/JetBrainsMono/releases
+  - LXGWBright-Regular.ttf / -Medium.ttf / -Light.ttf
+        https://github.com/lxgw/LxgwBright/releases（LXGWBright.7z 里）
+  - JetBrainsMono.ttf
+        https://github.com/JetBrains/JetBrainsMono/releases
 
 用法：venv\\Scripts\\python.exe _build_fonts.py
-输出：docs/stylesheets/LXGWBright-Regular.woff2、docs/stylesheets/JetBrainsMono.woff2
+输出（docs/stylesheets/）：
+  LXGWBright-Regular.woff2   正文字重 400
+  LXGWBright-Medium.woff2     粗体 / 标题字重 700
+  JetBrainsMono.woff2         代码
 """
 import pathlib
 from fontTools.subset import Subsetter, Options
@@ -41,6 +46,9 @@ def used_chars() -> set[str]:
 
 
 def build(src: pathlib.Path, dst: pathlib.Path, chars: set[str]) -> None:
+    if not src.exists():
+        print(f'跳过（缺源文件）: {src.name}')
+        return
     font = TTFont(str(src))
     cmap = font.getBestCmap()
     targets = [ord(c) for c in chars]
@@ -63,8 +71,6 @@ def build(src: pathlib.Path, dst: pathlib.Path, chars: set[str]) -> None:
     print(f'{src.name} -> {dst.name}: {src.stat().st_size:,}B -> {dst.stat().st_size:,}B '
           f'({dst.stat().st_size / src.stat().st_size:.1%})，字形数={len(new_cmap)}，'
           f'源字体缺字={len(missing)}，子集漏字={len(uncovered)}')
-    if missing:
-        print('  源字体没有的字:', ''.join(sorted(missing))[:200])
     if uncovered:
         raise SystemExit('子集化后仍有字缺失，检查逻辑')
 
@@ -74,6 +80,8 @@ def main() -> None:
     print(f'需要覆盖的字符数：{len(chars):,}')
     build(ROOT / 'fonts-src' / 'LXGWBright-Regular.ttf',
           DOCS / 'stylesheets' / 'LXGWBright-Regular.woff2', chars)
+    build(ROOT / 'fonts-src' / 'LXGWBright-Medium.ttf',
+          DOCS / 'stylesheets' / 'LXGWBright-Medium.woff2', chars)
     build(ROOT / 'fonts-src' / 'JetBrainsMono.ttf',
           DOCS / 'stylesheets' / 'JetBrainsMono.woff2', chars)
 

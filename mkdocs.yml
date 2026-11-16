@@ -47,12 +47,15 @@ theme:
     - search.highlight
     - content.action.edit
     - content.action.view
+    - navigation.footer
+    - content.tooltips
+    - toc.follow
 extra_css:
 #   - https://cdn.tonycrane.cc/utils/katex.min.css
 #   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
 #   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - stylesheets/extra.css?v=5
-  - stylesheets/extratest.css?v=3
+  - stylesheets/extra.css?v=6
+  - stylesheets/extratest.css?v=4
 markdown_extensions:
   - toc:
       permalink: true
@@ -101,6 +104,15 @@ plugins:
       timezone: Asia/Shanghai
       #fallback_to_build_date: true
       enable_creation_date: true
+  - glightbox:
+      touchNavigation: true
+      effect: zoom
+      background: 'rgba(20, 18, 16, 0.92)'
+      skip_classes:
+        - no-lightbox
+
+hooks:
+  - hooks/recent_updates.py
 extra_javascript:
   - assets/js/mathjax.js?v=2
   - assets/js/mathjax/tex-svg.js

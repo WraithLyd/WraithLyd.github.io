@@ -876,3 +876,393 @@ body {
 		background: none;
 	}
 }
+
+
+/* ==========================================================================
+   13. 大修：首页 hero / 卡片索引 / 最近更新 / 页面元信息 / 真粗体 /
+       代码标题栏与配色 / 图片灯箱 / 上一页-下一页
+   ========================================================================== */
+
+/* --- 真粗体：已加载 LXGW Bright Medium，禁止浏览器合成伪粗 --- */
+body {
+	font-synthesis-weight: none;
+	font-synthesis-style: none;
+}
+
+/* --- 首页 hero --- */
+.md-typeset .nb-hero {
+	margin: 0 0 2.4em;
+	padding: 2.4em 1.6em 2.2em;
+	border: 1px solid var(--rule);
+	border-radius: 20px;
+	background:
+		radial-gradient(120% 140% at 100% 0%, var(--seal-soft) 0%, transparent 58%),
+		var(--paper-raise);
+	box-shadow: var(--shadow-1);
+	text-align: center;
+}
+
+.md-typeset .nb-hero > h1 {
+	margin: 0.15em 0 0.4em;
+	padding: 0;
+	border: 0;
+	font-size: 2.1em;
+	line-height: 1.25;
+}
+
+.md-typeset .nb-hero__eyebrow {
+	margin: 0;
+	color: var(--seal);
+	font-size: 0.62rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.md-typeset .nb-hero__lead {
+	margin: 0 auto 1.5em;
+	max-width: 32em;
+	color: var(--ink-soft);
+}
+
+.md-typeset .nb-hero .md-button {
+	margin: 0.2em 0.3em;
+}
+
+/* --- 卡片网格（. grid.cards 重绘成纸卡片） --- */
+.md-typeset .grid.cards > ul > li {
+	padding: 1em 1.1em;
+	border: 1px solid var(--rule);
+	border-radius: var(--radius-lg);
+	background: var(--paper-raise);
+	box-shadow: none;
+	transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+	transform: translateY(-2px);
+	border-color: color-mix(in srgb, var(--seal) 35%, var(--rule));
+	box-shadow: var(--shadow-2);
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child {
+	color: var(--ink);
+	font-weight: 700;
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child .twemoji,
+.md-typeset .grid.cards > ul > li > p:first-child .emojione,
+.md-typeset .grid.cards > ul > li > p:first-child svg {
+	color: var(--seal);
+}
+
+.md-typeset .grid.cards > ul > li > hr {
+	margin: 0.7em 0;
+	border: 0;
+}
+
+.md-typeset .grid.cards > ul > li > p:last-child {
+	margin-bottom: 0;
+}
+
+.md-typeset .grid.cards > ul > li > p:last-child a {
+	font-size: 0.66rem;
+	font-weight: 700;
+}
+
+/* --- 首页「最近更新」（由 hooks/recent_updates.py 注入） --- */
+.md-typeset .nb-recent > ul {
+	margin: 0.4em 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.md-typeset .nb-recent > ul > li {
+	display: flex;
+	gap: 1em;
+	align-items: baseline;
+	justify-content: space-between;
+	margin: 0.18em 0;
+	padding: 0.55em 0.8em;
+	border: 1px solid transparent;
+	border-radius: var(--radius);
+	transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.md-typeset .nb-recent > ul > li::marker {
+	content: "";
+}
+
+.md-typeset .nb-recent > ul > li:hover {
+	background: var(--seal-soft);
+	border-color: var(--rule);
+}
+
+.md-typeset .nb-recent a {
+	font-weight: 700;
+}
+
+.md-typeset .nb-recent__meta {
+	flex: none;
+	color: var(--ink-soft);
+	font-size: 0.62rem;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+/* --- 页面元信息（partials/source-file.html） --- */
+.md-typeset .nb-page-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45em;
+	align-items: center;
+	margin: 2.6em 0 0;
+	padding-top: 1.1em;
+	border-top: 1px solid var(--rule);
+	color: var(--ink-soft);
+	font-size: 0.6rem;
+}
+
+.md-typeset .nb-page-meta__item {
+	display: inline-flex;
+	gap: 0.35em;
+	align-items: baseline;
+	padding: 0.28em 0.7em;
+	border: 1px solid var(--rule);
+	border-radius: 999px;
+	background: var(--paper-raise);
+	white-space: nowrap;
+}
+
+.md-typeset .nb-page-meta__label {
+	color: var(--seal);
+	font-weight: 700;
+}
+
+.md-typeset .nb-page-meta__item--source {
+	border-color: color-mix(in srgb, var(--seal) 30%, var(--rule));
+}
+
+.md-typeset .nb-page-meta__item--source a {
+	color: var(--seal);
+	font-weight: 700;
+	background: none;
+}
+
+/* --- 上一页 / 下一页（theme.features: navigation.footer） --- */
+.md-footer__inner {
+	margin: 0;
+	padding: 0.4rem;
+}
+
+.md-footer__link {
+	border-radius: var(--radius);
+	color: var(--ink);
+	padding: 0.4rem 0.6rem;
+}
+
+.md-footer__link:hover {
+	background: var(--seal-soft);
+}
+
+.md-footer__link .md-footer__title {
+	font-size: 0.72rem;
+}
+
+.md-footer__direction {
+	color: var(--ink-soft);
+	font-size: 0.58rem;
+	letter-spacing: 0.12em;
+}
+
+.md-footer__link .md-ellipsis {
+	font-weight: 700;
+}
+
+/* --- 中文段落：段距 + 首行缩进（只作用于正文直属段落） --- */
+.md-typeset > p {
+	margin: 1.05em 0;
+	text-indent: 2em;
+}
+
+.md-typeset > p.nb-noindent {
+	text-indent: 0;
+}
+
+.md-typeset .admonition p,
+.md-typeset details p,
+.md-typeset blockquote p,
+.md-typeset .grid p,
+.md-typeset li p,
+.md-typeset .nb-hero p,
+.md-typeset .nb-recent p,
+.md-typeset td p {
+	text-indent: 0;
+}
+
+/* --- 代码块标题栏：macOS 三点 + 语言名 --- */
+.md-typeset .highlight > .filename {
+	display: block;
+}
+
+/* 注意：表格版代码块的标题是 <th>，不能改 display，否则整张表错位 */
+/* 表格里 th > span.filename 是主题的小标签样式，这里清掉，只留三点 + 语言名 */
+.md-typeset .highlight span.filename {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+.md-typeset .highlight > .filename,
+.md-typeset .highlight th.filename {
+	padding: 0.5em 2.4em 0.5em 3.6em;
+	border-bottom: 1px solid var(--rule);
+	background: rgba(38, 34, 31, 0.035);
+	color: var(--ink-soft);
+	font-family: var(--md-code-font);
+	font-size: 0.62rem;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	text-align: left;
+	position: relative;
+}
+
+.md-typeset .highlight > .filename::before,
+.md-typeset .highlight th.filename::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 1.2em;
+	width: 0.4em;
+	height: 0.4em;
+	border-radius: 50%;
+	background: #dd6b5f;
+	box-shadow: 0.75em 0 0 #dfb45c, 1.5em 0 0 #78b06b;
+	transform: translateY(-50%);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight > .filename,
+[data-md-color-scheme="slate"] .md-typeset .highlight th.filename {
+	background: rgba(231, 227, 222, 0.05);
+}
+
+/* --- 复制按钮 --- */
+.md-typeset .md-clipboard {
+	top: 0.4rem;
+	right: 0.5rem;
+	width: 1.6rem;
+	height: 1.6rem;
+	border: 1px solid var(--rule);
+	border-radius: 6px;
+	background: var(--paper-raise);
+	color: var(--ink-soft);
+	opacity: 0;
+	transition: opacity 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.md-typeset .highlight:hover .md-clipboard,
+.md-typeset .md-clipboard:focus {
+	opacity: 1;
+}
+
+.md-typeset .md-clipboard:hover {
+	background: var(--seal-soft);
+	color: var(--seal);
+}
+
+/* --- 代码配色：按明暗两套低饱和（主题支持按 class 着色） --- */
+:root,
+[data-md-color-scheme="default"] {
+	--md-code-hl-color: #b3543a;
+	--md-code-hl-color--light: rgba(179, 84, 58, 0.14);
+	--md-code-hl-comment-color: #8d857e;
+	--md-code-hl-keyword-color: #96486b;
+	--md-code-hl-string-color: #4c7a4a;
+	--md-code-hl-number-color: #a8692b;
+	--md-code-hl-function-color: #3f6a8a;
+	--md-code-hl-constant-color: #7a5a8a;
+	--md-code-hl-operator-color: #6b625c;
+	--md-code-hl-punctuation-color: #8d857e;
+	--md-code-hl-special-color: #a8514a;
+	--md-code-hl-name-color: #3f6a8a;
+	--md-code-hl-variable-color: #4a413c;
+	--md-code-hl-generic-color: #8d857e;
+}
+
+[data-md-color-scheme="slate"] {
+	--md-code-hl-color: #e08263;
+	--md-code-hl-color--light: rgba(224, 130, 99, 0.18);
+	--md-code-hl-comment-color: #8b949e;
+	--md-code-hl-keyword-color: #d98ab0;
+	--md-code-hl-string-color: #9ccf9a;
+	--md-code-hl-number-color: #e0b07a;
+	--md-code-hl-function-color: #8ab8e0;
+	--md-code-hl-constant-color: #c3a0e0;
+	--md-code-hl-operator-color: #b9b3ad;
+	--md-code-hl-punctuation-color: #8b949e;
+	--md-code-hl-special-color: #e08a7a;
+	--md-code-hl-name-color: #8ab8e0;
+	--md-code-hl-variable-color: #e7e3de;
+	--md-code-hl-generic-color: #8b949e;
+}
+
+/* --- 图片灯箱（mkdocs-glightbox） --- */
+.glightbox-clean .gslide-description {
+	background: var(--paper-raise);
+	color: var(--ink);
+}
+
+.glightbox-clean .gslide-title,
+.glightbox-clean .gslide-desc {
+	color: var(--ink);
+	font-family: var(--md-text-font);
+}
+
+.glightbox-clean .gclose,
+.glightbox-clean .gnext,
+.glightbox-clean .gprev {
+	background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* --- 移动端微调 --- */
+@media screen and (max-width: 76.1875em) {
+
+	.md-typeset .nb-hero {
+		padding: 1.7em 1em 1.6em;
+		border-radius: 16px;
+	}
+
+	.md-typeset .nb-hero > h1 {
+		font-size: 1.7em;
+	}
+
+	.md-typeset .grid.cards > ul > li {
+		padding: 0.85em 0.95em;
+	}
+
+	.md-typeset .nb-recent > ul > li {
+		display: block;
+		padding: 0.5em 0.6em;
+	}
+
+	.md-typeset .nb-recent__meta {
+		display: block;
+		margin-top: 0.15em;
+	}
+
+	.md-typeset > p {
+		text-indent: 2em;
+	}
+
+	.md-typeset .nb-page-meta {
+		font-size: 0.56rem;
+	}
+}
