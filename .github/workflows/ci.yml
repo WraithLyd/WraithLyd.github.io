@@ -47,4 +47,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          mkdocs gh-deploy --force
+          set -o pipefail
+          mkdocs gh-deploy --force 2>&1 | tee /tmp/deploy.log
+
+      # TEMP-DIAG：把部署最后几十行以注解形式暴露出来（仓库日志需要登录才能看）
+      - name: Surface deploy error
+        if: failure()
+        run: |
+          tail -n 25 /tmp/deploy.log | while IFS= read -r line; do
+            echo "::error file=.github/workflows/ci.yml::$line"
+          done
