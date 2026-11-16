@@ -54,7 +54,7 @@ extra_css:
 #   - https://cdn.tonycrane.cc/utils/katex.min.css
 #   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
 #   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - stylesheets/extra.css?v=10
+  - stylesheets/extra.css?v=12
   - stylesheets/extratest.css?v=4
 markdown_extensions:
   - toc:

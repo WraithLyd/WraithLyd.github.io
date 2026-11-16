@@ -31,13 +31,14 @@
 	--md-accent-fg-color: var(--seal);
 	--md-accent-fg-color--transparent: var(--seal-soft);
 	--md-typeset-mark-color: rgba(230, 190, 80, 0.38);
-	/* 代码块一律用不透明色：否则落在告示块的绿/紫底上会被"染色" */
-	--md-code-bg-color: #eef3fd;
+	/* 代码块：很浅的暖灰底 + 左侧竖线 + 类型标签，不再铺深色卡片 */
+	--md-code-bg-color: #f4f1ed;
 	--md-code-fg-color: #4a413c;
 	--md-typeset-table-color: var(--rule);
---code-bg: #f2f6fe;
-	--code-rule: #a8c0f2;
-	--code-label: #2563eb;
+	--code-bg: #f6f3ef;
+	--code-fg: #33302c;
+	--code-rule: #d6cfc6;
+	--code-label: #b3543a;
 }
 
 [data-md-color-scheme="slate"] {
@@ -61,13 +62,14 @@
 	--md-typeset-a-color: var(--seal-dark);
 	--md-accent-fg-color: var(--seal);
 	--md-accent-fg-color--transparent: var(--seal-soft);
-	/* 代码块一律用不透明色：否则落在告示块的绿/紫底上会被"染色" */
-	--md-code-bg-color: #1b212b;
+	/* 代码块：比纸面略浅一档的暖灰底（暗色下是暖调深灰） */
+	--md-code-bg-color: #24211e;
 	--md-code-fg-color: #cdd4d8;
 	--md-typeset-table-color: var(--rule);
---code-bg: #191f28;
-	--code-rule: #3c5f93;
-	--code-label: #7db4ff;
+	--code-bg: #1f1d1b;
+	--code-fg: #e7e3de;
+	--code-rule: #3a3632;
+	--code-label: #e08263;
 }
 
 /* 正文字体（woff2 由 _build_fonts.py 生成） */
@@ -603,7 +605,7 @@ body {
 	vertical-align: baseline;
 }
 
-/* 代码块：一整块淡底 + 左边 2px 竖线；hover 时竖线变印章红 */
+/* 代码块：一整块浅暖灰底 + 左边 2px 竖线 + 圆角；hover 时竖线变标签色 */
 .md-typeset .highlight {
 	position: relative;
 	/* flow-root：自成 BFC，右侧浮动的 !!! inline end 告示块不会让淡底撑出一块空白 */
@@ -612,7 +614,7 @@ body {
 	padding: 0;
 	border: 0;
 	border-left: 2px solid var(--code-rule);
-	border-radius: 0;
+	border-radius: 8px;
 	background: var(--code-bg);
 	transition: border-left-color 0.22s ease, background 0.22s ease;
 }
@@ -682,7 +684,7 @@ body {
 	border: 0;
 	background: transparent;
 	box-shadow: none;
-	color: var(--ink);
+	color: var(--code-fg);
 	font-size: inherit;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
@@ -730,8 +732,8 @@ body {
 	margin: 0;
 	padding: 0;
 	background: transparent;
-	color: var(--ink-soft);
-	opacity: 0.45;
+	color: var(--code-fg);
+	opacity: 0.32;
 	font-size: 0.73rem;
 	line-height: 1.75;
 	text-align: right;
@@ -765,7 +767,7 @@ body {
 	border: 0;
 	border-radius: 4px;
 	background: transparent;
-	color: var(--ink-soft);
+	color: var(--code-label);
 	opacity: 0;
 	transition: opacity 0.18s ease, color 0.18s ease, background 0.18s ease;
 }
@@ -777,7 +779,7 @@ body {
 
 .md-typeset .md-clipboard:hover {
 	background: var(--seal-soft);
-	color: var(--seal);
+	color: var(--code-label);
 	opacity: 1;
 }
 
@@ -1182,40 +1184,40 @@ body {
 	text-indent: 0;
 }
 
-/* --- 语法配色：清爽高饱和（明暗两套，对应 JetBrains Mono 的等宽骨架） --- */
+/* --- 语法配色：浅底（明）/ 深底（暗）各一套；名字用中性色，不让整块泛蓝 --- */
 :root,
 [data-md-color-scheme="default"] {
-	--md-code-hl-color: #2563eb;
-	--md-code-hl-color--light: rgba(37, 99, 235, 0.14);
-	--md-code-hl-comment-color: #6b7280;
+	--md-code-hl-color: #b3543a;
+	--md-code-hl-color--light: rgba(179, 84, 58, 0.14);
+	--md-code-hl-comment-color: #7d766e;
 	--md-code-hl-keyword-color: #7c3aed;
-	--md-code-hl-string-color: #059669;
-	--md-code-hl-number-color: #d97706;
+	--md-code-hl-string-color: #047857;
+	--md-code-hl-number-color: #b45309;
 	--md-code-hl-function-color: #2563eb;
 	--md-code-hl-constant-color: #9333ea;
-	--md-code-hl-operator-color: #475569;
-	--md-code-hl-punctuation-color: #64748b;
-	--md-code-hl-special-color: #db2777;
-	--md-code-hl-name-color: #2563eb;
-	--md-code-hl-variable-color: #334155;
-	--md-code-hl-generic-color: #64748b;
+	--md-code-hl-operator-color: #6b625c;
+	--md-code-hl-punctuation-color: #8a817a;
+	--md-code-hl-special-color: #be185d;
+	--md-code-hl-name-color: #3a3430;
+	--md-code-hl-variable-color: #33302c;
+	--md-code-hl-generic-color: #8a817a;
 }
 
 [data-md-color-scheme="slate"] {
-	--md-code-hl-color: #60a5fa;
-	--md-code-hl-color--light: rgba(96, 165, 250, 0.18);
-	--md-code-hl-comment-color: #94a3b8;
-	--md-code-hl-keyword-color: #c084fc;
-	--md-code-hl-string-color: #34d399;
-	--md-code-hl-number-color: #fbbf24;
-	--md-code-hl-function-color: #60a5fa;
-	--md-code-hl-constant-color: #e879f9;
-	--md-code-hl-operator-color: #cbd5e1;
-	--md-code-hl-punctuation-color: #94a3b8;
-	--md-code-hl-special-color: #f472b6;
-	--md-code-hl-name-color: #60a5fa;
-	--md-code-hl-variable-color: #e2e8f0;
-	--md-code-hl-generic-color: #94a3b8;
+	--md-code-hl-color: #e08263;
+	--md-code-hl-color--light: rgba(224, 130, 99, 0.18);
+	--md-code-hl-comment-color: #98a2b3;
+	--md-code-hl-keyword-color: #c58cf5;
+	--md-code-hl-string-color: #6ee7a8;
+	--md-code-hl-number-color: #f5c05e;
+	--md-code-hl-function-color: #8ab4f8;
+	--md-code-hl-constant-color: #e58cf0;
+	--md-code-hl-operator-color: #c7cfda;
+	--md-code-hl-punctuation-color: #98a2b3;
+	--md-code-hl-special-color: #f78fb3;
+	--md-code-hl-name-color: #d7dde6;
+	--md-code-hl-variable-color: #e6e8ec;
+	--md-code-hl-generic-color: #98a2b3;
 }
 
 /* --- 图片灯箱（mkdocs-glightbox） --- */
