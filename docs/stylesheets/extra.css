@@ -64,8 +64,8 @@
 
 /* 正文字体（woff2 由 _build_fonts.py 生成） */
 :root {
-	--md-text-font: "LXGW WenKai GB Screen", "Songti SC", "Noto Serif SC", sans-serif;
-	--md-code-font: "JetBrains Mono Regular", "LXGW WenKai GB Screen", monospace;
+	--md-text-font: "LXGW Bright", "Ysabeau Office", "Songti SC", "Noto Serif SC", sans-serif;
+	--md-code-font: "JetBrains Mono Regular", "LXGW Bright", monospace;
 }
 
 /* --------------------------------------------------------------------------
@@ -765,11 +765,26 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   10. 数学公式
+   10. 数学公式（MathJax 3 SVG 输出，颜色跟随正文 currentColor）
    -------------------------------------------------------------------------- */
 .md-typeset .arithmatex {
 	overflow-x: auto;
 	padding: 0.4em 0;
+}
+
+/* MathJax SVG：
+   1) Material 自带 .md-typeset svg{max-width:100%;height:auto} 会把公式压成 1px，这里还原；
+   2) 过宽的公式交给 .arithmatex 横向滚动，而不是缩小。 */
+.md-typeset mjx-container[jax="SVG"] > svg {
+	max-width: none !important;
+	height: auto !important;
+}
+
+.md-typeset mjx-container[jax="SVG"][display="true"] {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: 1em 0;
 }
 
 /* --------------------------------------------------------------------------

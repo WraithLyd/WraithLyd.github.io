@@ -51,8 +51,8 @@ extra_css:
 #   - https://cdn.tonycrane.cc/utils/katex.min.css
 #   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
 #   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - stylesheets/extra.css?v=4
-  - stylesheets/extratest.css?v=2
+  - stylesheets/extra.css?v=5
+  - stylesheets/extratest.css?v=3
 markdown_extensions:
   - toc:
       permalink: true
@@ -102,8 +102,8 @@ plugins:
       #fallback_to_build_date: true
       enable_creation_date: true
 extra_javascript:
-  - assets/js/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+  - assets/js/mathjax.js?v=2
+  - assets/js/mathjax/tex-svg.js
 nav:
   - Home: index.md
   - Course: 

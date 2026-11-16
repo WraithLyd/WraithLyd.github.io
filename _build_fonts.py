@@ -1,7 +1,13 @@
 """生成站内字体用的 woff2（按 GB2312 + 全站实际用到的字符做子集化）。
 
+依赖：pip install fonttools brotli
+
+源字体放在 fonts-src/（不进版本库，见 .gitignore）：
+  - LXGWBright-Regular.ttf   https://github.com/lxgw/LxgwBright/releases（LXGWBright.7z 里）
+  - JetBrainsMono.ttf        https://github.com/JetBrains/JetBrainsMono/releases
+
 用法：venv\\Scripts\\python.exe _build_fonts.py
-输出：docs/stylesheets/LXGWWenKaiGBScreen.woff2、docs/stylesheets/JetBrainsMono.woff2
+输出：docs/stylesheets/LXGWBright-Regular.woff2、docs/stylesheets/JetBrainsMono.woff2
 """
 import pathlib
 from fontTools.subset import Subsetter, Options
@@ -66,8 +72,8 @@ def build(src: pathlib.Path, dst: pathlib.Path, chars: set[str]) -> None:
 def main() -> None:
     chars = used_chars()
     print(f'需要覆盖的字符数：{len(chars):,}')
-    build(ROOT / 'fonts-src' / 'LXGWWenKaiGBScreen.ttf',
-          DOCS / 'stylesheets' / 'LXGWWenKaiGBScreen.woff2', chars)
+    build(ROOT / 'fonts-src' / 'LXGWBright-Regular.ttf',
+          DOCS / 'stylesheets' / 'LXGWBright-Regular.woff2', chars)
     build(ROOT / 'fonts-src' / 'JetBrainsMono.ttf',
           DOCS / 'stylesheets' / 'JetBrainsMono.woff2', chars)
 

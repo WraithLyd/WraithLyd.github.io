@@ -19,3 +19,6 @@ desktop.ini
 
 # 日志文件
 *.log
+
+# 字体源文件（只提交子集化后的 woff2）
+fonts-src/
