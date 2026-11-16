@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Shanghai # 设置当前环境时区
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # git-revision-date-localized 需要完整提交历史，否则 creation date 会取不到
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Install dependencies
+        run: |
+          pip install "mkdocs-material>=9.4" mkdocs-git-revision-date-localized-plugin
+
+      - name: Build and deploy
+        run: mkdocs gh-deploy --force

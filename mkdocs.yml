@@ -64,11 +64,10 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.snippets
   - pymdownx.magiclink
-  - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.tasklist:
@@ -85,8 +84,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.arithmatex:
-      generic: true
 
 plugins:
   - search
@@ -127,8 +124,8 @@ nav:
         - course/Program/cpp/index.md
         - book: course/Program/cpp/1.md
       - Object-oriented Programming: 
-        - course/Program/oop/index.md
-        - string: course/Program/oop/string.md
+        - course/Program/Oop/index.md
+        - string: course/Program/Oop/string.md
     - ComputerSystem:
       - System1:
         - 单周期CPU复习: course/ComputerSystem/ComputerSystem1/preview.md

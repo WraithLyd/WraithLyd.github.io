@@ -9,6 +9,7 @@ debug/
 
 # 编辑器配置
 docs/.obsidian/
+.idea/
 *.code-workspace
 
 # OS 文件
