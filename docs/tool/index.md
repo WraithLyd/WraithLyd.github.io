@@ -1,4 +1,4 @@
-﻿# Tool
+# Tool
 !!! info "tool"
 	<br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
@@ -20,14 +20,6 @@
     建站、字体、代码块与提示框的配置备忘。
 
     [:octicons-arrow-right-24: 打开](MkDocs.md)
-
--   :material-graduation-cap-outline: **PyCharm 学生认证**
-
-    ---
-
-    校网环境下的许可证服务器激活流程。
-
-    [:octicons-arrow-right-24: 打开](pycharm.md)
 
 -   :material-camera-outline: **摄影**
 

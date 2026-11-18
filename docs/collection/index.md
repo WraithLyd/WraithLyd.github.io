@@ -1,4 +1,4 @@
-﻿# Collection
+# Collection
 !!! Abstract "collection"
 	<br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
@@ -41,8 +41,8 @@
 
     ---
 
-    词、诗、雅言与小说片段。
+    词、诗与雅言。
 
-    [:octicons-arrow-right-24: verse](verse.md) · [:octicons-arrow-right-24: poem](poem.md) · [:octicons-arrow-right-24: elegance](elegance.md) · [:octicons-arrow-right-24: novel](novel.md)
+    [:octicons-arrow-right-24: verse](verse.md) · [:octicons-arrow-right-24: poem](poem.md) · [:octicons-arrow-right-24: elegance](elegance.md)
 
 </div>

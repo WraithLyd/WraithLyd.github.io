@@ -54,12 +54,17 @@ extra_css:
 #   - https://cdn.tonycrane.cc/utils/katex.min.css
 #   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
 #   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - stylesheets/extra.css?v=13
+  - stylesheets/extra.css?v=14
   - stylesheets/extratest.css?v=4
 markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 4
+      # 默认 slugify 会把中文标题变成 _1/_2 这种顺序号：锚点不稳定，页内中文链接也全失效。
+      # 用 pymdownx 的 slugify（保留 Unicode），得到 #最近更新 这样的锚点。
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - meta
   - def_list
   - attr_list
@@ -140,12 +145,7 @@ nav:
       - Cpp: 
         - course/Program/cpp/index.md
         - book: course/Program/cpp/1.md
-      - Object-oriented Programming: 
-        - course/Program/Oop/index.md
-        - string: course/Program/Oop/string.md
     - ComputerSystem:
-      - System1:
-        - 单周期CPU复习: course/ComputerSystem/ComputerSystem1/preview.md
       - System2: 
         - course/ComputerSystem/ComputerSystem2/index.md
         - 指令集系统: course/ComputerSystem/ComputerSystem2/InstructionSet.md
@@ -164,12 +164,8 @@ nav:
         - 微经-需求、供给和均衡价格: course/Economics/WesternEconomics/microeconomics1.md
     - Policy:
       - course/Policy/index.md
-      - 政策科学的发展历程: course/Policy/1.md
       - 影响公共政策制定的因素: course/Policy/3.md
       - 公共政策的制定过程: course/Policy/4.md
-    - IdeologyAndPoitics:
-      - Military:
-        - course/IdeologyAndPoitics/military1.md
     - SoftwareSecurity:
       - course/SoftwareSecurity/lab1.md
   - Book Notes:
@@ -191,7 +187,24 @@ nav:
     - verse: collection/verse.md
     - poem: collection/poem.md
     - elegance: collection/elegance.md
-  - Life:
-    - life/index.md
-    - Music: life/music.md
-    - plan: life/plan.md
+  - Life: life/index.md
+
+# 内容还很少、也没成体系的页面：仍然构建（旧链接不会 404），但不进导航、也不报警告
+# 这里是 gitignore 风格的通配（pathspec），不是正则
+not_in_nav: |
+  course/Program/Oop/
+  course/Program/BasicDataStructure/Sorting.md
+  course/ComputerSystem/ComputerSystem1/
+  course/ComputerSystem/ComputerSystem2/Exceptions&Interruots.md
+  course/ComputerSystem/ComputerSystem2/OSintro.md
+  course/Economics/MacroEconomics/
+  course/IdeologyAndPoitics/
+  course/MathematicalBasic/CollegePhysics/机械波.md
+  course/MathematicalBasic/CollegePhysics/热学.md
+  course/MathematicalBasic/CollegePhysics/电磁学习题.md
+  course/Policy/1.md
+  collection/novel.md
+  life/music.md
+  life/preparation.md
+  tool/path.md
+  tool/pycharm.md

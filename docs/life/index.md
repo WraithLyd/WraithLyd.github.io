@@ -1,4 +1,4 @@
-﻿# Life
+# Life
 !!! tip "life"
 	<br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
@@ -11,30 +11,4 @@
 
 ## 分类
 
-<div class="grid cards" markdown>
-
--   :material-music-note: **音乐**
-
-    ---
-
-    在听的东西。
-
-    [:octicons-arrow-right-24: 打开](music.md)
-
--   :material-calendar-check-outline: **计划**
-
-    ---
-
-    阶段目标与待办。
-
-    [:octicons-arrow-right-24: 打开](plan.md)
-
--   :material-bag-checked: **准备**
-
-    ---
-
-    出门、考试与各种准备清单。
-
-    [:octicons-arrow-right-24: 打开](preparation.md)
-
-</div>
+音乐、计划与出行的准备清单还没成体系，先收起来了；等整理成样子再放出来。

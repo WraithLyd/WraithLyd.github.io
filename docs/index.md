@@ -33,7 +33,7 @@ hide_actions: true
 
     ---
 
-    MkDocs、PyCharm 学生认证、Qwen Code 与摄影相关，踩过的坑都记在这里。
+    MkDocs、Qwen Code 与摄影相关，踩过的坑都记在这里。
 
     [:octicons-arrow-right-24: 工具列表](tool/index.md)
 
@@ -49,7 +49,7 @@ hide_actions: true
 
     ---
 
-    音乐、计划，和一些还没想好怎么命名的准备。
+    随笔、随手记，和还没整理好的那些碎片。
 
     [:octicons-arrow-right-24: 生活记录](life/index.md)
 

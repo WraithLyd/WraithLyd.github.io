@@ -1,4 +1,4 @@
-﻿# Course
+# Course
 !!! note "course" 
     <br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
@@ -25,17 +25,17 @@
 
     ---
 
-    Python 入门、基本数据结构、C++ 与面向对象。
+    Python 入门、基本数据结构与 C++。
 
-    [:octicons-arrow-right-24: Python](python/index.md) · [:octicons-arrow-right-24: 数据结构](Program/BasicDataStructure/index.md) · [:octicons-arrow-right-24: Cpp](Program/cpp/index.md) · [:octicons-arrow-right-24: OOP](Program/Oop/index.md)
+    [:octicons-arrow-right-24: Python](python/index.md) · [:octicons-arrow-right-24: 数据结构](Program/BasicDataStructure/index.md) · [:octicons-arrow-right-24: Cpp](Program/cpp/index.md)
 
 -   :material-cpu-64-bit: **计算机系统**
 
     ---
 
-    单周期 CPU、指令集、流水线与计算机抽象。
+    指令集、流水线与计算机抽象。
 
-    [:octicons-arrow-right-24: 单周期CPU](ComputerSystem/ComputerSystem1/preview.md) · [:octicons-arrow-right-24: 流水线](ComputerSystem/ComputerSystem2/pipeline.md) · [:octicons-arrow-right-24: 计算机抽象](ComputerOrganization/ComputerOrganization1.md)
+    [:octicons-arrow-right-24: 流水线](ComputerSystem/ComputerSystem2/pipeline.md) · [:octicons-arrow-right-24: 计算机抽象](ComputerOrganization/ComputerOrganization1.md)
 
 -   :material-chart-line: **经济学**
 
@@ -49,9 +49,9 @@
 
     ---
 
-    政策科学的发展历程、影响因素与制定过程。
+    政策制定的影响因素与制定过程。
 
-    [:octicons-arrow-right-24: 政策科学](Policy/1.md)
+    [:octicons-arrow-right-24: 公共政策](Policy/3.md)
 
 -   :material-shield-lock-outline: **软件安全**
 
