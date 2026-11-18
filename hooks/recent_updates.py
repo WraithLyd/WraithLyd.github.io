@@ -1,6 +1,7 @@
 """MkDocs hook：
 1. 给每页算「字数 / 约几分钟」，写进 page.meta（供 partials/source-file.html 使用）；
-2. 在首页追加「最近更新」列表（按 git 最后一次提交时间排序）。
+2. 在首页追加「最近更新」列表（按 git 最后一次提交时间排序）；
+3. 把首页里的 <!-- nb-stats --> 换成站点统计（篇数 / 字数 / 板块数）。
 
 只在构建时运行，不改变任何笔记原文。
 """
@@ -30,7 +31,10 @@ SECTION_NAMES = {
 
 RECENT_LIMIT = 6
 
+STATS_PLACEHOLDER = '<!-- nb-stats -->'
+
 _recent_md: str | None = None
+_stats_html: str | None = None
 
 
 def _repo_root(config) -> Path:
@@ -88,6 +92,40 @@ def _build_recent(root: Path, docs_dir: Path) -> str:
     return '\n'.join(lines)
 
 
+def _build_stats(docs_dir: Path) -> str:
+    """首页站点统计：正文笔记篇数、总字数、板块数。"""
+    pages = 0
+    words = 0
+    for md in docs_dir.rglob('*.md'):
+        rel = md.relative_to(docs_dir).as_posix()
+        if rel == 'index.md' or rel.endswith('/index.md'):
+            continue
+        try:
+            text = md.read_text(encoding='utf-8-sig')
+        except OSError:
+            continue
+        pages += 1
+        words += _count_words(text)[0]
+
+    wan = words / 10000
+    if wan >= 1:
+        words_value, words_label = f'{wan:.1f}'.removesuffix('.0'), '万字'
+    else:
+        words_value, words_label = str(words), '字'
+    items = [
+        (str(pages), '篇笔记'),
+        (words_value, words_label),
+        (str(len(SECTION_NAMES)), '个板块'),
+    ]
+    values = ''.join(
+        f'<div class="nb-stats__item">'
+        f'<span class="nb-stats__value">{v}</span>'
+        f'<span class="nb-stats__label">{label}</span></div>'
+        for v, label in items
+    )
+    return f'<div class="nb-stats">{values}</div>\n'
+
+
 def _count_words(markdown: str) -> tuple[int, int]:
     text = FRONT_MATTER_RE.sub('', markdown)
     text = FENCE_RE.sub('', text)
@@ -100,7 +138,7 @@ def _count_words(markdown: str) -> tuple[int, int]:
 
 
 def on_page_markdown(markdown: str, page, config, files):
-    global _recent_md
+    global _recent_md, _stats_html
 
     page.meta = dict(page.meta or {})
     total, minutes = _count_words(markdown)
@@ -109,6 +147,15 @@ def on_page_markdown(markdown: str, page, config, files):
         page.meta['nb_minutes'] = minutes
 
     if page.file.src_uri == 'index.md':
+        if STATS_PLACEHOLDER in markdown:
+            if _stats_html is None:
+                try:
+                    _stats_html = _build_stats(Path(config.docs_dir))
+                except Exception as exc:  # 统计失败不影响首页
+                    print(f'[recent_updates] 跳过站点统计：{exc}')
+                    _stats_html = ''
+            markdown = markdown.replace(STATS_PLACEHOLDER, _stats_html)
+
         if _recent_md is None:
             root = _repo_root(config)
             docs_dir = Path(config.docs_dir)

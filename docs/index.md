@@ -1,41 +1,15 @@
 ---
 comments: false
 statistics: True
+hide_meta: true
+hide_actions: true
 ---
 
-<div class="nb-hero" markdown>
+<p class="nb-kicker">Wraith's Notebook</p>
 
-<p class="nb-hero__eyebrow">Wraith's Notebook</p>
+<!-- nb-stats -->
 
-# Welcome to Wraith's site
-
-<p class="nb-hero__lead">课程笔记、读书摘录、工具备忘与生活碎片 —— 慢慢写，慢慢放。</p>
-
-[开始浏览](course/index.md){ .md-button .md-button--primary }
-[最近更新](#最近更新){ .md-button }
-
-</div>
-
-!!! tip
-	我问大夫：世人皆道相思苦，可有解？  
-
-	大夫说：九叶重楼二两，冬至蝉蛹一钱，煎入隔年雪，可医世人相思疾苦。
-
-	我又问：可重楼七叶一枝花，冬至何来蝉蛹，雪又怎能隔年，原是相思无解。
-
-	大夫说：殊不知，夏枯即为九重楼，掘地三尺寒蝉现，除夕子时雪，落地已隔年，过了离别时，相思亦可解。
-	<br>
-
-!!! example
-    <br>
-    <div align="center" style="font-size:30px;font-weight:bold">
-        ~『迷失在莎士比亚的花园，那里盛放着浪漫主义的玫瑰』~
-    </div>
-    <br><br>
-    <div align="center" style="font-size:12px">
-		</div>
-
-## 去哪里看
+## 从哪里开始
 
 <div class="grid cards" markdown>
 
@@ -43,7 +17,7 @@ statistics: True
 
     ---
 
-    数学基础、程序设计、计算机系统、经济学、公共政策、软件安全与军事理论。
+    数学基础、程序设计、计算机系统、经济学、公共政策与软件安全，按课程整理的复习脉络。
 
     [:octicons-arrow-right-24: 全部课程](course/index.md)
 
@@ -51,7 +25,7 @@ statistics: True
 
     ---
 
-    正在读的书，摘录、批注与一点自己的想法。
+    正在读的书：摘录、批注，以及读完之后还想留下的一点想法。
 
     [:octicons-arrow-right-24: 社会认知论](read/社会认知论/index.md)
 
@@ -59,16 +33,42 @@ statistics: True
 
     ---
 
-    MkDocs、PyCharm 学生认证、Qwen Code 与摄影相关。
+    MkDocs、PyCharm 学生认证、Qwen Code 与摄影相关，踩过的坑都记在这里。
 
     [:octicons-arrow-right-24: 工具列表](tool/index.md)
 
--   :material-feather: **收藏与生活**
+-   :material-feather: **收藏**
 
     ---
 
-    句子、段落、诗词与文摘；音乐、计划和一些准备。
+    句子、段落、诗词与文摘——看到好的就抄下来，按年份归档。
 
-    [:octicons-arrow-right-24: 收藏](collection/index.md) · [:octicons-arrow-right-24: 生活](life/index.md)
+    [:octicons-arrow-right-24: 收藏夹](collection/index.md)
+
+-   :material-coffee-outline: **生活**
+
+    ---
+
+    音乐、计划，和一些还没想好怎么命名的准备。
+
+    [:octicons-arrow-right-24: 生活记录](life/index.md)
+
+-   :material-clock-outline: **最近更新**
+
+    ---
+
+    按 git 提交时间排的最新几篇，想随便翻翻就从这里进。
+
+    [:octicons-arrow-right-24: 跳到最近更新](#最近更新)
+
+</div>
+
+## 随手摘
+
+<div class="nb-quote" markdown>
+
+君不密则失臣，臣不密则失身，几事不密则害成，是以君子慎密而不出也。
+
+<span class="nb-quote__by">——《周易·系辞上》· [更多摘句](collection/sentence2023.md)</span>
 
 </div>

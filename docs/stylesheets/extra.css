@@ -973,47 +973,63 @@ body {
 	font-synthesis-style: none;
 }
 
-/* --- 首页 hero --- */
-.md-typeset .nb-hero {
-	margin: 0 0 2.4em;
-	padding: 2.4em 1.6em 2.2em;
-	border: 1px solid var(--rule);
-	border-radius: 20px;
-	background:
-		radial-gradient(120% 140% at 100% 0%, var(--seal-soft) 0%, transparent 58%),
-		var(--paper-raise);
-	box-shadow: var(--shadow-1);
-	text-align: center;
+/* --- 首页：一行小标（不放标题，直接进卡片区） --- */
+/* MkDocs 会给没有一级标题的页面自动补一个 <h1>，首页用 kicker 顶替，这里把它藏掉 */
+.md-typeset > h1:has(+ .nb-kicker) {
+	display: none;
 }
 
-.md-typeset .nb-hero > h1 {
-	margin: 0.15em 0 0.4em;
-	padding: 0;
-	border: 0;
-	font-size: 2.1em;
-	line-height: 1.25;
-}
-
-.md-typeset .nb-hero__eyebrow {
-	margin: 0;
-	color: var(--seal);
+.md-typeset .nb-kicker {
+	margin: 0 0 1.1em;
+	color: var(--ink-soft);
 	font-size: 0.62rem;
 	font-weight: 700;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.22em;
+	line-height: 1.6;
 	text-transform: uppercase;
 }
 
-.md-typeset .nb-hero__lead {
-	margin: 0 auto 1.5em;
-	max-width: 32em;
-	color: var(--ink-soft);
+/* --- 首页：一排“数字卡” --- */
+.md-typeset .nb-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8.5em, 1fr));
+	gap: 0.75em;
+	margin: 0 0 2.8em;
+	padding: 0;
+	border: 0;
 }
 
-.md-typeset .nb-hero .md-button {
-	margin: 0.2em 0.3em;
+.md-typeset .nb-stats__item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.1em;
+	padding: 0.95em 1.1em 1.05em;
+	border: 1px solid var(--rule);
+	border-radius: var(--radius-lg);
+	background: var(--paper-raise);
+}
+
+.md-typeset .nb-stats__value {
+	color: var(--ink);
+	font-family: var(--md-text-font);
+	font-size: 1.85em;
+	font-weight: 700;
+	line-height: 1.1;
+	font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .nb-stats__label {
+	color: var(--ink-soft);
+	font-size: 0.6rem;
+	font-weight: 400;
+	letter-spacing: 0.14em;
 }
 
 /* --- 卡片网格（. grid.cards 重绘成纸卡片） --- */
+.md-typeset .grid.cards {
+	grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+}
+
 .md-typeset .grid.cards > ul > li {
 	padding: 1em 1.1em;
 	border: 1px solid var(--rule);
@@ -1077,6 +1093,11 @@ body {
 	content: "";
 }
 
+.md-typeset .nb-recent > ul > li + li {
+	border-top: 1px dashed var(--rule);
+	border-radius: 0;
+}
+
 .md-typeset .nb-recent > ul > li:hover {
 	background: var(--seal-soft);
 	border-color: var(--rule);
@@ -1092,6 +1113,45 @@ body {
 	font-size: 0.62rem;
 	font-variant-numeric: tabular-nums;
 	white-space: nowrap;
+}
+
+/* --- 首页「随手摘」：纸卡片里的一段引文 --- */
+.md-typeset .nb-quote {
+	position: relative;
+	margin: 0.2em 0 2.8em;
+	padding: 1.15em 1.35em 1.1em 1.5em;
+	border: 1px solid var(--rule);
+	border-left: 2px solid var(--seal);
+	border-radius: var(--radius-lg);
+	background: var(--paper-raise);
+}
+
+.md-typeset .nb-quote > p {
+	margin: 0;
+	color: var(--ink);
+	font-size: 1.02em;
+	line-height: 1.95;
+	text-indent: 0;
+	text-wrap: pretty;
+}
+
+.md-typeset .nb-quote__by {
+	display: block;
+	margin-top: 0.55em;
+	color: var(--ink-soft);
+	font-size: 0.64rem;
+	letter-spacing: 0.06em;
+}
+
+.md-typeset .nb-quote__by a {
+	color: var(--ink-soft);
+	text-decoration: none;
+	border-bottom: 1px solid var(--rule);
+}
+
+.md-typeset .nb-quote__by a:hover {
+	color: var(--seal);
+	border-bottom-color: var(--seal);
 }
 
 /* --- 页面元信息（partials/source-file.html） --- */
@@ -1178,7 +1238,6 @@ body {
 .md-typeset blockquote p,
 .md-typeset .grid p,
 .md-typeset li p,
-.md-typeset .nb-hero p,
 .md-typeset .nb-recent p,
 .md-typeset td p {
 	text-indent: 0;
@@ -1241,13 +1300,8 @@ body {
 /* --- 移动端微调 --- */
 @media screen and (max-width: 76.1875em) {
 
-	.md-typeset .nb-hero {
-		padding: 1.7em 1em 1.6em;
-		border-radius: 16px;
-	}
-
-	.md-typeset .nb-hero > h1 {
-		font-size: 1.7em;
+	.md-typeset .nb-stats {
+		gap: 0.6em;
 	}
 
 	.md-typeset .grid.cards > ul > li {
