@@ -1,7 +1,8 @@
 {% import "partials/language.html" as lang with context %}
 
 <!-- 页面元信息：最后更新 / 创建 / 字数 / 阅读时长 / 编辑，样式见 stylesheets/extra.css 的 .nb-page-meta -->
-{% if page.meta.git_revision_date_localized or page.meta.nb_words %}
+{% if page.meta.hide_meta %}
+{% elif page.meta.git_revision_date_localized or page.meta.nb_words %}
 <div class="nb-page-meta">
   {% if page.meta.git_revision_date_localized %}
   <span class="nb-page-meta__item" title="最后更新">
