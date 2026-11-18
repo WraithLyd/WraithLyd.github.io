@@ -25,9 +25,9 @@
 
     ---
 
-    Python 入门、基本数据结构与 C++。
+    Python 入门、基本数据结构、C++ 与 Prolog。
 
-    [:octicons-arrow-right-24: Python](python/index.md) · [:octicons-arrow-right-24: 数据结构](Program/BasicDataStructure/index.md) · [:octicons-arrow-right-24: Cpp](Program/cpp/index.md)
+    [:octicons-arrow-right-24: Python](python/index.md) · [:octicons-arrow-right-24: 数据结构](Program/BasicDataStructure/index.md) · [:octicons-arrow-right-24: Cpp](Program/cpp/index.md) · [:octicons-arrow-right-24: Prolog](Program/prolog.md)
 
 -   :material-cpu-64-bit: **计算机系统**
 

@@ -145,6 +145,7 @@ nav:
       - Cpp: 
         - course/Program/cpp/index.md
         - book: course/Program/cpp/1.md
+      - Prolog: course/Program/prolog.md
     - ComputerSystem:
       - System2: 
         - course/ComputerSystem/ComputerSystem2/index.md
