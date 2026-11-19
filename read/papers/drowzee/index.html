@@ -3541,14 +3541,49 @@
 </ul>
 <h3 id="32-②-逻辑推理五条规则">3.2 ② 逻辑推理：五条规则<a class="headerlink" href="#32-②-逻辑推理五条规则" title="Permanent link">¶</a></h3>
 <p>论文声明贡献是"<strong>five</strong> unique logic reasoning rules"，但 <strong>RQ4 消融只测四类</strong>——因为 <strong>Symmetric 主要作为 Composite 的构件、自身不引入新知识</strong>。</p>
-<p>| # | 规则 | 形式化 | 论文例子 | 单独成题 |
-|---|---|---|---|
-| 1 | Negation <code>[Neg]</code> | <span class="arithmatex">\(\dfrac{n(s,o)}{\neg\,\overline{n}(s,o)}[Neg]\)</span> | 由 <em>(Haruki Murakami, won, Nobel Prize in Literature in 2016)</em> 得 <em>(Haruki Murakami, did not win, …)</em> 为假 | ✅ |
-| 2 | Symmetric <code>[Sym]</code> | <span class="arithmatex">\(\dfrac{n(s,o)}{n(o,s)}[Sym]\)</span> | <code>different_from(s,o)</code> ⇒ <code>different_from(o,s)</code> | ❌（只作构件） |
-| 3 | Inverse <code>[Inverse]</code> | <span class="arithmatex">\(\dfrac{n(s,o),\;n'=Reverse(n)}{n'(o,s)}[Inverse]\)</span> | <code>influence_by(Haruki Murakami, Richard Brautigan)</code> ⇒ <code>influence(Richard Brautigan, Haruki Murakami)</code> | ✅ |
-| 4 | Transitive <code>[Trans]</code> | <span class="arithmatex">\(\dfrac{n(s_1,o_1),\;n(s_2,o_2),\;o_1=s_2}{n(s_1,o_2)}[Trans]\)</span> | <code>loc_in(Haruki Murakami, Kyoto)</code> + <code>loc_in(Kyoto, Japan)</code> ⇒ <code>loc_in(Haruki Murakami, Japan)</code> | ✅ |
-| 5 | Composite <code>[Comp]</code> | 把 Neg / Sym / Inverse / Trans 及普通谓词<strong>串接</strong>成多层规则 | 论文只给多层推理式（式 12），正文该处三元组例子被注释掉 | ✅ |</p>
-<p><strong>机制（Algorithm 2 <code>DerivingFacts</code>）</strong>：对每类关系里的每个谓词 <span class="arithmatex">\(n\)</span> 自动生成规则与新谓词 <span class="arithmatex">\(n_{new}\)</span>；把 <span class="arithmatex">\(\widetilde{R}_{ground}\)</span> 与规则 <span class="arithmatex">\(\widetilde{Q}\)</span> 拼成 Prolog 程序 <span class="arithmatex">\(\mathcal{P}\)</span>；查询 <span class="arithmatex">\(\llbracket n_{new}(S,O) \rrbracket_{\mathcal{P}}\)</span> 取变量实例，每个 <span class="arithmatex">\((s,o)\)</span> 组成新事实 <span class="arithmatex">\(n_{new}(s,o)\)</span> 存入 <span class="arithmatex">\(\widetilde{R}_{derived}\)</span>。<strong>注意</strong>：事实太多会让引擎报错，作者用<strong>采样子集</strong>实体构造查询（§4.1）。</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>规则</th>
+<th>形式化</th>
+<th>例子（及是否单独成题）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Negation</strong> <code>[Neg]</code></td>
+<td><span class="arithmatex">\(\dfrac{n(s,o)}{\neg\,\overline{n}(s,o)}[Neg]\)</span></td>
+<td>由 <code>won(Murakami, Nobel2016)</code> 得 <code>did not win(…)</code> 为假 · <strong>单独成题 ✅</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Symmetric</strong> <code>[Sym]</code></td>
+<td><span class="arithmatex">\(\dfrac{n(s,o)}{n(o,s)}[Sym]\)</span></td>
+<td><code>different_from(s,o)</code> ⇒ <code>different_from(o,s)</code> · 只作 Composite 构件 ❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Inverse</strong> <code>[Inverse]</code></td>
+<td><span class="arithmatex">\(\dfrac{n(s,o),\,n'=Reverse(n)}{n'(o,s)}[Inverse]\)</span></td>
+<td><code>influence_by(Murakami, Brautigan)</code> ⇒ <code>influence(Brautigan, Murakami)</code> · ✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Transitive</strong> <code>[Trans]</code></td>
+<td><span class="arithmatex">\(\dfrac{n(s_1,o_1),\,n(s_2,o_2),\,o_1=s_2}{n(s_1,o_2)}[Trans]\)</span></td>
+<td><code>loc_in(Murakami, Kyoto)</code> + <code>loc_in(Kyoto, Japan)</code> ⇒ <code>loc_in(Murakami, Japan)</code> · ✅</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Composite</strong> <code>[Comp]</code></td>
+<td>把 Neg / Sym / Inverse / Trans 及普通谓词<strong>串接</strong>成多层规则</td>
+<td>论文只给多层推理式（式 12），正文该处三元组例子被注释掉 · ✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>机制（Algorithm 2 <code>DerivingFacts</code>）</strong>：对每类关系里的每个谓词 <span class="arithmatex">\(n\)</span> 自动生成规则与新谓词 <span class="arithmatex">\(n_{new}\)</span>；把 <span class="arithmatex">\(\widetilde{R}_{ground}\)</span> 与规则 <span class="arithmatex">\(\widetilde{Q}\)</span> 拼成 Prolog 程序 <span class="arithmatex">\(\mathcal{P}\)</span>；查询 <span class="arithmatex">\(n_{new}(S,O)\)</span> 在程序 <span class="arithmatex">\(\mathcal{P}\)</span> 下的解，取变量实例，每个 <span class="arithmatex">\((s,o)\)</span> 组成新事实 <span class="arithmatex">\(n_{new}(s,o)\)</span> 存入 <span class="arithmatex">\(\widetilde{R}_{derived}\)</span>。<strong>注意</strong>：事实太多会让引擎报错，作者用<strong>采样子集</strong>实体构造查询（§4.1）。</p>
 <blockquote>
 <p>这一节最该记住的一句：扩增出的新事实是<strong>"由可信事实必然推出"的</strong>，所以它自带 ground truth——这是全方法能自动化的根。</p>
 </blockquote>
@@ -3814,7 +3849,7 @@ Query: Now given the question: {question}, please provide an answer with your kn
   
   <span class="nb-page-meta__item" title="最后更新">
     <span class="nb-page-meta__label">最后更新</span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年11月19日 15:55:08 CST">2026年11月19日 15:55:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年11月19日 16:38:15 CST">2026年11月19日 16:38:15</span>
   </span>
   
 
@@ -3828,7 +3863,7 @@ Query: Now given the question: {question}, please provide an answer with your kn
   
   <span class="nb-page-meta__item" title="字数与阅读时长">
     <span class="nb-page-meta__label">字数</span>
-    4092 · 约 12 分钟
+    4088 · 约 12 分钟
   </span>
   
 
