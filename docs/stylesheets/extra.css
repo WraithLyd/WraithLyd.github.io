@@ -605,52 +605,69 @@ body {
 	vertical-align: baseline;
 }
 
-/* 代码块：一整块浅暖灰底 + 左边 2px 竖线 + 圆角；hover 时竖线变标签色 */
+/* 代码块：ray.so 式「窗口卡片」——圆角、细边框、左上三圆点、右上语言标签 */
 .md-typeset .highlight {
 	position: relative;
-	/* flow-root：自成 BFC，右侧浮动的 !!! inline end 告示块不会让淡底撑出一块空白 */
+	/* flow-root：自成 BFC，右侧浮动的 !!! inline end 告示块不会让卡片撑出一块空白 */
 	display: flow-root;
-	margin: 1.7em 0;
+	margin: 1.9em 0;
 	padding: 0;
-	border: 0;
-	border-left: 2px solid var(--code-rule);
-	border-radius: 8px;
+	border: 1px solid var(--code-rule);
+	border-radius: 12px;
 	background: var(--code-bg);
-	transition: border-left-color 0.22s ease, background 0.22s ease;
+	box-shadow: 0 1px 2px rgba(38, 34, 31, 0.04), 0 8px 20px rgba(38, 34, 31, 0.05);
+	overflow: hidden;
+	transition: box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 26px rgba(0, 0, 0, 0.3);
+}
+
+/* 窗口左上角的三圆点（红 / 黄 / 绿）——纯 CSS 绘制，不改 HTML */
+.md-typeset .highlight::before {
+	content: "";
+	position: absolute;
+	top: 1.02em;
+	left: 1.15em;
+	width: 3em;
+	height: 0.62em;
+	background:
+		radial-gradient(circle at 0.31em 0.31em, #ff5f57 0.27em, transparent 0.3em),
+		radial-gradient(circle at 1.5em 0.31em, #febc2e 0.27em, transparent 0.3em),
+		radial-gradient(circle at 2.69em 0.31em, #28c840 0.27em, transparent 0.3em);
+	opacity: 0.85;
+	pointer-events: none;
 }
 
 .md-typeset .highlight:hover {
-	border-left-color: var(--code-label);
+	border-color: color-mix(in srgb, var(--code-label) 40%, var(--code-rule));
+	box-shadow: var(--shadow-2);
 }
 
-/* 顶部小标签：语言/文件名 + 细线，像书页的栏目标记，不是标题栏色块 */
+/* 语言 / 文件名：窗口右上角的小标签 */
 .md-typeset .highlight > .filename,
 .md-typeset .highlight th.filename {
-	display: flex;
-	align-items: baseline;
-	gap: 0.6em;
+	position: absolute;
+	top: 0.8em;
+	right: 1.2em;
+	left: auto;
+	display: block;
+	width: auto;
 	height: auto;
 	margin: 0;
-	padding: 0.62em 1.05em 0;
+	padding: 0;
 	border: 0;
 	background: none;
 	color: var(--code-label);
-	/* 类型标签：跟随代码字体（JetBrains Mono），只放大字号，不加粗、不加字距、不改大小写 */
 	font-family: var(--md-code-font);
-	font-size: 0.7rem;
+	font-size: 0.62rem;
 	font-weight: 400;
 	letter-spacing: normal;
 	line-height: 1.4;
-	text-align: left;
+	text-align: right;
 	white-space: nowrap;
 	overflow: hidden;
-}
-
-/* 表格版标题也要跟着走新样式 */
-.md-typeset .highlight th.filename {
-	display: flex;
-	width: 100%;
-	box-sizing: border-box;
 }
 
 .md-typeset .highlight th.filename > .filename {
@@ -669,10 +686,10 @@ body {
 	display: none;
 }
 
-/* 代码正文 */
+/* 代码正文（顶部留出窗口圆点那一行的高度） */
 .md-typeset .highlight pre {
 	margin: 0;
-	padding: 0.5em 1.05em 0.95em;
+	padding: 2.4em 1.35em 1.2em;
 	background: transparent;
 	font-size: 0.73rem;
 	line-height: 1.75;
@@ -691,13 +708,7 @@ body {
 	word-break: break-word;
 }
 
-/* 没有标题栏的块：正文自己留出上边距 */
-.md-typeset .highlight.language-text pre,
-.md-typeset .highlight:not(:has(> .filename, > table)) pre {
-	padding-top: 0.95em;
-}
-
-/* 带行号（linenums）：表格重排成 flex，一行标签 + 一行 [行号 | 代码] */
+/* 带行号（linenums）：表格重排成 flex，一行 [行号 | 代码] */
 .md-typeset .highlighttable,
 .md-typeset .highlighttable > tbody,
 .md-typeset .highlighttable tr {
@@ -721,7 +732,7 @@ body {
 	flex: 0 0 auto;
 	width: 2.9em;
 	box-sizing: border-box;
-	padding: 0.5em 0.7em 0.95em 0;
+	padding: 2.4em 0.7em 1.2em 0;
 	background: transparent;
 	border: 0;
 	vertical-align: top;
@@ -755,7 +766,7 @@ body {
 .md-typeset .highlighttable td.code > div > pre,
 .md-typeset .highlighttable td.code pre {
 	margin: 0;
-	padding: 0.5em 1.05em 0.95em 0;
+	padding: 2.4em 1.35em 1.2em 0;
 }
 
 /* 复制按钮：右上角，平时隐藏，hover 或聚焦时出现 */
