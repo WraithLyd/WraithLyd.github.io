@@ -67,15 +67,15 @@ $$\frac{R_1,\;R_2,\;\dots}{R_{new}}\,[Rule]$$
 
 论文声明贡献是"**five** unique logic reasoning rules"，但 **RQ4 消融只测四类**——因为 **Symmetric 主要作为 Composite 的构件、自身不引入新知识**。
 
-| # | 规则 | 形式化 | 论文例子 | 单独成题 |
+| # | 规则 | 形式化 | 例子（及是否单独成题） |
 |---|---|---|---|
-| 1 | Negation `[Neg]` | $\dfrac{n(s,o)}{\neg\,\overline{n}(s,o)}[Neg]$ | 由 *(Haruki Murakami, won, Nobel Prize in Literature in 2016)* 得 *(Haruki Murakami, did not win, …)* 为假 | ✅ |
-| 2 | Symmetric `[Sym]` | $\dfrac{n(s,o)}{n(o,s)}[Sym]$ | `different_from(s,o)` ⇒ `different_from(o,s)` | ❌（只作构件） |
-| 3 | Inverse `[Inverse]` | $\dfrac{n(s,o),\;n'=Reverse(n)}{n'(o,s)}[Inverse]$ | `influence_by(Haruki Murakami, Richard Brautigan)` ⇒ `influence(Richard Brautigan, Haruki Murakami)` | ✅ |
-| 4 | Transitive `[Trans]` | $\dfrac{n(s_1,o_1),\;n(s_2,o_2),\;o_1=s_2}{n(s_1,o_2)}[Trans]$ | `loc_in(Haruki Murakami, Kyoto)` + `loc_in(Kyoto, Japan)` ⇒ `loc_in(Haruki Murakami, Japan)` | ✅ |
-| 5 | Composite `[Comp]` | 把 Neg / Sym / Inverse / Trans 及普通谓词**串接**成多层规则 | 论文只给多层推理式（式 12），正文该处三元组例子被注释掉 | ✅ |
+| 1 | **Negation** `[Neg]` | $\dfrac{n(s,o)}{\neg\,\overline{n}(s,o)}[Neg]$ | 由 `won(Murakami, Nobel2016)` 得 `did not win(…)` 为假 · **单独成题 ✅** |
+| 2 | **Symmetric** `[Sym]` | $\dfrac{n(s,o)}{n(o,s)}[Sym]$ | `different_from(s,o)` ⇒ `different_from(o,s)` · 只作 Composite 构件 ❌ |
+| 3 | **Inverse** `[Inverse]` | $\dfrac{n(s,o),\,n'=Reverse(n)}{n'(o,s)}[Inverse]$ | `influence_by(Murakami, Brautigan)` ⇒ `influence(Brautigan, Murakami)` · ✅ |
+| 4 | **Transitive** `[Trans]` | $\dfrac{n(s_1,o_1),\,n(s_2,o_2),\,o_1=s_2}{n(s_1,o_2)}[Trans]$ | `loc_in(Murakami, Kyoto)` + `loc_in(Kyoto, Japan)` ⇒ `loc_in(Murakami, Japan)` · ✅ |
+| 5 | **Composite** `[Comp]` | 把 Neg / Sym / Inverse / Trans 及普通谓词**串接**成多层规则 | 论文只给多层推理式（式 12），正文该处三元组例子被注释掉 · ✅ |
 
-**机制（Algorithm 2 `DerivingFacts`）**：对每类关系里的每个谓词 $n$ 自动生成规则与新谓词 $n_{new}$；把 $\widetilde{R}_{ground}$ 与规则 $\widetilde{Q}$ 拼成 Prolog 程序 $\mathcal{P}$；查询 $\llbracket n_{new}(S,O) \rrbracket_{\mathcal{P}}$ 取变量实例，每个 $(s,o)$ 组成新事实 $n_{new}(s,o)$ 存入 $\widetilde{R}_{derived}$。**注意**：事实太多会让引擎报错，作者用**采样子集**实体构造查询（§4.1）。
+**机制（Algorithm 2 `DerivingFacts`）**：对每类关系里的每个谓词 $n$ 自动生成规则与新谓词 $n_{new}$；把 $\widetilde{R}_{ground}$ 与规则 $\widetilde{Q}$ 拼成 Prolog 程序 $\mathcal{P}$；查询 $n_{new}(S,O)$ 在程序 $\mathcal{P}$ 下的解，取变量实例，每个 $(s,o)$ 组成新事实 $n_{new}(s,o)$ 存入 $\widetilde{R}_{derived}$。**注意**：事实太多会让引擎报错，作者用**采样子集**实体构造查询（§4.1）。
 
 > 这一节最该记住的一句：扩增出的新事实是**"由可信事实必然推出"的**，所以它自带 ground truth——这是全方法能自动化的根。
 
