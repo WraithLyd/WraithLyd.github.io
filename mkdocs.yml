@@ -172,6 +172,8 @@ nav:
   - Book Notes:
     - 社会认知论:
       - read/社会认知论/index.md
+    - Paper Notes:
+      - Drowzee: read/papers/drowzee.md
   - Tool:
     - tool/index.md
     - Mkdocs: tool/MkDocs.md
